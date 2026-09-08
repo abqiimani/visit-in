@@ -1,589 +1,295 @@
-@extends('layouts.visitor')
+@extends('layouts.app')
 
-@section('title', 'VISIT-IN | Evara Beach')
+@section('title', 'Dashboard Admin | VISIT-IN')
 
 @section('content')
 
 <style>
-    * {
-        box-sizing: border-box;
+    .visit-dashboard {
+        min-height: calc(100vh - 75px);
+        padding: 30px 25px 45px;
+        background: #f7f3e9;
     }
 
-    body {
+    .visit-dashboard-header {
+        margin-bottom: 30px;
+    }
+
+    .visit-dashboard-header h1 {
+        margin: 0 0 8px;
+        color: #075c59;
+        font-size: 30px;
+        font-weight: 700;
+    }
+
+    .visit-dashboard-header p {
         margin: 0;
-        padding: 0;
-        overflow-x: hidden;
+        color: #7b8884;
+        font-size: 14px;
     }
 
-    /* =========================================
-       HERO HOME
-    ========================================= */
-
-    .home-page {
-        position: relative;
-        min-height: calc(100vh - 82px);
-
-        display: flex;
-        align-items: center;
-
-        overflow: hidden;
-
-        background-image: url('{{ asset('img/pantai.jpg') }}');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
+    /* Kartu statistik */
+    .visit-stat-card {
+        height: 100%;
+        min-height: 155px;
+        padding: 24px;
+        border: none;
+        border-radius: 12px;
+        background: #fffdf8;
+        box-shadow: 0 5px 18px rgba(18, 109, 105, 0.06);
+        transition: 0.2s ease;
     }
 
-    /* Overlay pantai */
-    .home-overlay {
-        position: absolute;
-        inset: 0;
-        z-index: 1;
-
-        background:
-            linear-gradient(
-                90deg,
-                rgba(5, 65, 63, 0.88) 0%,
-                rgba(6, 82, 78, 0.72) 30%,
-                rgba(8, 91, 86, 0.38) 58%,
-                rgba(8, 91, 86, 0.08) 100%
-            );
+    .visit-stat-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 22px rgba(18, 109, 105, 0.09);
     }
 
-    /* =========================================
-       CONTENT
-    ========================================= */
-
-    .home-content {
-        position: relative;
-        z-index: 3;
-
-        width: 100%;
-        max-width: 1250px;
-
-        margin: 0 auto;
-
-        padding: 75px 55px;
-    }
-
-    .home-text {
-        width: 700px;
-        max-width: 100%;
-    }
-
-    /* =========================================
-       BADGE
-    ========================================= */
-
-    .home-badge {
-        display: inline-block;
-
-        padding: 10px 22px;
-        margin-bottom: 25px;
-
-        border-radius: 50px;
-
-        color: #ffffff;
-
-        background: rgba(21, 137, 130, 0.90);
-
-        border: 1px solid rgba(255,255,255,0.35);
-
-        font-size: 12px;
-        font-weight: 700;
-
-        letter-spacing: 1.3px;
-
-        box-shadow:
-            0 8px 25px rgba(0,0,0,0.18);
-    }
-
-    /* =========================================
-       JUDUL
-    ========================================= */
-
-    .home-title {
-        margin: 0;
-
-        color: #ffffff;
-
-        font-family:
-            Georgia,
-            'Times New Roman',
-            serif;
-
-        font-size: clamp(58px, 7vw, 92px);
-
-        font-weight: 700;
-
-        line-height: 0.94;
-
-        letter-spacing: -3px;
-
-        text-shadow:
-            0 5px 25px rgba(0,0,0,0.25);
-    }
-
-    .home-title .highlight {
-        color: #e5bb78;
-    }
-
-    /* =========================================
-       DESKRIPSI
-    ========================================= */
-
-    .home-description {
-        max-width: 650px;
-
-        margin-top: 30px;
-        margin-bottom: 32px;
-
-        color: #ffffff;
-
-        font-size: 18px;
-
-        line-height: 1.8;
-
-        text-shadow:
-            0 2px 8px rgba(0,0,0,0.25);
-    }
-
-    /* =========================================
-       AREA CTA
-    ========================================= */
-
-    .visit-action {
-        width: 100%;
-        max-width: 520px;
-
-        margin-top: 5px;
-    }
-
-    /* Label kecil di atas tombol */
-
-    .visit-label {
-        margin-bottom: 10px;
-
-        color: #ffffff;
-
-        font-size: 13px;
-        font-weight: 700;
-
-        letter-spacing: 0.5px;
-    }
-
-    /* =========================================
-       TOMBOL UTAMA
-    ========================================= */
-
-    .home-visit-button {
-        position: relative;
-
+    .visit-stat-top {
         display: flex;
         align-items: center;
         justify-content: space-between;
-
-        width: 100%;
-
-        padding: 20px 25px 20px 30px;
-
-        border: none;
-        border-radius: 18px;
-
-        background:
-            linear-gradient(
-                135deg,
-                #087d78,
-                #35b8ad
-            );
-
-        color: #ffffff !important;
-
-        text-decoration: none;
-
-        box-shadow:
-            0 15px 35px rgba(3, 75, 71, 0.40);
-
-        transition:
-            transform 0.3s ease,
-            box-shadow 0.3s ease,
-            background 0.3s ease;
+        margin-bottom: 22px;
     }
 
-    .home-visit-button:hover {
-        transform: translateY(-4px);
-
-        background:
-            linear-gradient(
-                135deg,
-                #066b67,
-                #2eaaa1
-            );
-
-        box-shadow:
-            0 20px 45px rgba(3, 75, 71, 0.50);
+    .visit-stat-title {
+        margin: 0;
+        color: #71807d;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
     }
 
-    /* Tulisan utama tombol */
-
-    .visit-button-text {
-        display: flex;
-        flex-direction: column;
-
-        gap: 4px;
-    }
-
-    .visit-button-title {
-        font-size: 19px;
-        font-weight: 800;
-
-        letter-spacing: 0.4px;
-    }
-
-    .visit-button-subtitle {
-        font-size: 12px;
-        font-weight: 400;
-
-        opacity: 0.90;
-    }
-
-    /* Panah */
-
-    .visit-arrow {
-        width: 48px;
-        height: 48px;
-
+    .visit-stat-icon {
         display: flex;
         align-items: center;
         justify-content: center;
-
-        flex-shrink: 0;
-
-        border-radius: 50%;
-
-        background: rgba(255,255,255,0.18);
-
-        font-size: 24px;
-
-        transition:
-            transform 0.3s ease,
-            background 0.3s ease;
+        width: 38px;
+        height: 38px;
+        border-radius: 9px;
+        background: #e4f1ee;
+        color: #0d7772;
+        font-size: 17px;
     }
 
-    .home-visit-button:hover .visit-arrow {
-        transform: translateX(5px);
-
-        background: rgba(255,255,255,0.28);
+    .visit-stat-number {
+        margin-bottom: 8px;
+        color: #075c59;
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 1;
     }
 
-    /* =========================================
-       KEAMANAN DATA
-    ========================================= */
-
-    .data-security {
-        display: flex;
-        align-items: center;
-
-        gap: 9px;
-
-        margin-top: 14px;
-        padding-left: 5px;
-
-        color: rgba(255,255,255,0.90);
-
+    .visit-stat-description {
+        margin: 0;
+        color: #9a9f99;
         font-size: 12px;
     }
 
-    .security-dot {
-        width: 8px;
-        height: 8px;
-
-        flex-shrink: 0;
-
-        border-radius: 50%;
-
-        background: #e5bb78;
-
-        box-shadow:
-            0 0 0 4px rgba(229,187,120,0.15);
+    /* Kartu informasi */
+    .visit-information-card {
+        margin-top: 12px;
+        border: none;
+        border-radius: 12px;
+        background: #fffdf8;
+        box-shadow: 0 5px 18px rgba(18, 109, 105, 0.06);
     }
 
-    /* =========================================
-       INFO TAMBAHAN
-    ========================================= */
+    .visit-information-header {
+        padding: 22px 25px 15px;
+    }
 
-    .home-info {
+    .visit-information-header h5 {
+        margin: 0;
+        color: #075c59;
+        font-size: 17px;
+        font-weight: 700;
+    }
+
+    .visit-information-body {
+        padding: 10px 25px 25px;
+    }
+
+    .visit-information-body p {
+        margin-bottom: 20px;
+        color: #71807d;
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    /* Baris informasi tanpa garis pembatas */
+    .visit-information-item {
         display: flex;
         align-items: center;
-
-        gap: 25px;
-
-        margin-top: 30px;
-
-        color: rgba(255,255,255,0.88);
-
-        font-size: 12px;
+        gap: 12px;
+        padding: 10px 0;
     }
 
-    .home-info-item {
-        display: flex;
-        flex-direction: column;
-
-        gap: 3px;
+    .visit-information-item i {
+        width: 25px;
+        color: #d8a35b;
+        font-size: 16px;
+        text-align: center;
     }
 
-    .home-info-number {
-        color: #e5bb78;
-
-        font-size: 18px;
-        font-weight: 800;
+    .visit-information-item span {
+        color: #71807d;
+        font-size: 13px;
     }
 
-    .home-info-label {
-        font-size: 11px;
+    .visit-information-item strong {
+        color: #075c59;
+        font-weight: 700;
     }
 
-    .home-info-divider {
-        width: 1px;
-        height: 35px;
-
-        background: rgba(255,255,255,0.30);
-    }
-
-    /* =========================================
-       RESPONSIVE
-    ========================================= */
-
-    @media (max-width: 991px) {
-
-        .home-content {
-            padding: 65px 35px;
+    @media (max-width: 768px) {
+        .visit-dashboard {
+            padding: 25px 15px 35px;
         }
 
-        .home-title {
-            font-size: 68px;
+        .visit-dashboard-header h1 {
+            font-size: 25px;
         }
 
-        .home-description {
-            font-size: 16px;
-        }
-
-        .visit-action {
-            max-width: 480px;
-        }
-    }
-
-    @media (max-width: 576px) {
-
-        .home-page {
-            min-height: calc(100vh - 70px);
-
-            background-position: 58% center;
-        }
-
-        .home-content {
-            min-height: calc(100vh - 70px);
-
-            display: flex;
-            align-items: center;
-
-            padding: 45px 22px;
-        }
-
-        .home-badge {
-            padding: 8px 15px;
-
-            font-size: 9px;
-        }
-
-        .home-title {
-            font-size: 52px;
-
-            line-height: 0.98;
-
-            letter-spacing: -1.5px;
-        }
-
-        .home-description {
-            margin-top: 22px;
-            margin-bottom: 27px;
-
-            font-size: 14px;
-
-            line-height: 1.7;
-        }
-
-        .home-visit-button {
-            padding: 17px 18px 17px 22px;
-
-            border-radius: 16px;
-        }
-
-        .visit-button-title {
-            font-size: 15px;
-        }
-
-        .visit-button-subtitle {
-            font-size: 10px;
-        }
-
-        .visit-arrow {
-            width: 42px;
-            height: 42px;
-
-            font-size: 20px;
-        }
-
-        .data-security {
-            font-size: 10px;
-        }
-
-        .home-info {
-            gap: 15px;
-
-            margin-top: 25px;
-        }
-
-        .home-info-number {
-            font-size: 15px;
-        }
-
-        .home-info-label {
-            font-size: 9px;
+        .visit-stat-card {
+            min-height: 145px;
         }
     }
 </style>
 
 
-<!-- =========================================
-     BERANDA VISIT-IN
-========================================= -->
+<div class="visit-dashboard">
 
-<section class="home-page">
+    <!-- Header Dashboard -->
+    <div class="visit-dashboard-header">
 
-    <!-- Background overlay -->
-    <div class="home-overlay"></div>
+        <h1>Dashboard Admin</h1>
 
+        <p>
+            Ringkasan pengelolaan data kunjungan wisata Evara Beach.
+        </p>
 
-    <div class="home-content">
-
-        <div class="home-text">
-
-            <!-- Badge -->
-            <div class="home-badge">
-                SELAMAT DATANG DI EVARA BEACH
-            </div>
+    </div>
 
 
-            <!-- Judul utama -->
-            <h1 class="home-title">
+    <!-- Statistik Dashboard -->
+    <div class="row">
 
-                Nikmati<br>
+        <!-- Total Pengunjung -->
+        <div class="col-xl-3 col-md-6 mb-4">
 
-                Keindahan
-                <span class="highlight">
-                    Evara<br>
-                    Beach
-                </span>
+            <div class="visit-stat-card">
 
-            </h1>
+                <div class="visit-stat-top">
 
+                    <p class="visit-stat-title">
+                        Total Pengunjung
+                    </p>
 
-            <!-- Deskripsi -->
-            <p class="home-description">
-
-                Temukan pesona pantai, pasir yang indah,
-                suara ombak yang menenangkan, dan suasana
-                liburan yang tak terlupakan di Evara Beach.
-
-            </p>
-
-
-            <!-- =====================================
-                 CTA UTAMA
-            ====================================== -->
-
-            <div class="visit-action">
-
-                <div class="visit-label">
-                    Sudah berada di Evara Beach?
-                </div>
-
-
-                <!-- SATU-SATUNYA TOMBOL -->
-                <a
-                    href="{{ route('pengunjung.create') }}"
-                    class="home-visit-button"
-                >
-
-                    <div class="visit-button-text">
-
-                        <span class="visit-button-title">
-                            ISI DATA KUNJUNGAN
-                        </span>
-
-                        <span class="visit-button-subtitle">
-                            Lengkapi data kunjungan Anda
-                        </span>
-
+                    <div class="visit-stat-icon">
+                        <i class="fas fa-users"></i>
                     </div>
 
-
-                    <div class="visit-arrow">
-                        →
-                    </div>
-
-                </a>
-
-
-                <!-- Keamanan data -->
-                <div class="data-security">
-
-                    <span class="security-dot"></span>
-
-                    <span>
-                        Data Anda aman dan digunakan untuk
-                        pendataan kunjungan wisata.
-                    </span>
-
                 </div>
+
+                <div class="visit-stat-number">
+                    0
+                </div>
+
+                <p class="visit-stat-description">
+                    Orang telah tercatat
+                </p>
 
             </div>
 
+        </div>
 
-            <!-- =====================================
-                 INFO KECIL
-            ====================================== -->
 
-            <div class="home-info">
+        <!-- Kunjungan Hari Ini -->
+        <div class="col-xl-3 col-md-6 mb-4">
 
-                <div class="home-info-item">
+            <div class="visit-stat-card">
 
-                    <span class="home-info-number">
-                        Evara
-                    </span>
+                <div class="visit-stat-top">
 
-                    <span class="home-info-label">
-                        Beach
-                    </span>
+                    <p class="visit-stat-title">
+                        Kunjungan Hari Ini
+                    </p>
+
+                    <div class="visit-stat-icon">
+                        <i class="fas fa-calendar-day"></i>
+                    </div>
+
+                </div>
+
+                <div class="visit-stat-number">
+                    0
+                </div>
+
+                <p class="visit-stat-description">
+                    Data kunjungan hari ini
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Kunjungan Bulan Ini -->
+        <div class="col-xl-3 col-md-6 mb-4">
+
+            <div class="visit-stat-card">
+
+                <div class="visit-stat-top">
+
+                    <p class="visit-stat-title">
+                        Kunjungan Bulan Ini
+                    </p>
+
+                    <div class="visit-stat-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
 
                 </div>
 
+                <div class="visit-stat-number">
+                    0
+                </div>
 
-                <div class="home-info-divider"></div>
+                <p class="visit-stat-description">
+                    Data kunjungan bulan ini
+                </p>
+
+            </div>
+
+        </div>
 
 
-                <div class="home-info-item">
+        <!-- Kategori Terbanyak -->
+        <div class="col-xl-3 col-md-6 mb-4">
 
-                    <span class="home-info-number">
-                        VISIT-IN
-                    </span>
+            <div class="visit-stat-card">
 
-                    <span class="home-info-label">
-                        Pendataan Wisata
-                    </span>
+                <div class="visit-stat-top">
+
+                    <p class="visit-stat-title">
+                        Kategori Terbanyak
+                    </p>
+
+                    <div class="visit-stat-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
 
                 </div>
+
+                <div class="visit-stat-number" style="font-size: 21px;">
+                    Belum Ada
+                </div>
+
+                <p class="visit-stat-description">
+                    Berdasarkan data pengunjung
+                </p>
 
             </div>
 
@@ -591,6 +297,67 @@
 
     </div>
 
-</section>
+
+    <!-- Informasi Sistem -->
+    <div class="visit-information-card">
+
+        <div class="visit-information-header">
+
+            <h5>
+                Informasi Sistem
+            </h5>
+
+        </div>
+
+
+        <div class="visit-information-body">
+
+            <p>
+                VISIT-IN merupakan sistem pendataan kunjungan wisatawan
+                yang membantu pengelola Evara Beach dalam mencatat,
+                mengelola, dan memantau data pengunjung.
+            </p>
+
+
+            <div class="visit-information-item">
+
+                <i class="fas fa-map-marker-alt"></i>
+
+                <span>
+                    Destinasi:
+                    <strong>Evara Beach</strong>
+                </span>
+
+            </div>
+
+
+            <div class="visit-information-item">
+
+                <i class="fas fa-database"></i>
+
+                <span>
+                    Fungsi Sistem:
+                    <strong>Pendataan Pengunjung Wisata</strong>
+                </span>
+
+            </div>
+
+
+            <div class="visit-information-item">
+
+                <i class="fas fa-user-shield"></i>
+
+                <span>
+                    Hak Akses:
+                    <strong>Administrator VISIT-IN</strong>
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
 
 @endsection

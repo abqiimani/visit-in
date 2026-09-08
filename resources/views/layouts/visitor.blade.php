@@ -603,17 +603,7 @@
                     </li>
 
 
-                    <!-- TOMBOL UTAMA -->
-
-                    <li class="nav-item ms-lg-3">
-
-                        <a
-                            href="{{ route('pengunjung.create') }}"
-                            class="btn-visit"
-                        >
-                            ISI DATA KUNJUNGAN
-                        </a>
-
+                  
                     </li>
 
                 </ul>
