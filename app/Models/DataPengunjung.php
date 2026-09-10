@@ -10,7 +10,7 @@ class DataPengunjung extends Model
 
     protected $fillable = [
         'nama_lengkap',
-        'phone',
+        'nomor_telepon',
         'asal_daerah',
         'kategori_pengunjung',
         'jumlah_pengunjung',

@@ -10,7 +10,7 @@ class DataPengunjungController extends Controller
     // Menampilkan form data kunjungan
     public function create()
     {
-        return view('pengunjung.create');
+        return view('visit-in');
     }
 
     // Menyimpan data pengunjung
@@ -18,7 +18,7 @@ class DataPengunjungController extends Controller
     {
         $validated = $request->validate([
             'nama_lengkap' => 'required|string|max:255',
-            'phone' => 'required|string|max:20',
+            'nomor_telepon' => 'required|string|max:20',
             'asal_daerah' => 'required|string|max:255',
             'kategori_pengunjung' => 'required|string|max:50',
             'jumlah_pengunjung' => 'required|integer|min:1',
@@ -27,13 +27,8 @@ class DataPengunjungController extends Controller
 
         DataPengunjung::create($validated);
 
-        // Setelah berhasil disimpan, pindah ke halaman konfirmasi
-        return redirect()->route('pengunjung.konfirmasi');
-    }
-
-    // Menampilkan halaman konfirmasi
-    public function konfirmasi()
-    {
-        return view('pengunjung.konfirmasi');
+        return redirect()
+            ->route('pengunjung.create')
+            ->with('success', 'Data kunjungan berhasil disimpan.');
     }
 }

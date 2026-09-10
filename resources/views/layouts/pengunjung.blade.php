@@ -2,42 +2,43 @@
 <html lang="id">
 
 <head>
-
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <title>VISIT-IN | Data Kunjungan</title>
+    <meta
+        name="csrf-token"
+        content="{{ csrf_token() }}"
+    >
 
+    <title>
+        @yield('title', 'VISIT-IN | Evara Beach')
+    </title>
 
-    <!-- =====================================================
-         BOOTSTRAP
-    ====================================================== -->
-
+    {{-- Bootstrap --}}
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
         rel="stylesheet"
     >
 
-
-    <!-- =====================================================
-         GOOGLE FONT
-    ====================================================== -->
-
+    {{-- Google Font --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
 
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
         rel="stylesheet"
     >
 
-
     <style>
-
-        /* =====================================================
-           RESET
-        ===================================================== */
-
         * {
             box-sizing: border-box;
         }
@@ -46,118 +47,236 @@
         body {
             margin: 0;
             padding: 0;
-            min-height: 100%;
         }
-
-
-        /* =====================================================
-           BODY
-        ===================================================== */
 
         body {
-
-            min-height: 100vh;
-
             font-family: 'DM Sans', sans-serif;
-
-            display: flex;
-
-            justify-content: center;
-
-            align-items: center;
-
-            padding: 35px 20px;
-
-            position: relative;
-
-            background-image:
-                linear-gradient(
-                    rgba(10, 91, 88, 0.20),
-                    rgba(7, 70, 69, 0.27)
-                ),
-                url("{{ asset('img/pantai.jpg') }}");
-
-            background-size: cover;
-
-            background-position: center;
-
-            background-repeat: no-repeat;
-
-            background-attachment: fixed;
+            background: #f7f3e9;
+            color: #315e5c;
         }
 
+        /* =========================
+           NAVBAR
+        ========================= */
 
-        /* =====================================================
-           OVERLAY
-        ===================================================== */
-
-        body::before {
-
-            content: "";
-
-            position: fixed;
-
-            inset: 0;
-
-            background:
-                linear-gradient(
-                    180deg,
-                    rgba(255,255,255,0.03),
-                    rgba(5,65,65,0.10)
-                );
-
-            pointer-events: none;
-
-            z-index: 0;
-        }
-
-
-        /* =====================================================
-           WRAPPER
-        ===================================================== */
-
-        .page-wrapper {
+        .visitor-navbar {
+            position: sticky;
+            top: 0;
+            z-index: 9999;
 
             width: 100%;
 
-            max-width: 520px;
+            background: rgba(255, 252, 244, 0.97);
 
-            position: relative;
+            border-bottom: 1px solid #e7dcc9;
 
-            z-index: 2;
+            box-shadow:
+                0 5px 25px rgba(27, 87, 82, 0.08);
+
+            backdrop-filter: blur(10px);
         }
 
+        .visitor-navbar .container {
+            min-height: 82px;
+        }
 
-        /* =====================================================
+        /* =========================
+           LOGO CSS
+        ========================= */
+
+        .visitor-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            text-decoration: none;
+            color: #126d69 !important;
+        }
+
+        .brand-logo {
+            position: relative;
+
+            width: 52px;
+            height: 52px;
+
+            overflow: hidden;
+
+            border-radius: 50%;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #086d69,
+                    #36aaa1
+                );
+
+            border: 3px solid #fffdf8;
+
+            box-shadow:
+                0 6px 18px rgba(8, 109, 105, 0.22);
+        }
+
+        /* Matahari */
+        .logo-sun {
+            position: absolute;
+
+            width: 10px;
+            height: 10px;
+
+            top: 9px;
+            right: 10px;
+
+            border-radius: 50%;
+
+            background: #d8a35b;
+        }
+
+        /* Ombak */
+        .logo-wave {
+            position: absolute;
+
+            width: 40px;
+            height: 18px;
+
+            left: 5px;
+            bottom: 8px;
+
+            border-top: 3px solid white;
+            border-radius: 50%;
+
+            transform: rotate(-5deg);
+        }
+
+        .logo-wave::after {
+            content: "";
+
+            position: absolute;
+
+            width: 29px;
+            height: 13px;
+
+            left: 8px;
+            top: 4px;
+
+            border-top: 3px solid #d8a35b;
+            border-radius: 50%;
+        }
+
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .brand-text span {
+            font-family:
+                'Playfair Display',
+                serif;
+
+            font-size: 23px;
+            font-weight: 700;
+
+            letter-spacing: 1px;
+
+            color: #126d69;
+        }
+
+        .brand-text small {
+            margin-top: 6px;
+
+            font-size: 8px;
+            font-weight: 700;
+
+            letter-spacing: 1.7px;
+
+            color: #a87842;
+        }
+
+        /* =========================
+           MENU
+        ========================= */
+
+        .visitor-navbar .nav-link {
+            position: relative;
+
+            margin: 0 8px;
+            padding: 12px 5px !important;
+
+            color: #315e5c !important;
+
+            font-size: 14px;
+            font-weight: 600;
+
+            transition: 0.3s ease;
+        }
+
+        .visitor-navbar .nav-link::after {
+            content: "";
+
+            position: absolute;
+
+            left: 50%;
+            bottom: 4px;
+
+            width: 0;
+            height: 2px;
+
+            background: #c59558;
+
+            border-radius: 20px;
+
+            transform: translateX(-50%);
+
+            transition: 0.3s ease;
+        }
+
+        .visitor-navbar .nav-link:hover {
+            color: #08746f !important;
+        }
+
+        .visitor-navbar .nav-link:hover::after {
+            width: 30px;
+        }
+
+        .visitor-navbar .nav-link.active {
+            color: #08746f !important;
+        }
+
+        .visitor-navbar .nav-link.active::after {
+            width: 30px;
+        }
+
+        /* =========================
+           MAIN CONTENT
+        ========================= */
+
+        .visitor-main {
+            min-height: calc(100vh - 82px);
+        }
+
+        /* =========================
            FORM CARD
-        ===================================================== */
+        ========================= */
 
         .form-card {
-
             width: 100%;
 
             background: #faf8f1;
 
             border-radius: 18px;
-
             overflow: hidden;
 
             box-shadow:
                 0 22px 55px rgba(0, 55, 55, 0.30);
 
             border: none;
-
             position: relative;
         }
 
-
-        /* =====================================================
-           HEADER VISIT-IN
-           GRADASI HIJAU TOSKA
-        ===================================================== */
+        /* =========================
+           HEADER FORM
+        ========================= */
 
         .brand-header {
-
             background:
                 linear-gradient(
                     135deg,
@@ -169,59 +288,38 @@
                 );
 
             text-align: center;
-
             color: white;
 
-            padding:
-                21px
-                20px
-                22px;
+            padding: 21px 20px 22px;
 
             position: relative;
         }
 
-
-        /* =====================================================
-           EFEK CAHAYA
-        ===================================================== */
-
         .brand-header::before {
-
             content: "";
 
             position: absolute;
 
             width: 190px;
-
             height: 190px;
 
             top: -120px;
-
             right: -70px;
 
             border-radius: 50%;
 
-            background:
-                rgba(255,255,255,0.10);
+            background: rgba(255, 255, 255, 0.10);
 
             pointer-events: none;
         }
 
-
-        /* =====================================================
-           AKSEN PASIR
-        ===================================================== */
-
         .brand-header::after {
-
             content: "";
 
             position: absolute;
 
             left: 0;
-
             right: 0;
-
             bottom: 0;
 
             height: 3px;
@@ -235,20 +333,13 @@
                 );
         }
 
-
-        /* =====================================================
-           LOGO
-        ===================================================== */
-
-        .logo {
-
+        .form-card-logo {
             width: 60px;
-
             height: 60px;
 
-            border-radius: 50%;
-
             margin: 0 auto 10px;
+
+            border-radius: 50%;
 
             background:
                 linear-gradient(
@@ -258,936 +349,326 @@
                 );
 
             display: flex;
-
             align-items: center;
-
             justify-content: center;
 
             box-shadow:
-                0 7px 18px rgba(0,0,0,0.18);
+                0 7px 18px rgba(0, 0, 0, 0.18);
+        }
 
-            border: none;
-
+        .form-card-logo .logo-sun {
             position: relative;
+            top: auto;
+            right: auto;
         }
 
-
-        /* =====================================================
-           LOGO ICON
-        ===================================================== */
-
-        .logo-icon {
-
-            width: 34px;
-
-            height: 34px;
-
-            position: relative;
-        }
-
-
-        /* =====================================================
-           MATAHARI
-        ===================================================== */
-
-        .logo-sun {
-
-            position: absolute;
-
-            width: 10px;
-
-            height: 10px;
-
-            border-radius: 50%;
-
-            background: #d5a65d;
-
-            top: 1px;
-
-            right: 1px;
-        }
-
-
-        /* =====================================================
-           POHON KELAPA
-        ===================================================== */
-
-        .logo-tree {
-
-            position: absolute;
-
-            left: 9px;
-
-            top: 8px;
-
-            width: 3px;
-
-            height: 21px;
-
-            background: #227871;
-
-            border-radius: 5px;
-
-            transform: rotate(-12deg);
-        }
-
-
-        /* =====================================================
-           DAUN KELAPA
-        ===================================================== */
-
-        .logo-tree::before {
-
-            content: "";
-
-            position: absolute;
-
-            width: 19px;
-
-            height: 8px;
-
-            border-top:
-                3px solid #227871;
-
-            border-radius: 50%;
-
-            top: -6px;
-
-            left: -7px;
-
-            transform: rotate(-25deg);
-        }
-
-
-        .logo-tree::after {
-
-            content: "";
-
-            position: absolute;
-
-            width: 19px;
-
-            height: 8px;
-
-            border-top:
-                3px solid #227871;
-
-            border-radius: 50%;
-
-            top: -6px;
-
-            left: -7px;
-
-            transform: rotate(38deg);
-        }
-
-
-        /* =====================================================
-           OMBAK LOGO
-        ===================================================== */
-
-        .logo-wave {
-
-            position: absolute;
-
-            width: 23px;
-
-            height: 9px;
-
-            border-top:
-                3px solid #23928c;
-
-            border-radius: 50%;
-
-            bottom: 1px;
-
-            right: 0;
-        }
-
-
-        /* =====================================================
-           VISIT-IN
-        ===================================================== */
-
-        .brand-title {
-
-            margin: 0;
-
-            font-size: 30px;
-
-            font-weight: 700;
-
-            letter-spacing: 3px;
-
-            line-height: 1.1;
-
-            text-shadow:
-                0 2px 8px rgba(0,0,0,0.10);
-        }
-
-
-        /* =====================================================
-           SUBTITLE
-        ===================================================== */
-
-        .brand-subtitle {
-
-            margin-top: 6px;
-
-            font-size: 9px;
-
-            font-weight: 600;
-
-            letter-spacing: 1.8px;
-
-            opacity: 0.94;
-        }
-
-
-        /* =====================================================
+        /* =========================
            FORM CONTENT
-        ===================================================== */
+        ========================= */
 
         .form-content {
-
-            padding:
-                22px
-                30px
-                24px;
-
-            background:
-                linear-gradient(
-                    180deg,
-                    #fbfaf4 0%,
-                    #f8f6ed 100%
-                );
+            padding: 30px;
         }
 
-
-        /* =====================================================
-           FORM HEADING
-        ===================================================== */
-
-        .form-heading {
-
-            text-align: center;
-
-            margin-bottom: 21px;
-        }
-
-
-        /* =====================================================
-           EVARA BEACH
-        ===================================================== */
-
-        .beach-name {
+        .form-title {
+            margin-bottom: 8px;
 
             font-family:
                 'Playfair Display',
                 serif;
 
-            color: #bd7756;
+            color: #315e5c;
 
-            font-size: 17px;
-
-            font-weight: 600;
-
-            margin-bottom: 2px;
-        }
-
-
-        /* =====================================================
-           FORM TITLE
-        ===================================================== */
-
-        .form-title {
-
-            margin: 0;
-
-            color: #146b69;
-
-            font-size: 24px;
-
+            font-size: 28px;
             font-weight: 700;
 
-            letter-spacing: -0.2px;
+            text-align: center;
         }
 
+        .form-subtitle {
+            margin-bottom: 28px;
 
-        /* =====================================================
-           DESKRIPSI
-        ===================================================== */
+            color: #7d8b85;
 
-        .form-description {
-
-            margin:
-                4px
-                0
-                0;
-
-            color: #8d9692;
-
-            font-size: 10px;
+            font-size: 13px;
+            text-align: center;
         }
-
-
-        /* =====================================================
-           FORM GROUP
-        ===================================================== */
 
         .form-group {
-
-            margin-bottom: 14px;
+            margin-bottom: 20px;
         }
-
-
-        /* =====================================================
-           LABEL
-        ===================================================== */
 
         .form-label {
+            margin-bottom: 8px;
 
-            display: block;
+            color: #315e5c;
 
-            color: #385b5a;
-
-            font-size: 10px;
-
+            font-size: 13px;
             font-weight: 600;
-
-            margin-bottom: 5px;
         }
-
-
-        /* =====================================================
-           INPUT & SELECT
-        ===================================================== */
 
         .form-control,
         .form-select {
+            min-height: 46px;
 
-            width: 100%;
+            border: 1px solid #dfd4c2;
+            border-radius: 10px;
 
-            height: 38px;
+            background: #fffdf8;
 
-            border:
-                1px solid #d4dfdb;
+            color: #315e5c;
 
-            border-radius: 7px;
-
-            background: #ffffff;
-
-            color: #405654;
-
-            font-family:
-                'DM Sans',
-                sans-serif;
-
-            font-size: 11px;
-
-            padding:
-                0
-                11px;
-
-            box-shadow: none !important;
-
-            transition:
-                border-color .2s ease,
-                box-shadow .2s ease,
-                background .2s ease;
+            font-size: 13px;
         }
-
-
-        /* =====================================================
-           PLACEHOLDER
-        ===================================================== */
-
-        .form-control::placeholder {
-
-            color: #aab5b1;
-
-            opacity: 1;
-        }
-
-
-        /* =====================================================
-           HOVER
-        ===================================================== */
-
-        .form-control:hover,
-        .form-select:hover {
-
-            border-color: #8fc4be;
-
-            background: #ffffff;
-        }
-
-
-        /* =====================================================
-           FOCUS
-        ===================================================== */
 
         .form-control:focus,
         .form-select:focus {
-
-            border-color: #20938e;
-
-            background: #ffffff;
+            border-color: #a87842;
 
             box-shadow:
-                0 0 0 3px
-                rgba(32,147,142,0.10)
-                !important;
-
-            outline: none;
+                0 0 0 0.2rem rgba(168, 120, 66, 0.12);
         }
 
-
-        /* =====================================================
-           TWO COLUMN
-        ===================================================== */
+        .form-control::placeholder {
+            color: #aaa096;
+        }
 
         .two-column {
-
             display: grid;
-
-            grid-template-columns:
-                1fr 1fr;
-
-            gap: 13px;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
         }
 
-
-        /* =====================================================
-           BUTTON
-           GRADASI HIJAU TOSKA
-        ===================================================== */
-
         .btn-submit {
-
             width: 100%;
 
-            height: 41px;
-
-            margin-top: 1px;
+            padding: 14px 25px;
 
             border: none;
-
-            border-radius: 7px;
-
-            background:
-                linear-gradient(
-                    100deg,
-                    #116e6b 0%,
-                    #16827e 30%,
-                    #20938e 60%,
-                    #2ca59e 100%
-                );
+            border-radius: 30px;
 
             color: white;
 
-            font-family:
-                'DM Sans',
-                sans-serif;
-
-            font-size: 10px;
-
+            font-size: 12px;
             font-weight: 700;
 
             letter-spacing: 0.5px;
 
-            cursor: pointer;
+            background:
+                linear-gradient(
+                    135deg,
+                    #08746f,
+                    #2da79e
+                );
 
             box-shadow:
-                0 7px 16px
-                rgba(22,125,121,0.23);
+                0 8px 22px rgba(8, 116, 111, 0.25);
 
-            transition:
-                all .25s ease;
+            transition: 0.3s ease;
         }
 
-
-        /* =====================================================
-           BUTTON HOVER
-        ===================================================== */
-
         .btn-submit:hover {
+            color: white;
+
+            transform: translateY(-3px);
 
             background:
                 linear-gradient(
-                    100deg,
-                    #0f625f 0%,
-                    #147773 30%,
-                    #1c8883 60%,
-                    #249b94 100%
+                    135deg,
+                    #075e5a,
+                    #23948d
                 );
 
-            transform:
-                translateY(-1px);
-
             box-shadow:
-                0 9px 20px
-                rgba(22,125,121,0.30);
+                0 12px 28px rgba(8, 116, 111, 0.32);
         }
 
-
-        .btn-submit:active {
-
-            transform:
-                translateY(0);
-        }
-
-
-        /* =====================================================
+        /* =========================
            FOOTER
-        ===================================================== */
+        ========================= */
 
-        .card-footer {
+        .visitor-footer {
+            padding: 45px 0;
+
+            background: #105f5c;
+
+            color: rgba(255, 255, 255, 0.8);
 
             text-align: center;
-
-            color: #929b97;
-
-            font-size: 8px;
-
-            padding:
-                0
-                15px
-                18px;
-
-            background:
-                #f8f6ed;
         }
 
+        .visitor-footer h4 {
+            margin-bottom: 8px;
 
-        /* =====================================================
-           NAMA PANTAI21
-        ===================================================== */
+            font-family:
+                'Playfair Display',
+                serif;
 
-        .card-footer span {
-
-            color: #bd7756;
-
-            font-weight: 600;
+            color: white;
         }
 
+        .visitor-footer p {
+            margin: 0;
+            font-size: 13px;
+        }
 
-        /* =====================================================
-           RESPONSIVE
-        ===================================================== */
+        /* =========================
+           MOBILE
+        ========================= */
 
-        @media (max-width: 600px) {
-
-            body {
-
-                padding:
-                    20px
-                    13px;
-
-                background-attachment:
-                    scroll;
+        @media (max-width: 991px) {
+            .visitor-navbar .container {
+                min-height: 70px;
             }
 
+            .visitor-navbar .navbar-collapse {
+                margin-top: 12px;
+                padding: 15px;
 
-            .page-wrapper {
+                background: white;
+                border-radius: 16px;
 
-                max-width: 430px;
+                box-shadow:
+                    0 10px 30px rgba(15, 70, 68, 0.08);
             }
 
+            .visitor-navbar .nav-link {
+                margin: 3px 0;
+                padding: 10px !important;
+            }
+
+            .visitor-navbar .nav-link::after {
+                display: none;
+            }
+        }
+
+        @media (max-width: 575px) {
+            .brand-logo {
+                width: 44px;
+                height: 44px;
+            }
+
+            .brand-text span {
+                font-size: 19px;
+            }
+
+            .brand-text small {
+                font-size: 7px;
+            }
 
             .form-content {
-
-                padding:
-                    20px
-                    21px
-                    22px;
+                padding: 22px;
             }
-
-
-            .brand-title {
-
-                font-size: 27px;
-            }
-
-
-            .brand-subtitle {
-
-                font-size: 8px;
-            }
-
-
-            .form-title {
-
-                font-size: 22px;
-            }
-
-
-            .beach-name {
-
-                font-size: 16px;
-            }
-
 
             .two-column {
-
-                grid-template-columns:
-                    1fr;
-
+                grid-template-columns: 1fr;
                 gap: 0;
             }
-
         }
-
     </style>
 
+    @stack('styles')
 </head>
-
 
 <body>
 
+    {{-- NAVBAR --}}
+    <nav class="navbar navbar-expand-lg visitor-navbar">
 
-    <!-- =====================================================
-         PAGE WRAPPER
-    ===================================================== -->
+        <div class="container">
 
-    <div class="page-wrapper">
-
-
-        <!-- =================================================
-             FORM CARD
-        ================================================== -->
-
-        <div class="form-card">
-
-
-            <!-- =================================================
-                 HEADER VISIT-IN
-            ================================================== -->
-
-            <div class="brand-header">
-
-
-                <!-- LOGO -->
-
-                <div class="logo">
-
-                    <div class="logo-icon">
-
-                        <div class="logo-sun"></div>
-
-                        <div class="logo-tree"></div>
-
-                        <div class="logo-wave"></div>
-
-                    </div>
-
+            {{-- LOGO CSS, BUKAN FOTO --}}
+            <a
+                href="{{ route('pengunjung.create') }}"
+                class="visitor-brand"
+            >
+                <div class="brand-logo">
+                    <div class="logo-sun"></div>
+                    <div class="logo-wave"></div>
                 </div>
 
+                <div class="brand-text">
+                    <span>
+                        VISIT-IN
+                    </span>
 
-                <!-- NAMA APLIKASI -->
-
-                <h1 class="brand-title">
-                    VISIT-IN
-                </h1>
-
-
-                <!-- SUBTITLE -->
-
-                <div class="brand-subtitle">
-                    PENDATAAN PENGUNJUNG WISATA
+                    <small>
+                        PENDATAAN PENGUNJUNG WISATA
+                    </small>
                 </div>
+            </a>
 
+            {{-- MOBILE BUTTON --}}
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#visitorNavbar"
+                aria-controls="visitorNavbar"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
+            {{-- MENU --}}
+            <div
+                class="collapse navbar-collapse"
+                id="visitorNavbar"
+            >
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                    <li class="nav-item">
+                        <a
+                            class="nav-link {{ request()->routeIs('pengunjung.create') ? 'active' : '' }}"
+                            href="{{ route('pengunjung.create') }}"
+                        >
+                            Beranda
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a
+                            class="nav-link {{ request()->routeIs('pengunjung.create') ? 'active' : '' }}"
+                            href="{{ route('pengunjung.create') }}"
+                        >
+                            Isi Buku Tamu
+                        </a>
+                    </li>
+
+                </ul>
             </div>
-
-
-
-            <!-- =================================================
-                 FORM CONTENT
-            ================================================== -->
-
-            <div class="form-content">
-
-
-                <!-- JUDUL -->
-
-                <div class="form-heading">
-
-
-                    <div class="beach-name">
-                        Evara Beach
-                    </div>
-
-
-                    <h2 class="form-title">
-                        Form Data Kunjungan
-                    </h2>
-
-
-                    <p class="form-description">
-                        Silakan isi data kunjungan dengan lengkap
-                    </p>
-
-
-                </div>
-
-
-
-                <!-- =================================================
-                     FORM
-                ================================================== -->
-
-                <form
-                    action="#"
-                    method="POST"
-                >
-
-                    @csrf
-
-
-                    <!-- =================================================
-                         NAMA LENGKAP
-                    ================================================== -->
-
-                    <div class="form-group">
-
-                        <label
-                            for="nama_lengkap"
-                            class="form-label"
-                        >
-                            Nama Lengkap
-                        </label>
-
-
-                        <input
-                            type="text"
-                            id="nama_lengkap"
-                            name="nama_lengkap"
-                            class="form-control"
-                            placeholder="Masukkan nama lengkap"
-                            autocomplete="name"
-                            required
-                        >
-
-                    </div>
-
-
-
-                    <!-- =================================================
-                         NOMOR TELEPON
-                    ================================================== -->
-
-                    <div class="form-group">
-
-                        <label
-                            for="nomor_telepon"
-                            class="form-label"
-                        >
-                            Nomor Telepon
-                        </label>
-
-
-                        <input
-                            type="tel"
-                            id="nomor_telepon"
-                            name="nomor_telepon"
-                            class="form-control"
-                            placeholder="Masukkan nomor telepon"
-                            autocomplete="tel"
-                            required
-                        >
-
-                    </div>
-
-
-
-                    <!-- =================================================
-                         ASAL DAERAH
-                    ================================================== -->
-
-                    <div class="form-group">
-
-                        <label
-                            for="asal_daerah"
-                            class="form-label"
-                        >
-                            Asal Daerah
-                        </label>
-
-
-                        <input
-                            type="text"
-                            id="asal_daerah"
-                            name="asal_daerah"
-                            class="form-control"
-                            placeholder="Masukkan asal daerah"
-                            required
-                        >
-
-                    </div>
-
-
-
-                    <!-- =================================================
-                         KATEGORI PENGUNJUNG
-                    ================================================== -->
-
-                    <div class="form-group">
-
-                        <label
-                            for="kategori_pengunjung"
-                            class="form-label"
-                        >
-                            Kategori Pengunjung
-                        </label>
-
-
-                        <select
-                            id="kategori_pengunjung"
-                            name="kategori_pengunjung"
-                            class="form-select"
-                            required
-                        >
-
-                            <option
-                                value=""
-                                selected
-                                disabled
-                            >
-                                Pilih kategori pengunjung
-                            </option>
-
-
-                            <option value="Masyarakat Umum">
-                                Masyarakat Umum
-                            </option>
-
-
-                            <option value="Pelajar">
-                                Pelajar
-                            </option>
-
-
-                            <option value="Mahasiswa">
-                                Mahasiswa
-                            </option>
-
-
-                            <option value="Wisatawan">
-                                Wisatawan
-                            </option>
-
-                        </select>
-
-                    </div>
-
-
-
-                    <!-- =================================================
-                         JUMLAH + TANGGAL
-                    ================================================== -->
-
-                    <div class="two-column">
-
-
-                        <!-- JUMLAH PENGUNJUNG -->
-
-                        <div class="form-group">
-
-                            <label
-                                for="jumlah_pengunjung"
-                                class="form-label"
-                            >
-                                Jumlah Pengunjung
-                            </label>
-
-
-                            <input
-                                type="number"
-                                id="jumlah_pengunjung"
-                                name="jumlah_pengunjung"
-                                class="form-control"
-                                placeholder="Masukkan jumlah"
-                                min="1"
-                                required
-                            >
-
-                        </div>
-
-
-
-                        <!-- TANGGAL KUNJUNGAN -->
-
-                        <div class="form-group">
-
-                            <label
-                                for="tanggal_kunjungan"
-                                class="form-label"
-                            >
-                                Tanggal Kunjungan
-                            </label>
-
-
-                            <input
-                                type="date"
-                                id="tanggal_kunjungan"
-                                name="tanggal_kunjungan"
-                                class="form-control"
-                                required
-                            >
-
-                        </div>
-
-
-                    </div>
-
-
-
-                    <!-- =================================================
-                         BUTTON
-                    ================================================== -->
-
-                    <button
-                        type="submit"
-                        class="btn-submit"
-                    >
-
-                        SIMPAN DATA KUNJUNGAN
-
-                    </button>
-
-
-                </form>
-
-
-            </div>
-
-
-
-            <!-- =================================================
-                 FOOTER
-            ================================================== -->
-
-            <div class="card-footer">
-
-                VISIT-IN
-                &nbsp;•&nbsp;
-                Pendataan Pengunjung Wisata
-                &nbsp;•&nbsp;
-
-                <span>
-                    pantai21
-                </span>
-
-            </div>
-
 
         </div>
+    </nav>
 
+    {{-- CONTENT --}}
+    <main class="visitor-main">
+        @yield('content')
+    </main>
 
-    </div>
+    {{-- FOOTER --}}
+    <footer class="visitor-footer">
+        @yield('footer')
 
+        @if (!View::hasSection('footer'))
+            <h4>VISIT-IN</h4>
+
+            <p>
+                Sistem Pendataan Pengunjung Wisata
+            </p>
+
+            <p class="mt-2">
+                &copy; {{ date('Y') }} VISIT-IN
+            </p>
+        @endif
+    </footer>
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    ></script>
+
+    @stack('scripts')
 
 </body>
-
 </html>

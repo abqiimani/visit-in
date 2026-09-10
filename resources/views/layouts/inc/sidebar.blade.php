@@ -1,10 +1,18 @@
 <style>
+    /* =====================================================
+       SIDEBAR VISIT-IN
+    ====================================================== */
+
     .visit-sidebar {
         background: #126d69;
         background-image: none;
         width: 14rem !important;
         min-width: 14rem;
     }
+
+    /* =====================================================
+       BRAND / LOGO
+    ====================================================== */
 
     .visit-sidebar .sidebar-brand {
         min-height: 105px;
@@ -92,10 +100,18 @@
         white-space: nowrap;
     }
 
+    /* =====================================================
+       DIVIDER
+    ====================================================== */
+
     .visit-sidebar .sidebar-divider {
         margin: 0;
         border-top: 1px solid rgba(255, 253, 248, 0.18);
     }
+
+    /* =====================================================
+       MENU
+    ====================================================== */
 
     .visit-sidebar .nav-item {
         margin: 3px 0;
@@ -123,14 +139,18 @@
     }
 
     .visit-sidebar .nav-item.active .nav-link {
-        background: transparent;
-        color: rgba(255, 255, 255, 0.88);
+        background: rgba(255, 253, 248, 0.12);
+        color: #fffdf8;
         box-shadow: none;
     }
 
     .visit-sidebar .nav-item.active .nav-link i {
         color: #d8a35b;
     }
+
+    /* =====================================================
+       JUDUL MENU
+    ====================================================== */
 
     .visit-sidebar .sidebar-heading {
         padding-left: 27px;
@@ -143,85 +163,168 @@
 </style>
 
 
-<ul class="navbar-nav sidebar sidebar-dark accordion visit-sidebar" id="accordionSidebar">
+<ul
+    class="navbar-nav sidebar sidebar-dark accordion visit-sidebar"
+    id="accordionSidebar"
+>
 
-    <!-- Logo VISIT-IN -->
+    <!-- ==================================================
+         LOGO VISIT-IN
+    =================================================== -->
+
     <a
         class="sidebar-brand"
         href="{{ route('admin.dashboard') }}"
     >
+
         <div class="sidebar-brand-logo">
 
             <div class="brand-logo">
+
                 <div class="logo-sun"></div>
+
                 <div class="logo-wave"></div>
+
             </div>
 
             <div class="brand-text">
+
                 <span>VISIT-IN</span>
-                <small>PENDATAAN PENGUNJUNG WISATA</small>
+
+                <small>
+                    PENDATAAN PENGUNJUNG WISATA
+                </small>
+
             </div>
 
         </div>
+
     </a>
 
+
+    <!-- GARIS PEMISAH -->
 
     <hr class="sidebar-divider my-0">
 
 
-    <!-- Dashboard -->
-    <li class="nav-item active">
+    <!-- ==================================================
+         DASHBOARD
+    =================================================== -->
+
+    <li class="nav-item">
+
         <a
             class="nav-link"
             href="{{ route('admin.dashboard') }}"
         >
+
             <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Dashboard</span>
+
+            <span>
+                Dashboard
+            </span>
+
         </a>
+
     </li>
 
 
-    <!-- Judul Kelompok Menu -->
+    <!-- ==================================================
+         JUDUL KELOMPOK MENU
+    =================================================== -->
+
     <div class="sidebar-heading mt-4 mb-2">
+
         Pengelolaan Data
+
     </div>
 
 
-   <li class="nav-item">
-    <a class="nav-link" href="{{ route('admin.admin.index') }}">
-        <i class="fas fa-users"></i>
-        <span>Data User / Admin</span>
-    </a>
-</li>
+    <!-- ==================================================
+         DATA USER / ADMIN
+    =================================================== -->
 
-
-    <!-- Data Pengunjung -->
     <li class="nav-item">
-        <a class="nav-link" href="#">
+
+        <a
+            class="nav-link"
+            href="{{ route('admin.admin.index') }}"
+        >
+
+            <i class="fas fa-fw fa-user-shield"></i>
+
+            <span>
+                Data User / Admin
+            </span>
+
+        </a>
+
+    </li>
+
+
+    <!-- ==================================================
+         DATA PENGUNJUNG
+    =================================================== -->
+
+    <li class="nav-item">
+
+        <a
+            class="nav-link"
+            href="{{ route('admin.pengunjung.index') }}"
+        >
+
             <i class="fas fa-fw fa-users"></i>
-            <span>Pengunjung</span>
+
+            <span>
+                Pengunjung
+            </span>
+
         </a>
+
     </li>
 
 
-    <!-- Rekap Kunjungan -->
+    <!-- ==================================================
+         REKAP KUNJUNGAN
+    =================================================== -->
+
     <li class="nav-item">
-        <a class="nav-link" href="#">
+
+        <a
+            class="nav-link"
+            href="{{ route('admin.rekap-kunjungan.index') }}"
+        >
+
             <i class="fas fa-fw fa-clipboard-list"></i>
-            <span>Rekap Kunjungan</span>
+
+            <span>
+                Rekap Kunjungan
+            </span>
+
         </a>
+
     </li>
 
 
-    <!-- Grafik Kunjungan -->
+    <!-- ==================================================
+         GRAFIK KUNJUNGAN
+    =================================================== -->
+
     <li class="nav-item">
-        <a class="nav-link" href="#">
-            <i class="fas fa-fw fa-chart-bar"></i>
-            <span>Grafik Kunjungan</span>
-        </a>
-    </li>
 
-     @csrf
-    </form>
+        <a
+            class="nav-link"
+            href="{{ route('admin.grafik-kunjungan.index') }}"
+        >
+
+            <i class="fas fa-fw fa-chart-bar"></i>
+
+            <span>
+                Grafik Kunjungan
+            </span>
+
+        </a>
+
+    </li>
 
 </ul>
