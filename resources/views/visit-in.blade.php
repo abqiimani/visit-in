@@ -108,8 +108,6 @@
         border: 2px solid #ffffff;
     }
 
-    /* BULATAN COKELAT */
-
     .logo-sun {
         position: absolute;
         top: 8px;
@@ -120,8 +118,6 @@
         background: #d5a05a;
         z-index: 5;
     }
-
-    /* GARIS HIJAU */
 
     .logo-tree {
         position: absolute;
@@ -157,8 +153,6 @@
         border-radius: 50%;
         transform: rotate(38deg);
     }
-
-    /* OMBAK */
 
     .logo-wave {
         position: absolute;
@@ -336,8 +330,6 @@
         font-weight: 600;
     }
 
-    /* Sembunyikan footer hijau dari layout */
-
     .visitor-footer {
         display: none !important;
     }
@@ -393,6 +385,15 @@
             grid-template-columns: 1fr;
             gap: 0;
         }
+    }
+
+    /* ==========================================================
+       HANYA UNTUK HALAMAN FORM
+       SEMBUNYIKAN "BERANDA" DAN "ISI BUKU TAMU"
+       ========================================================== */
+
+    .visitor-navbar .navbar-nav .nav-item:nth-child(-n+2) {
+        display: none !important;
     }
 </style>
 

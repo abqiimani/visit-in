@@ -6,6 +6,7 @@ use App\Http\Controllers\DataPengunjungController;
 use App\Http\Controllers\RekapKunjunganController;
 use App\Http\Controllers\GrafikKunjunganController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -68,7 +69,7 @@ Route::post('/pengunjung', [DataPengunjungController::class, 'store'])
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])
+Route::get('/home', [HomeController::class, 'index'])
     ->name('home');
 
 
@@ -86,18 +87,16 @@ Route::group([
     // ADMIN HOME
     // ------------------------------------------------------
 
-    Route::get('/', function () {
-        return view('home');
-    })->name('home');
+    Route::get('/', [HomeController::class, 'index'])
+        ->name('home');
 
 
     // ------------------------------------------------------
     // ADMIN DASHBOARD
     // ------------------------------------------------------
 
-    Route::get('/dashboard', function () {
-        return view('home');
-    })->name('dashboard');
+    Route::get('/dashboard', [HomeController::class, 'index'])
+        ->name('dashboard');
 
 
     // ------------------------------------------------------
