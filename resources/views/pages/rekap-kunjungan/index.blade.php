@@ -416,13 +416,6 @@
                             Mahasiswa
                         </option>
 
-                        <option
-                            value="Wisatawan"
-                            {{ request('kategori_pengunjung') == 'Wisatawan' ? 'selected' : '' }}
-                        >
-                            Wisatawan
-                        </option>
-
                     </select>
 
                 </div>

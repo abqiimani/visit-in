@@ -287,16 +287,26 @@
                             Semua Kategori
                         </option>
 
-                        @foreach($kategori as $item)
+                        <option
+                            value="Masyarakat Umum"
+                            {{ request('kategori_pengunjung') == 'Masyarakat Umum' ? 'selected' : '' }}
+                        >
+                            Masyarakat Umum
+                        </option>
 
-                            <option
-                                value="{{ $item }}"
-                                {{ request('kategori_pengunjung') == $item ? 'selected' : '' }}
-                            >
-                                {{ $item }}
-                            </option>
+                        <option
+                            value="Pelajar"
+                            {{ request('kategori_pengunjung') == 'Pelajar' ? 'selected' : '' }}
+                        >
+                            Pelajar
+                        </option>
 
-                        @endforeach
+                        <option
+                            value="Mahasiswa"
+                            {{ request('kategori_pengunjung') == 'Mahasiswa' ? 'selected' : '' }}
+                        >
+                            Mahasiswa
+                        </option>
 
                     </select>
 

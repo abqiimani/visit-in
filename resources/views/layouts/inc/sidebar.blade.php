@@ -295,7 +295,7 @@
             <i class="fas fa-fw fa-user-shield"></i>
 
             <span>
-                Data User / Admin
+                 Admin
             </span>
 
         </a>

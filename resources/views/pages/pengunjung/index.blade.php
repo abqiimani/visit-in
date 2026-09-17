@@ -64,7 +64,7 @@
 
                             {{-- Lihat Detail --}}
                             <a href="{{ route('admin.pengunjung.show', encrypt($pengunjung->id)) }}"
-                               class="btn btn-link text-secondary p-0 mx-2"
+                               class="btn btn-link text-secondary p-0 mx-2 action-button"
                                title="Lihat Detail">
 
                                 <span class="fa fa-eye"></span>
@@ -74,7 +74,7 @@
                             {{-- Hapus --}}
                             <a href="javascript:void(0)"
                                onclick="actionDestroy('{{ route('admin.pengunjung.destroy', encrypt($pengunjung->id)) }}')"
-                               class="btn btn-link text-danger p-0 mx-2"
+                               class="btn btn-link text-danger p-0 mx-2 action-button"
                                title="Hapus">
 
                                 <span class="fa fa-trash"></span>
@@ -159,10 +159,59 @@
    HEADER TABEL
    ========================================================== */
 
+.datatables {
+    width: 100% !important;
+    border-color: var(--visit-border) !important;
+}
+
 .datatables thead th {
     background: var(--visit-sand) !important;
     color: var(--visit-teal-dark) !important;
     border-color: var(--visit-border) !important;
+    vertical-align: middle !important;
+    white-space: normal !important;
+}
+
+
+/* ==========================================================
+   LEBAR KOLOM
+   ========================================================== */
+
+.datatables th:nth-child(1),
+.datatables td:nth-child(1) {
+    width: 17% !important;
+}
+
+.datatables th:nth-child(2),
+.datatables td:nth-child(2) {
+    width: 14% !important;
+}
+
+.datatables th:nth-child(3),
+.datatables td:nth-child(3) {
+    width: 16% !important;
+}
+
+.datatables th:nth-child(4),
+.datatables td:nth-child(4) {
+    width: 17% !important;
+}
+
+.datatables th:nth-child(5),
+.datatables td:nth-child(5) {
+    width: 13% !important;
+    text-align: center !important;
+}
+
+.datatables th:nth-child(6),
+.datatables td:nth-child(6) {
+    width: 14% !important;
+}
+
+.datatables th:nth-child(7),
+.datatables td:nth-child(7) {
+    width: 9% !important;
+    text-align: center !important;
 }
 
 
@@ -173,6 +222,7 @@
 .datatables tbody td {
     color: var(--visit-text) !important;
     border-color: var(--visit-border) !important;
+    vertical-align: middle !important;
 }
 
 
@@ -180,6 +230,39 @@
 
 .datatables tbody td:first-child {
     color: var(--visit-teal) !important;
+}
+
+
+/* ==========================================================
+   AGAR ISI KOLOM TIDAK BERANTAKAN
+   ========================================================== */
+
+.datatables tbody td:nth-child(2),
+.datatables tbody td:nth-child(5),
+.datatables tbody td:nth-child(6),
+.datatables tbody td:nth-child(7) {
+    white-space: nowrap !important;
+}
+
+
+/* ==========================================================
+   ACTION — DIBUAT SEBARIS
+   ========================================================== */
+
+.datatables tbody td:last-child {
+    white-space: nowrap !important;
+    text-align: center !important;
+}
+
+.datatables .action-button {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    vertical-align: middle !important;
+    margin-left: 5px !important;
+    margin-right: 5px !important;
+    width: 22px !important;
+    height: 22px !important;
 }
 
 
@@ -280,8 +363,6 @@
    PAGINATION - BOOTSTRAP 4
    ========================================================== */
 
-/* Tombol Previous dan Next */
-
 .dataTables_wrapper .dataTables_paginate .page-link {
     color: var(--visit-teal) !important;
     background-color: var(--visit-cream) !important;
@@ -291,7 +372,6 @@
 
 /* ==========================================================
    NOMOR HALAMAN AKTIF
-   INI YANG MENGHILANGKAN WARNA BIRU
    ========================================================== */
 
 .dataTables_wrapper
@@ -377,6 +457,7 @@
 .pagination
 .page-item.active
 .page-link,
+
 .dataTables_wrapper
 .dataTables_paginate
 .pagination
@@ -452,7 +533,6 @@
 
 /* ==========================================================
    TOMBOL PAGINATION DATATABLES
-   OVERRIDE BOOTSTRAP
    ========================================================== */
 
 .dataTables_wrapper .paginate_button {
@@ -474,6 +554,10 @@
 
     .dataTables_wrapper .dataTables_filter {
         margin-top: 10px;
+    }
+
+    .datatables {
+        min-width: 900px;
     }
 
 }

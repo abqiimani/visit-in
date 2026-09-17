@@ -1,743 +1,972 @@
 @extends('layouts.visitor')
 
-@section('title', 'Tentang Destinasi')
+@section('title', 'Tentang Destinasi | Evara Beach')
 
 @section('content')
 
 <style>
     :root {
         --toska: #087873;
-        --toska-dark: #075b58;
-        --cream: #fbf8f1;
-        --cream-soft: #f3e8d5;
-        --sand: #d4aa6b;
-        --brown: #987047;
+        --toska-dark: #045956;
+        --toska-deep: #034a47;
+        --toska-soft: #dcefeb;
+
+        --cream: #f8f1e3;
+        --cream-light: #fffaf1;
+        --cream-dark: #eee1c9;
+
+        --sand: #c99755;
+        --sand-light: #e4c38f;
+
+        --brown: #8a6038;
+        --brown-dark: #6f4828;
+
         --text: #405954;
-        --muted: #78847f;
+        --muted: #6f7d78;
+
         --white: #ffffff;
-        --line: rgba(117, 91, 57, .20);
+
+        --line: rgba(111, 72, 40, .22);
+    }
+
+    * {
+        box-sizing: border-box;
     }
 
     .destination-page {
         background: var(--cream);
         color: var(--text);
-        overflow: hidden;
     }
 
-    .destination-page .container {
-        max-width: 1160px;
-    }
 
     /* =========================
        HERO
     ========================= */
 
     .destination-hero {
-        padding: 82px 0 100px;
-        background: var(--cream);
-    }
-
-    .hero-layout {
+        min-height: 560px;
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 70px;
-        align-items: center;
+        grid-template-columns: .9fr 1.1fr;
+        align-items: stretch;
+        background: var(--cream-light);
     }
 
-    .hero-content {
-        max-width: 500px;
-    }
-
-    .eyebrow {
+    .destination-hero-content {
         display: flex;
-        align-items: center;
-        gap: 12px;
-        margin-bottom: 24px;
-        color: var(--toska);
-        font-size: 11px;
-        font-weight: 800;
-        letter-spacing: 2.5px;
+        flex-direction: column;
+        justify-content: center;
+        padding: 80px 8%;
+        background:
+            linear-gradient(
+                135deg,
+                var(--cream-light) 0%,
+                var(--cream) 100%
+            );
+    }
+
+    .destination-eyebrow {
+        display: inline-block;
+        margin-bottom: 18px;
+        color: var(--brown);
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 2px;
         text-transform: uppercase;
     }
 
-    .eyebrow::before {
-        content: "";
-        width: 34px;
-        height: 2px;
-        background: var(--sand);
-    }
-
-    .hero-title {
-        margin: 0;
+    .destination-hero h1 {
+        margin: 0 0 20px;
         color: var(--toska-dark);
-        font-size: clamp(43px, 4.5vw, 62px);
-        font-weight: 800;
-        line-height: 1.08;
+        font-size: clamp(48px, 6vw, 82px);
+        line-height: .95;
+        font-weight: 700;
         letter-spacing: -2px;
     }
 
-    .hero-title span {
+    .destination-hero h1 span {
         display: block;
         color: var(--brown);
+        font-weight: 400;
     }
 
-    .hero-description {
-        max-width: 420px;
-        margin: 30px 0 0;
-        color: var(--muted);
-        font-size: 15px;
-        line-height: 1.95;
+    .destination-hero p {
+        max-width: 520px;
+        margin: 0;
+        color: var(--text);
+        font-size: 17px;
+        line-height: 1.8;
     }
 
-    .hero-photo {
-        position: relative;
-        padding: 0 0 18px 18px;
+    .destination-hero-image {
+        min-height: 560px;
+        overflow: hidden;
     }
 
-    .hero-photo::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 75%;
-        height: 75%;
-        background: var(--sand);
-    }
-
-    .hero-photo img {
-        position: relative;
-        z-index: 1;
+    .destination-hero-image img {
         width: 100%;
-        height: 430px;
+        height: 100%;
         display: block;
         object-fit: cover;
-        border-radius: 2px;
     }
+
 
     /* =========================
-       INTRODUCTION
+       ABOUT
     ========================= */
 
-    .introduction-section {
-        padding: 100px 0;
-        background: var(--white);
+    .about-section {
+        padding: 100px 8%;
+        background: var(--toska);
     }
 
-    .introduction-content {
-        max-width: 850px;
-        margin: 0 auto;
+    .about-grid {
+        display: grid;
+        grid-template-columns: .7fr 1.3fr;
+        gap: 80px;
+        align-items: start;
     }
 
     .section-label {
-        margin-bottom: 16px;
-        color: var(--toska);
-        font-size: 11px;
-        font-weight: 800;
-        letter-spacing: 2.5px;
+        margin-bottom: 14px;
+        color: var(--brown);
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 2px;
         text-transform: uppercase;
     }
 
-    .section-title {
-        max-width: 680px;
+    .about-section .section-label {
+        color: var(--sand-light);
+    }
+
+    .about-heading h2 {
         margin: 0;
-        color: var(--toska-dark);
-        font-size: clamp(32px, 3.5vw, 47px);
-        font-weight: 800;
-        line-height: 1.2;
-        letter-spacing: -1px;
+        color: var(--cream-light);
+        font-size: clamp(32px, 4vw, 52px);
+        line-height: 1.15;
+        font-weight: 700;
     }
 
-    .section-title span {
-        color: var(--brown);
+    .about-content .lead {
+        margin: 0 0 22px;
+        color: var(--cream-light);
+        font-size: 21px;
+        line-height: 1.65;
+        font-weight: 500;
     }
 
-    .introduction-lead {
-        max-width: 820px;
-        margin: 40px 0 25px;
-        color: var(--text);
-        font-size: 22px;
-        line-height: 1.75;
-    }
-
-    .introduction-content p:not(.introduction-lead) {
-        max-width: 780px;
+    .about-content p {
         margin: 0 0 18px;
-        color: var(--muted);
-        font-size: 15px;
-        line-height: 1.95;
+        color: rgba(255, 250, 241, .82);
+        font-size: 16px;
+        line-height: 1.8;
     }
+
+    .about-highlights {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+        margin-top: 32px;
+    }
+
+    .highlight-box {
+        padding: 22px;
+        background: var(--cream-light);
+        border-left: 4px solid var(--sand);
+    }
+
+    .highlight-box strong {
+        display: block;
+        margin-bottom: 7px;
+        color: var(--toska-dark);
+        font-size: 15px;
+    }
+
+    .highlight-box span {
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
 
     /* =========================
-       PESONA
+       DAYA TARIK
     ========================= */
 
-    .character-section {
-        padding: 100px 0;
-        background: var(--cream-soft);
+    .attraction-section {
+        padding: 100px 8%;
+        background:
+            linear-gradient(
+                180deg,
+                var(--cream-light) 0%,
+                var(--cream) 100%
+            );
     }
 
-    .character-heading {
-        max-width: 650px;
+    .attraction-header {
+        max-width: 720px;
         margin-bottom: 48px;
     }
 
-    .character-description {
-        max-width: 570px;
-        margin: 23px 0 0;
-        color: var(--muted);
-        font-size: 15px;
-        line-height: 1.9;
+    .attraction-header .section-label {
+        color: var(--brown);
     }
 
-    .character-list {
-        border-top: 1px solid var(--line);
+    .attraction-header h2 {
+        margin: 0 0 15px;
+        color: var(--toska-dark);
+        font-size: clamp(32px, 4vw, 50px);
+        line-height: 1.15;
     }
 
-    .character-item {
-        display: grid;
-        grid-template-columns: 65px 260px minmax(0, 1fr);
-        gap: 30px;
-        align-items: start;
-        padding: 30px 0;
-        border-bottom: 1px solid var(--line);
-    }
-
-    .character-number {
-        padding-top: 3px;
-        color: var(--sand);
-        font-size: 14px;
-        font-weight: 800;
-    }
-
-    .character-item h3 {
+    .attraction-header p {
         margin: 0;
+        color: var(--text);
+        font-size: 16px;
+        line-height: 1.8;
+    }
+
+
+    /* =========================
+       ACCORDION
+    ========================= */
+
+    .attraction-list {
+        max-width: 1000px;
+        border-top: 2px solid var(--brown);
+    }
+
+    .attraction-item {
+        border-bottom: 1px solid var(--line);
+        transition: background .3s ease;
+    }
+
+    .attraction-item.active {
+        background: var(--toska-soft);
+        border-bottom-color: rgba(8, 120, 115, .25);
+    }
+
+    .attraction-button {
+        width: 100%;
+        padding: 25px 18px;
+        border: 0;
+        outline: none;
+        background: transparent;
+        color: var(--toska-dark);
+        display: flex;
+        align-items: center;
+        text-align: left;
+        cursor: pointer;
+        font-family: inherit;
+        transition: .25s ease;
+    }
+
+    .attraction-button:hover {
+        color: var(--brown-dark);
+        background: rgba(201, 151, 85, .08);
+        padding-left: 25px;
+    }
+
+    .attraction-number {
+        width: 55px;
+        flex-shrink: 0;
+        color: var(--brown);
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 1px;
+    }
+
+    .attraction-title {
+        flex: 1;
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    .attraction-arrow {
+        color: var(--brown);
+        font-size: 18px;
+        transition: transform .3s ease;
+        margin-left: 20px;
+    }
+
+    .attraction-item.active .attraction-arrow {
+        transform: rotate(180deg);
+        color: var(--toska);
+    }
+
+    .attraction-content {
+        max-height: 0;
+        overflow: hidden;
+        transition:
+            max-height .35s ease,
+            padding .35s ease;
+        padding-left: 73px;
+        padding-right: 30px;
+    }
+
+    .attraction-content p {
+        max-width: 760px;
+        margin: 0;
+        padding: 0 0 27px;
+        color: var(--text);
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .attraction-item.active .attraction-content {
+        max-height: 180px;
+    }
+
+
+    /* =========================
+       CHARACTER
+    ========================= */
+
+    .character-section {
+        padding: 100px 8%;
+        background: var(--cream-dark);
+    }
+
+    .character-header {
+        max-width: 700px;
+        margin-bottom: 45px;
+    }
+
+    .character-header .section-label {
+        color: var(--brown);
+    }
+
+    .character-header h2 {
+        margin: 0 0 15px;
+        color: var(--toska-dark);
+        font-size: clamp(32px, 4vw, 50px);
+        line-height: 1.15;
+    }
+
+    .character-header p {
+        margin: 0;
+        color: var(--text);
+        font-size: 16px;
+        line-height: 1.8;
+    }
+
+    .character-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .character-card {
+        padding: 32px 28px;
+        background: var(--cream-light);
+        border-top: 4px solid var(--toska);
+        box-shadow: 0 8px 25px rgba(111, 72, 40, .06);
+        transition:
+            transform .25s ease,
+            box-shadow .25s ease;
+    }
+
+    .character-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 30px rgba(111, 72, 40, .10);
+    }
+
+    .character-card h3 {
+        margin: 0 0 10px;
         color: var(--toska-dark);
         font-size: 21px;
-        font-weight: 750;
-        line-height: 1.4;
     }
 
-    .character-item p {
-        max-width: 570px;
+    .character-card p {
         margin: 0;
         color: var(--muted);
-        font-size: 15px;
-        line-height: 1.9;
+        font-size: 14px;
+        line-height: 1.7;
     }
 
-    /* =========================
-       EXPERIENCE
-    ========================= */
-
-    .experience-section {
-        padding: 100px 0;
-        background: var(--white);
-    }
-
-    .experience-content {
-        max-width: 850px;
-        margin: 0 auto;
-    }
-
-    .experience-content p {
-        max-width: 790px;
-        margin: 25px 0 0;
-        color: var(--muted);
-        font-size: 15px;
-        line-height: 1.95;
-    }
-
-    .experience-quote {
-        max-width: 790px;
-        margin-top: 30px;
-        padding: 20px 25px;
-        border-left: 3px solid var(--sand);
-        background: var(--cream);
-    }
-
-    .experience-quote p {
-        margin: 0;
-        color: var(--brown);
-        font-size: 15px;
-        font-style: italic;
-        line-height: 1.8;
-    }
-
-    /* =========================
-       INFORMATION
-    ========================= */
-
-    .information-section {
-        padding: 95px 0;
-        background: var(--cream);
-    }
-
-    .information-layout {
-        display: grid;
-        grid-template-columns: .8fr 1.2fr;
-        gap: 85px;
-        align-items: start;
-    }
-
-    .information-intro {
-        max-width: 360px;
-    }
-
-    .information-intro p {
-        margin: 23px 0 0;
-        color: var(--muted);
-        font-size: 15px;
-        line-height: 1.95;
-    }
-
-    .information-list {
-        border-top: 1px solid var(--line);
-    }
-
-    .information-row {
-        display: grid;
-        grid-template-columns: 170px minmax(0, 1fr);
-        gap: 30px;
-        padding: 23px 0;
-        border-bottom: 1px solid var(--line);
-    }
-
-    .information-row strong {
-        color: var(--toska-dark);
-        font-size: 15px;
-        font-weight: 750;
-    }
-
-    .information-row span {
-        color: var(--muted);
-        font-size: 15px;
-        line-height: 1.8;
-    }
 
     /* =========================
        CLOSING
     ========================= */
 
-    .closing-section {
-        padding: 90px 20px;
-        background: var(--toska-dark);
+    .destination-closing {
+        padding: 100px 8%;
+        background:
+            linear-gradient(
+                rgba(4, 89, 86, .94),
+                rgba(4, 89, 86, .94)
+            ),
+            url('{{ asset('img/pantai.jpg') }}') center/cover no-repeat;
         text-align: center;
+        border-top: 6px solid var(--sand);
     }
 
-    .closing-content {
-        max-width: 680px;
+    .destination-closing .section-label {
+        color: var(--sand-light);
+    }
+
+    .destination-closing h2 {
+        max-width: 700px;
+        margin: 0 auto 18px;
+        color: var(--cream-light);
+        font-size: clamp(32px, 4vw, 52px);
+        line-height: 1.15;
+    }
+
+    .destination-closing p {
+        max-width: 650px;
         margin: 0 auto;
+        color: rgba(255, 250, 241, .82);
+        font-size: 16px;
+        line-height: 1.8;
     }
 
-    .closing-content .section-label {
-        color: var(--sand);
-    }
-
-    .closing-title {
-        margin: 0 0 22px;
-        color: var(--white);
-        font-size: clamp(32px, 3.8vw, 48px);
-        font-weight: 800;
-        line-height: 1.2;
-        letter-spacing: -1px;
-    }
-
-    .closing-title span {
-        color: var(--sand);
-    }
-
-    .closing-description {
-        margin: 0;
-        color: rgba(255, 255, 255, .68);
-        font-size: 15px;
-        line-height: 1.9;
-    }
 
     /* =========================
        RESPONSIVE
     ========================= */
 
     @media (max-width: 991px) {
+
         .destination-hero {
-            padding: 65px 0 80px;
-        }
-
-        .hero-layout {
             grid-template-columns: 1fr;
-            gap: 50px;
         }
 
-        .hero-content {
-            max-width: 650px;
+        .destination-hero-content {
+            padding: 75px 8%;
         }
 
-        .hero-description {
-            max-width: 540px;
+        .destination-hero-image {
+            min-height: 420px;
         }
 
-        .hero-photo {
-            max-width: 720px;
+        .about-grid {
+            grid-template-columns: 1fr;
+            gap: 40px;
         }
 
-        .hero-photo img {
-            height: 390px;
+        .character-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+
+    @media (max-width: 600px) {
+
+        .destination-hero-content {
+            padding: 60px 7%;
         }
 
-        .introduction-section,
+        .destination-hero h1 {
+            font-size: 52px;
+        }
+
+        .destination-hero p {
+            font-size: 15px;
+        }
+
+        .destination-hero-image {
+            min-height: 330px;
+        }
+
+        .about-section,
+        .attraction-section,
         .character-section,
-        .experience-section,
-        .information-section {
-            padding: 75px 0;
+        .destination-closing {
+            padding: 70px 7%;
         }
 
-        .information-layout {
+        .about-highlights {
             grid-template-columns: 1fr;
-            gap: 45px;
         }
 
-        .information-intro {
-            max-width: 600px;
-        }
-    }
-
-    @media (max-width: 767px) {
-        .hero-title {
-            font-size: 43px;
+        .attraction-button {
+            padding: 22px 10px;
         }
 
-        .hero-photo {
-            padding-left: 12px;
-            padding-bottom: 12px;
+        .attraction-number {
+            width: 42px;
+            font-size: 12px;
         }
 
-        .hero-photo img {
-            height: 320px;
+        .attraction-title {
+            font-size: 17px;
         }
 
-        .introduction-lead {
-            font-size: 20px;
+        .attraction-arrow {
+            margin-left: 10px;
         }
 
-        .character-item {
-            grid-template-columns: 42px minmax(0, 1fr);
-            gap: 15px;
+        .attraction-content {
+            padding-left: 52px;
+            padding-right: 10px;
         }
 
-        .character-item h3 {
-            margin-bottom: 10px;
-        }
-
-        .character-item p {
-            grid-column: 2;
-        }
-
-        .information-row {
-            grid-template-columns: 1fr;
-            gap: 7px;
-        }
-    }
-
-    @media (max-width: 480px) {
-        .destination-hero {
-            padding: 48px 0 65px;
-        }
-
-        .hero-title {
-            font-size: 38px;
-        }
-
-        .hero-description,
-        .introduction-content p:not(.introduction-lead),
-        .character-item p,
-        .experience-content p,
-        .information-row span {
+        .attraction-content p {
             font-size: 14px;
         }
 
-        .hero-photo img {
-            height: 270px;
-        }
-
-        .section-title {
-            font-size: 31px;
-        }
-
-        .closing-section {
-            padding: 70px 20px;
+        .character-card {
+            padding: 25px 22px;
         }
     }
 </style>
 
+
 <div class="destination-page">
 
-    {{-- HERO --}}
+    {{-- =========================
+         HERO
+    ========================= --}}
+
     <section class="destination-hero">
-        <div class="container">
-            <div class="hero-layout">
 
-                <div class="hero-content">
-                    <div class="eyebrow">
-                        Tentang Destinasi
-                    </div>
+        <div class="destination-hero-content">
 
-                    <h1 class="hero-title">
-                        Mengenal lebih dekat
-                        <span>Evara Beach</span>
-                    </h1>
+            <span class="destination-eyebrow">
+                Tentang Destinasi
+            </span>
 
-                    <p class="hero-description">
-                        Evara Beach merupakan destinasi pesisir
-                        dengan suasana tenang, pemandangan alam
-                        yang menyegarkan, dan keindahan sederhana
-                        yang meninggalkan kesan.
-                    </p>
-                </div>
+            <h1>
+                Evara
+                <span>Beach</span>
+            </h1>
 
-                <div class="hero-photo">
-                    <img
-                        src="{{ asset('img/pantai.jpg') }}"
-                        alt="Pemandangan Evara Beach"
-                    >
-                </div>
+            <p>
+                Kenali suasana kawasan pesisir dan daya tarik
+                yang dapat ditemukan dalam kunjungan ke Evara Beach.
+            </p>
 
-            </div>
         </div>
+
+
+        <div class="destination-hero-image">
+
+            <img
+                src="{{ asset('img/pantai.jpg') }}"
+                alt="Evara Beach"
+            >
+
+        </div>
+
     </section>
 
-    {{-- TENTANG DESTINASI --}}
-    <section class="introduction-section">
-        <div class="container">
-            <div class="introduction-content">
+
+    {{-- =========================
+         ABOUT
+    ========================= --}}
+
+    <section class="about-section">
+
+        <div class="about-grid">
+
+            <div class="about-heading">
 
                 <div class="section-label">
                     Tentang Evara Beach
                 </div>
 
-                <h2 class="section-title">
-                    Keindahan yang terasa
-                    <span>dekat dan alami</span>
+                <h2>
+                    Keindahan pesisir
+                    yang sederhana
                 </h2>
 
-                <p class="introduction-lead">
-                    Evara Beach menghadirkan pesona pantai melalui
-                    suasana alam yang sederhana, udara laut yang
-                    menyegarkan, dan pemandangan pesisir yang menenangkan.
-                </p>
-
-                <p>
-                    Evara Beach menjadi ruang untuk menikmati suasana
-                    terbuka dan sejenak menjauh dari kesibukan sehari-hari.
-                    Keindahannya hadir melalui perpaduan laut, pantai,
-                    dan lingkungan sekitar yang terasa alami.
-                </p>
-
-                <p>
-                    Setiap kunjungan dapat memberikan pengalaman yang
-                    berbeda. Suasana pantai dapat dinikmati melalui
-                    pemandangan, kebersamaan, maupun waktu tenang
-                    yang dihabiskan dengan cara masing-masing.
-                </p>
-
             </div>
-        </div>
-    </section>
 
-    {{-- PESONA DESTINASI --}}
-    <section class="character-section">
-        <div class="container">
 
-            <div class="character-heading">
-                <div class="section-label">
-                    Pesona Destinasi
+            <div class="about-content">
+
+                <p class="lead">
+                    Evara Beach merupakan destinasi pesisir
+                    yang menghadirkan suasana pantai sebagai
+                    bagian utama dari pengalaman berkunjung.
+                </p>
+
+                <p>
+                    Kawasan pantai menjadi ruang untuk menikmati
+                    pemandangan laut, suasana sekitar, serta
+                    karakter lingkungan pesisir secara langsung.
+                </p>
+
+                <p>
+                    Setiap bagian memiliki daya tarik tersendiri
+                    yang dapat dinikmati sesuai dengan kebutuhan
+                    dan waktu kunjungan.
+                </p>
+
+
+                <div class="about-highlights">
+
+                    <div class="highlight-box">
+
+                        <strong>
+                            Nuansa Pesisir
+                        </strong>
+
+                        <span>
+                            Suasana khas kawasan pantai yang
+                            menjadi bagian dari pengalaman berkunjung.
+                        </span>
+
+                    </div>
+
+
+                    <div class="highlight-box">
+
+                        <strong>
+                            Keindahan Alam
+                        </strong>
+
+                        <span>
+                            Pemandangan alam pesisir yang dapat
+                            dinikmati secara langsung.
+                        </span>
+
+                    </div>
+
                 </div>
 
-                <h2 class="section-title">
-                    Sederhana tetapi
-                    <span>berkesan</span>
-                </h2>
-
-                <p class="character-description">
-                    Daya tarik Evara Beach hadir melalui suasana,
-                    pemandangan, dan momen yang tercipta selama
-                    berada di kawasan pesisir.
-                </p>
             </div>
 
-            <div class="character-list">
+        </div>
 
-                <div class="character-item">
-                    <div class="character-number">
+    </section>
+
+
+    {{-- =========================
+         DAYA TARIK
+    ========================= --}}
+
+    <section class="attraction-section">
+
+        <div class="attraction-header">
+
+            <div class="section-label">
+                Daya Tarik
+            </div>
+
+            <h2>
+                Hal yang dapat ditemukan
+            </h2>
+
+            <p>
+                Beberapa bagian dari kawasan pantai yang dapat
+                menjadi perhatian selama kunjungan.
+            </p>
+
+        </div>
+
+
+        <div class="attraction-list">
+
+
+            {{-- 01 --}}
+            <div class="attraction-item">
+
+                <button
+                    type="button"
+                    class="attraction-button"
+                    onclick="toggleAttraction(this)"
+                >
+
+                    <span class="attraction-number">
                         01
-                    </div>
+                    </span>
 
-                    <h3>Suasana Pesisir</h3>
+                    <span class="attraction-title">
+                        Pemandangan Laut
+                    </span>
+
+                    <span class="attraction-arrow">
+                        ↓
+                    </span>
+
+                </button>
+
+
+                <div class="attraction-content">
 
                     <p>
-                        Suara ombak, udara laut, dan hamparan pantai
-                        menciptakan suasana yang tenang serta
-                        memberikan kesan santai.
+                        Pemandangan laut menjadi salah satu bagian
+                        yang dapat dinikmati secara langsung dari
+                        kawasan pesisir.
                     </p>
+
                 </div>
 
-                <div class="character-item">
-                    <div class="character-number">
+            </div>
+
+
+            {{-- 02 --}}
+            <div class="attraction-item">
+
+                <button
+                    type="button"
+                    class="attraction-button"
+                    onclick="toggleAttraction(this)"
+                >
+
+                    <span class="attraction-number">
                         02
-                    </div>
+                    </span>
 
-                    <h3>Pemandangan Alam</h3>
+                    <span class="attraction-title">
+                        Garis Pantai
+                    </span>
+
+                    <span class="attraction-arrow">
+                        ↓
+                    </span>
+
+                </button>
+
+
+                <div class="attraction-content">
 
                     <p>
-                        Pemandangan laut dan lingkungan sekitar menjadi
-                        bagian dari daya tarik Evara Beach yang dapat
-                        dinikmati dalam berbagai suasana.
+                        Area garis pantai memberikan ruang untuk
+                        menikmati kawasan pesisir dan melihat
+                        perpaduan antara daratan dengan laut.
                     </p>
+
                 </div>
 
-                <div class="character-item">
-                    <div class="character-number">
+            </div>
+
+
+            {{-- 03 --}}
+            <div class="attraction-item">
+
+                <button
+                    type="button"
+                    class="attraction-button"
+                    onclick="toggleAttraction(this)"
+                >
+
+                    <span class="attraction-number">
                         03
-                    </div>
+                    </span>
 
-                    <h3>Momen Kebersamaan</h3>
+                    <span class="attraction-title">
+                        Lingkungan Pesisir
+                    </span>
+
+                    <span class="attraction-arrow">
+                        ↓
+                    </span>
+
+                </button>
+
+
+                <div class="attraction-content">
 
                     <p>
-                        Evara Beach menjadi tempat untuk menikmati waktu
-                        bersama keluarga, sahabat, maupun orang-orang
-                        terdekat dalam suasana yang lebih santai.
+                        Lingkungan sekitar pantai memperlihatkan
+                        karakter kawasan pesisir yang menjadi bagian
+                        dari suasana destinasi.
                     </p>
+
                 </div>
 
             </div>
-        </div>
-    </section>
 
-    {{-- PENGALAMAN --}}
-    <section class="experience-section">
-        <div class="container">
-            <div class="experience-content">
 
-                <div class="section-label">
-                    Pengalaman Berkunjung
+            {{-- 04 --}}
+            <div class="attraction-item">
+
+                <button
+                    type="button"
+                    class="attraction-button"
+                    onclick="toggleAttraction(this)"
+                >
+
+                    <span class="attraction-number">
+                        04
+                    </span>
+
+                    <span class="attraction-title">
+                        Suasana Menjelang Sore
+                    </span>
+
+                    <span class="attraction-arrow">
+                        ↓
+                    </span>
+
+                </button>
+
+
+                <div class="attraction-content">
+
+                    <p>
+                        Perubahan suasana menjelang sore memberikan
+                        pengalaman visual yang berbeda dibandingkan
+                        waktu kunjungan lainnya.
+                    </p>
+
                 </div>
 
-                <h2 class="section-title">
-                    Setiap kunjungan
-                    memiliki ceritanya sendiri
-                </h2>
+            </div>
+
+
+            {{-- 05 --}}
+            <div class="attraction-item">
+
+                <button
+                    type="button"
+                    class="attraction-button"
+                    onclick="toggleAttraction(this)"
+                >
+
+                    <span class="attraction-number">
+                        05
+                    </span>
+
+                    <span class="attraction-title">
+                        Area untuk Bersantai
+                    </span>
+
+                    <span class="attraction-arrow">
+                        ↓
+                    </span>
+
+                </button>
+
+
+                <div class="attraction-content">
+
+                    <p>
+                        Kawasan pantai dapat menjadi tempat untuk
+                        berhenti sejenak dan menikmati suasana
+                        sekitar selama berada di lokasi.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    {{-- =========================
+         CHARACTER
+    ========================= --}}
+
+    <section class="character-section">
+
+        <div class="character-header">
+
+            <div class="section-label">
+                Karakter Destinasi
+            </div>
+
+            <h2>
+                Suasana yang menjadi
+                ciri khas
+            </h2>
+
+            <p>
+                Karakter kawasan pantai dapat dilihat dari
+                lingkungan dan suasana yang dirasakan selama
+                berada di destinasi.
+            </p>
+
+        </div>
+
+
+        <div class="character-grid">
+
+            <div class="character-card">
+
+                <h3>
+                    Tenang
+                </h3>
 
                 <p>
-                    Berkunjung ke Evara Beach tidak harus selalu
-                    dipenuhi dengan banyak kegiatan. Menikmati
-                    pemandangan, merasakan angin laut, berbincang,
-                    atau mengabadikan momen sederhana juga menjadi
-                    bagian dari pengalaman yang berharga.
+                    Suasana kawasan pesisir yang dapat dinikmati
+                    tanpa banyak gangguan dari lingkungan sekitar.
                 </p>
+
+            </div>
+
+
+            <div class="character-card">
+
+                <h3>
+                    Alami
+                </h3>
 
                 <p>
-                    Setiap orang dapat menemukan kesan yang berbeda.
-                    Bagi sebagian orang, Evara Beach menjadi tempat
-                    untuk mencari ketenangan. Bagi yang lain, tempat
-                    ini menjadi bagian dari cerita perjalanan bersama
-                    keluarga dan sahabat.
-                </p>
-
-                <div class="experience-quote">
-                    <p>
-                        “Terkadang, tempat yang paling berkesan adalah
-                        tempat yang membuat kita merasa tenang.”
-                    </p>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    {{-- INFORMASI --}}
-    <section class="information-section">
-        <div class="container">
-
-            <div class="information-layout">
-
-                <div class="information-intro">
-                    <div class="section-label">
-                        Informasi Destinasi
-                    </div>
-
-                    <h2 class="section-title">
-                        Hal yang perlu
-                        <span>diketahui</span>
-                    </h2>
-
-                    <p>
-                        Informasi mengenai destinasi membantu pengunjung
-                        mempersiapkan kunjungan dengan lebih baik dan
-                        menikmati pengalaman di Evara Beach secara nyaman.
-                    </p>
-                </div>
-
-                <div class="information-list">
-
-                    <div class="information-row">
-                        <strong>Jenis Destinasi</strong>
-                        <span>
-                            Destinasi wisata pesisir dan pantai
-                        </span>
-                    </div>
-
-                    <div class="information-row">
-                        <strong>Suasana</strong>
-                        <span>
-                            Tenang, terbuka, dan dekat dengan alam
-                        </span>
-                    </div>
-
-                    <div class="information-row">
-                        <strong>Aktivitas</strong>
-                        <span>
-                            Menikmati pemandangan, bersantai,
-                            berfoto, dan menghabiskan waktu bersama
-                        </span>
-                    </div>
-
-                    <div class="information-row">
-                        <strong>Lokasi</strong>
-                        <span>
-                            Silakan sesuaikan dengan alamat resmi
-                            Evara Beach
-                        </span>
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    {{-- PENUTUP --}}
-    <section class="closing-section">
-        <div class="container">
-            <div class="closing-content">
-
-                <div class="section-label">
-                    Evara Beach
-                </div>
-
-                <h2 class="closing-title">
-                    Sebuah tempat untuk
-                    <span>menikmati momen</span>
-                </h2>
-
-                <p class="closing-description">
-                    Dengan suasana pesisir yang tenang dan keindahan
-                    alam yang sederhana, Evara Beach menjadi bagian
-                    dari perjalanan yang dapat dikenang melalui
-                    momen-momen kecil.
+                    Lingkungan pantai menjadi bagian utama dari
+                    tampilan dan karakter destinasi.
                 </p>
 
             </div>
+
+
+            <div class="character-card">
+
+                <h3>
+                    Menyegarkan
+                </h3>
+
+                <p>
+                    Keberadaan laut dan kawasan terbuka memberikan
+                    suasana yang berbeda dari lingkungan perkotaan.
+                </p>
+
+            </div>
+
         </div>
+
+    </section>
+
+
+    {{-- =========================
+         CLOSING
+    ========================= --}}
+
+    <section class="destination-closing">
+
+        <div class="section-label">
+            Evara Beach
+        </div>
+
+        <h2>
+            Temukan ketenangan
+            di tepi pantai
+        </h2>
+
+        <p>
+            Nikmati suasana kawasan pesisir dan temukan
+            pengalaman yang sesuai dengan perjalanan Anda.
+        </p>
+
     </section>
 
 </div>
+
+
+<script>
+    function toggleAttraction(button) {
+
+        const item = button.closest('.attraction-item');
+
+        const allItems = document.querySelectorAll(
+            '.attraction-item'
+        );
+
+        allItems.forEach(function(otherItem) {
+
+            if (otherItem !== item) {
+                otherItem.classList.remove('active');
+            }
+
+        });
+
+        item.classList.toggle('active');
+    }
+</script>
 
 @endsection

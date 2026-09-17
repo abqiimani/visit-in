@@ -603,12 +603,7 @@
                                 Mahasiswa
                             </option>
 
-                            <option
-                                value="Wisatawan"
-                                {{ old('kategori_pengunjung') == 'Wisatawan' ? 'selected' : '' }}
-                            >
-                                Wisatawan
-                            </option>
+                           
 
                         </select>
 
