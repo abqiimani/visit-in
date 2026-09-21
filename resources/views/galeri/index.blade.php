@@ -8,610 +8,922 @@
     :root {
         --toska: #087873;
         --toska-dark: #075b58;
+        --toska-soft: #dcefed;
         --cream: #fbf8f1;
-        --cream-soft: #f2e6d3;
+        --cream-soft: #f4eadb;
         --sand: #d4aa6b;
         --brown: #987047;
         --text: #405954;
         --muted: #78847f;
         --white: #ffffff;
-        --line: rgba(117, 91, 57, .20);
     }
+
+    /* =========================================================
+       HALAMAN GALERI
+    ========================================================= */
 
     .gallery-page {
         background: var(--cream);
-        color: var(--text);
-        overflow: hidden;
+        min-height: 100vh;
+        padding-bottom: 55px;
     }
 
-    .gallery-page .container {
-        max-width: 1160px;
-    }
-
-    /* =========================
+    /* =========================================================
        HEADER GALERI
-    ========================= */
+    ========================================================= */
 
     .gallery-header {
-        padding: 82px 0 70px;
-        background: var(--cream);
+        padding: 70px 20px 35px;
+        text-align: center;
+        background:
+            linear-gradient(
+                180deg,
+                rgba(244, 234, 219, 0.65),
+                rgba(251, 248, 241, 0.98)
+            );
     }
 
     .gallery-header-inner {
-        max-width: 720px;
+        max-width: 850px;
+        margin: 0 auto;
     }
 
-    .eyebrow {
-        display: flex;
-        align-items: center;
-        gap: 13px;
-        margin-bottom: 23px;
+    .gallery-label {
+        display: inline-block;
+        margin-bottom: 12px;
         color: var(--toska);
-        font-size: 11px;
-        font-weight: 800;
-        letter-spacing: 2.5px;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 3px;
         text-transform: uppercase;
-    }
-
-    .eyebrow::before {
-        content: "";
-        width: 35px;
-        height: 2px;
-        background: var(--sand);
     }
 
     .gallery-title {
         margin: 0;
-        color: var(--toska-dark);
-        font-size: clamp(40px, 4.7vw, 62px);
-        font-weight: 800;
-        line-height: 1.08;
-        letter-spacing: -1.8px;
+        color: var(--brown);
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: clamp(38px, 5vw, 58px);
+        font-weight: 600;
+        line-height: 1.1;
     }
 
     .gallery-title span {
-        color: var(--brown);
+        color: var(--toska);
     }
 
-    .gallery-intro {
-        max-width: 590px;
-        margin: 27px 0 0;
+    .gallery-header-description {
+        max-width: 620px;
+        margin: 18px auto 0;
         color: var(--muted);
         font-size: 15px;
-        line-height: 1.95;
+        line-height: 1.8;
     }
 
-    /* =========================
+    .gallery-header-line {
+        width: 65px;
+        height: 3px;
+        margin: 25px auto 0;
+        border-radius: 50px;
+        background: var(--sand);
+    }
+
+    /* =========================================================
        GALERI GRID
-    ========================= */
+    ========================================================= */
 
     .gallery-section {
-        padding: 0 0 105px;
-        background: var(--cream);
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 20px 25px 0;
     }
 
     .gallery-grid {
         display: grid;
-        grid-template-columns: repeat(12, minmax(0, 1fr));
-        gap: 48px 28px;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 28px;
     }
 
     .gallery-item {
         min-width: 0;
     }
 
-    .gallery-item.large {
-        grid-column: span 7;
-    }
+    /* =========================================================
+       CARD FOTO
+    ========================================================= */
 
-    .gallery-item.small {
-        grid-column: span 5;
-    }
-
-    .gallery-item.full {
-        grid-column: span 12;
-        display: grid;
-        grid-template-columns: 1.1fr .9fr;
-        gap: 42px;
-        align-items: center;
-    }
-
-    .gallery-image-wrapper {
+    .gallery-card {
         position: relative;
+        height: 255px;
         overflow: hidden;
-        background: var(--cream-soft);
+        border-radius: 18px;
+        background: #e8dfd1;
+        cursor: pointer;
+        box-shadow:
+            0 8px 25px rgba(52, 76, 72, 0.08);
     }
 
-    .gallery-item.large .gallery-image-wrapper {
-        height: 430px;
-    }
-
-    .gallery-item.small .gallery-image-wrapper {
-        height: 350px;
-    }
-
-    .gallery-item.full .gallery-image-wrapper {
-        height: 390px;
-    }
-
-    .gallery-image-wrapper::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        border: 1px solid rgba(255, 255, 255, .25);
-        pointer-events: none;
-    }
-
-    .gallery-image {
+    .gallery-card img {
         width: 100%;
         height: 100%;
         display: block;
         object-fit: cover;
-        transition: transform .5s ease;
+        transition:
+            transform 0.5s ease,
+            filter 0.5s ease;
     }
 
-    .gallery-item:hover .gallery-image {
-        transform: scale(1.035);
+    /* =========================================================
+       HOVER OVERLAY
+    ========================================================= */
+
+    .gallery-overlay {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background: rgba(8, 120, 115, 0.76);
+
+        opacity: 0;
+        transition: opacity 0.35s ease;
     }
 
-    .gallery-caption {
-        padding-top: 20px;
+    .gallery-overlay span {
+        color: var(--white);
+        font-size: 16px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-align: center;
+        text-transform: uppercase;
+
+        padding: 12px 22px;
+        border: 1px solid rgba(255, 255, 255, 0.65);
+        border-radius: 50px;
+
+        transform: translateY(12px);
+        transition: transform 0.35s ease;
     }
 
-    .gallery-item.full .gallery-caption {
-        padding: 0;
+    .gallery-card:hover img {
+        transform: scale(1.05);
+        filter: brightness(0.88);
     }
 
-    .gallery-number {
-        margin-bottom: 10px;
-        color: var(--sand);
-        font-size: 12px;
-        font-weight: 800;
-        letter-spacing: 1.5px;
+    .gallery-card:hover .gallery-overlay {
+        opacity: 1;
     }
 
-    .gallery-caption h2,
-    .gallery-caption h3 {
-        margin: 0;
-        color: var(--toska-dark);
-        font-weight: 800;
-        line-height: 1.3;
+    .gallery-card:hover .gallery-overlay span {
+        transform: translateY(0);
     }
 
-    .gallery-caption h2 {
-        font-size: 31px;
-        letter-spacing: -.5px;
+    /* =========================================================
+       ITEM TAMBAHAN
+    ========================================================= */
+
+    .gallery-item-extra {
+        display: none;
     }
 
-    .gallery-caption h3 {
-        font-size: 24px;
+    .gallery-item-extra.show {
+        display: block;
+        animation: galleryFadeIn 0.45s ease both;
     }
 
-    .gallery-caption p {
-        max-width: 500px;
-        margin: 13px 0 0;
-        color: var(--muted);
-        font-size: 14px;
-        line-height: 1.9;
+    @keyframes galleryFadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(15px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 
-    .gallery-caption-line {
-        width: 42px;
-        height: 2px;
-        margin-top: 20px;
-        background: var(--sand);
+    /* =========================================================
+       LEARN MORE
+    ========================================================= */
+
+    .gallery-more {
+        display: flex;
+        justify-content: center;
+        margin-top: 45px;
     }
 
-    /* =========================
-       PENUTUP
-    ========================= */
+    .gallery-more-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
 
-    .gallery-closing {
-        padding: 85px 20px;
-        background: var(--toska-dark);
+        min-width: 175px;
+        padding: 13px 24px;
+
+        border: 1px solid var(--toska);
+        border-radius: 50px;
+
+        background: transparent;
+        color: var(--toska);
+
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+
+        cursor: pointer;
+        transition:
+            background 0.3s ease,
+            color 0.3s ease,
+            transform 0.3s ease,
+            box-shadow 0.3s ease;
+    }
+
+    .gallery-more-btn:hover {
+        background: var(--toska);
+        color: var(--white);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(8, 120, 115, 0.18);
+    }
+
+    .gallery-more-btn .arrow {
+        font-size: 16px;
+        transition: transform 0.3s ease;
+    }
+
+    .gallery-more-btn.active .arrow {
+        transform: rotate(180deg);
+    }
+
+    /* =========================================================
+       PENUTUP KECIL SEBELUM FOOTER
+       ========================================================= */
+
+    .gallery-ending {
+        max-width: 1180px;
+        margin: 55px auto 0;
+        padding: 0 25px;
         text-align: center;
     }
 
-    .gallery-closing-inner {
-        max-width: 650px;
-        margin: 0 auto;
+    .gallery-ending-line {
+        width: 100%;
+        height: 1px;
+        background: rgba(152, 112, 71, 0.18);
+        margin-bottom: 20px;
     }
 
-    .gallery-closing-label {
-        margin-bottom: 18px;
-        color: var(--sand);
-        font-size: 11px;
-        font-weight: 800;
-        letter-spacing: 2.5px;
-        text-transform: uppercase;
-    }
-
-    .gallery-closing h2 {
-        margin: 0 0 20px;
-        color: var(--white);
-        font-size: clamp(30px, 3.7vw, 46px);
-        font-weight: 800;
-        line-height: 1.2;
-        letter-spacing: -.8px;
-    }
-
-    .gallery-closing h2 span {
-        color: var(--sand);
-    }
-
-    .gallery-closing p {
+    .gallery-ending-text {
         margin: 0;
-        color: rgba(255, 255, 255, .68);
-        font-size: 15px;
-        line-height: 1.9;
+        color: var(--muted);
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: 17px;
+        font-style: italic;
     }
 
-    /* =========================
+    /* =========================================================
+       MODAL FOTO
+    ========================================================= */
+
+    .gallery-modal .modal-content {
+        overflow: hidden;
+        border: 0;
+        border-radius: 18px;
+        background: var(--cream);
+        box-shadow: 0 25px 70px rgba(0, 0, 0, 0.2);
+    }
+
+    .gallery-modal .modal-header {
+        padding: 18px 22px;
+        border-bottom: 1px solid rgba(8, 120, 115, 0.12);
+        background: var(--cream);
+    }
+
+    .gallery-modal .modal-title {
+        color: var(--toska-dark);
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: 24px;
+        font-weight: 600;
+    }
+
+    .gallery-modal .btn-close {
+        box-shadow: none;
+    }
+
+    .gallery-modal .modal-body {
+        padding: 0;
+    }
+
+    .gallery-modal-image {
+        width: 100%;
+        max-height: 500px;
+        display: block;
+        object-fit: cover;
+    }
+
+    .gallery-modal-description {
+        margin: 0;
+        padding: 20px 24px 25px;
+        color: var(--text);
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    /* =========================================================
        RESPONSIVE
-    ========================= */
+    ========================================================= */
 
     @media (max-width: 991px) {
-        .gallery-header {
-            padding: 65px 0 55px;
-        }
-
-        .gallery-section {
-            padding-bottom: 75px;
-        }
 
         .gallery-grid {
-            gap: 38px 22px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
         }
 
-        .gallery-item.large {
-            grid-column: span 12;
-        }
-
-        .gallery-item.small {
-            grid-column: span 6;
-        }
-
-        .gallery-item.full {
-            grid-column: span 12;
-            grid-template-columns: 1fr;
-            gap: 25px;
-        }
-
-        .gallery-item.large .gallery-image-wrapper {
-            height: 400px;
-        }
-
-        .gallery-item.small .gallery-image-wrapper {
-            height: 310px;
-        }
-
-        .gallery-item.full .gallery-image-wrapper {
-            height: 370px;
-        }
-
-        .gallery-item.full .gallery-caption {
-            padding: 0;
+        .gallery-card {
+            height: 235px;
         }
     }
 
-    @media (max-width: 767px) {
-        .gallery-title {
-            font-size: 43px;
-        }
+    @media (max-width: 575px) {
 
-        .gallery-grid {
-            display: block;
-        }
-
-        .gallery-item {
-            margin-bottom: 48px;
-        }
-
-        .gallery-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .gallery-item.small {
-            display: block;
-        }
-
-        .gallery-item.large .gallery-image-wrapper,
-        .gallery-item.small .gallery-image-wrapper,
-        .gallery-item.full .gallery-image-wrapper {
-            height: 300px;
-        }
-
-        .gallery-caption h2 {
-            font-size: 29px;
-        }
-
-        .gallery-caption h3 {
-            font-size: 23px;
-        }
-
-        .gallery-item.full {
-            display: block;
-        }
-    }
-
-    @media (max-width: 480px) {
         .gallery-header {
-            padding: 48px 0 50px;
+            padding: 55px 18px 30px;
         }
 
         .gallery-title {
             font-size: 38px;
-            letter-spacing: -1px;
         }
 
-        .gallery-intro,
-        .gallery-caption p,
-        .gallery-closing p {
+        .gallery-header-description {
             font-size: 14px;
         }
 
-        .gallery-item.large .gallery-image-wrapper,
-        .gallery-item.small .gallery-image-wrapper,
-        .gallery-item.full .gallery-image-wrapper {
-            height: 260px;
+        .gallery-section {
+            padding: 15px 18px 0;
         }
 
-        .gallery-closing {
-            padding: 70px 20px;
+        .gallery-grid {
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .gallery-card {
+            height: 240px;
+            border-radius: 15px;
+        }
+
+        .gallery-more {
+            margin-top: 35px;
+        }
+
+        .gallery-ending {
+            padding: 0 18px;
+            margin-top: 45px;
+        }
+
+        .gallery-ending-text {
+            font-size: 15px;
         }
     }
 </style>
 
+
 <div class="gallery-page">
 
-    {{-- HEADER --}}
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
     <section class="gallery-header">
-        <div class="container">
-            <div class="gallery-header-inner">
+        <div class="gallery-header-inner">
 
-                <div class="eyebrow">
-                    Galeri Destinasi
-                </div>
+            <span class="gallery-label">
+                VISIT-IN
+            </span>
 
-                <h1 class="gallery-title">
-                    Pesona
-                    <span>Evara Beach</span>
-                </h1>
+            <h1 class="gallery-title">
+                <span>Galeri</span> Evara Beach
+            </h1>
 
-                <p class="gallery-intro">
-                    Lihat lebih dekat suasana, pemandangan, dan berbagai
-                    aktivitas yang dapat dinikmati di Evara Beach melalui
-                    rangkaian foto berikut.
-                </p>
+            <p class="gallery-header-description">
+                Lihat berbagai suasana, aktivitas, dan fasilitas
+                yang ada di Evara Beach.
+            </p>
 
-            </div>
+            <div class="gallery-header-line"></div>
+
         </div>
     </section>
 
-    {{-- GALERI --}}
+
+    <!-- =====================================================
+         GALERI
+    ====================================================== -->
+
     <section class="gallery-section">
-        <div class="container">
 
-            <div class="gallery-grid">
+        <div class="gallery-grid">
 
-                {{-- FOTO 1 --}}
-                <article class="gallery-item large">
+            <!-- =================================================
+                 1. LOKET TIKET
+            ================================================== -->
 
-                    <div class="gallery-image-wrapper">
-                        {{-- Ganti pantai21.png dengan foto spot foto --}}
-                        <img
-                            src="{{ asset('img/pantai21.png') }}"
-                            alt="Spot foto Evara Beach"
-                            class="gallery-image"
-                        >
+            <div class="gallery-item">
+
+                <div class="gallery-card"
+                     data-bs-toggle="modal"
+                     data-bs-target="#galleryModal"
+                     data-image="{{ asset('img/pantai21.png') }}"
+                     data-title="Loket Tiket"
+                     data-description="Area loket tiket sebagai tempat pelayanan bagi pengunjung sebelum memasuki kawasan Evara Beach.">
+
+                    <img src="{{ asset('img/pantai21.png') }}"
+                         alt="Loket Tiket Evara Beach">
+
+                    <div class="gallery-overlay">
+                        <span>LOKET TIKET</span>
                     </div>
 
-                    <div class="gallery-caption">
-                        <div class="gallery-number">
-                            01 / SPOT DESTINASI
-                        </div>
-
-                        <h2>
-                            Spot Foto
-                        </h2>
-
-                        <p>
-                            Area yang dapat digunakan pengunjung untuk
-                            mengabadikan momen dengan latar pemandangan
-                            Evara Beach.
-                        </p>
-
-                        <div class="gallery-caption-line"></div>
-                    </div>
-
-                </article>
-
-                {{-- FOTO 2 --}}
-                <article class="gallery-item small">
-
-                    <div class="gallery-image-wrapper">
-                        {{-- Ganti pantai.jpg dengan foto pemandangan laut --}}
-                        <img
-                            src="{{ asset('img/pantai.jpg') }}"
-                            alt="Pemandangan laut Evara Beach"
-                            class="gallery-image"
-                        >
-                    </div>
-
-                    <div class="gallery-caption">
-                        <div class="gallery-number">
-                            02 / PEMANDANGAN
-                        </div>
-
-                        <h3>
-                            Pemandangan Laut
-                        </h3>
-
-                        <p>
-                            Hamparan laut dan suasana pesisir yang
-                            memberikan kesan tenang serta menyegarkan.
-                        </p>
-
-                        <div class="gallery-caption-line"></div>
-                    </div>
-
-                </article>
-
-                {{-- FOTO 3 --}}
-                <article class="gallery-item small">
-
-                    <div class="gallery-image-wrapper">
-                        {{-- Ganti foto20.png dengan foto aktivitas berenang --}}
-                        <img
-                            src="{{ asset('img/foto20.png') }}"
-                            alt="Aktivitas berenang di Evara Beach"
-                            class="gallery-image"
-                        >
-                    </div>
-
-                    <div class="gallery-caption">
-                        <div class="gallery-number">
-                            03 / AKTIVITAS
-                        </div>
-
-                        <h3>
-                            Berenang
-                        </h3>
-
-                        <p>
-                            Aktivitas menikmati air laut yang dapat
-                            dilakukan sesuai kondisi dan keamanan
-                            kawasan pantai.
-                        </p>
-
-                        <div class="gallery-caption-line"></div>
-                    </div>
-
-                </article>
-
-                {{-- FOTO 4 --}}
-                <article class="gallery-item large">
-
-                    <div class="gallery-image-wrapper">
-                        {{-- Ganti pantai1.jpg dengan foto bersantai atau berjemur --}}
-                        <img
-                            src="{{ asset('img/pantai1.jpg') }}"
-                            alt="Bersantai di tepi pantai"
-                            class="gallery-image"
-                        >
-                    </div>
-
-                    <div class="gallery-caption">
-                        <div class="gallery-number">
-                            04 / WAKTU SANTAI
-                        </div>
-
-                        <h2>
-                            Bersantai di Tepi Pantai
-                        </h2>
-
-                        <p>
-                            Menikmati udara laut, suara ombak, dan waktu
-                            luang dalam suasana pantai yang terbuka.
-                        </p>
-
-                        <div class="gallery-caption-line"></div>
-                    </div>
-
-                </article>
-
-                {{-- FOTO 5 --}}
-                <article class="gallery-item full">
-
-                    <div class="gallery-image-wrapper">
-                        {{-- Ganti nama file dengan foto kebersamaan keluarga atau teman --}}
-                        <img
-                            src="{{ asset('img/pantai.jpg') }}"
-                            alt="Momen kebersamaan di Evara Beach"
-                            class="gallery-image"
-                        >
-                    </div>
-
-                    <div class="gallery-caption">
-                        <div class="gallery-number">
-                            05 / MOMEN BERKESAN
-                        </div>
-
-                        <h2>
-                            Momen Kebersamaan
-                        </h2>
-
-                        <p>
-                            Evara Beach menjadi tempat untuk menghabiskan
-                            waktu bersama keluarga, sahabat, maupun orang
-                            terdekat dalam suasana yang santai.
-                        </p>
-
-                        <div class="gallery-caption-line"></div>
-                    </div>
-
-                </article>
-
-                {{-- FOTO 6 --}}
-                <article class="gallery-item full">
-
-                    <div class="gallery-image-wrapper">
-                        {{-- Ganti nama file dengan foto suasana sore atau matahari terbenam --}}
-                        <img
-                            src="{{ asset('img/pantai21.png') }}"
-                            alt="Suasana sore di Evara Beach"
-                            class="gallery-image"
-                        >
-                    </div>
-
-                    <div class="gallery-caption">
-                        <div class="gallery-number">
-                            06 / SUASANA PANTAI
-                        </div>
-
-                        <h2>
-                            Menikmati Suasana Sore
-                        </h2>
-
-                        <p>
-                            Suasana sore menghadirkan cahaya yang lembut
-                            dan pemandangan yang cocok untuk menikmati
-                            akhir perjalanan.
-                        </p>
-
-                        <div class="gallery-caption-line"></div>
-                    </div>
-
-                </article>
-
-            </div>
-
-        </div>
-    </section>
-
-    {{-- PENUTUP --}}
-    <section class="gallery-closing">
-        <div class="container">
-            <div class="gallery-closing-inner">
-
-                <div class="gallery-closing-label">
-                    Evara Beach
                 </div>
 
-                <h2>
-                    Setiap foto menyimpan
-                    <span>sebuah cerita</span>
-                </h2>
+            </div>
 
-                <p>
-                    Temukan suasana dan momen menarik lainnya
-                    melalui kunjungan langsung ke Evara Beach.
-                </p>
+
+            <!-- =================================================
+                 2. PEMANDANGAN PANTAI
+            ================================================== -->
+
+            <div class="gallery-item">
+
+                <div class="gallery-card"
+                     data-bs-toggle="modal"
+                     data-bs-target="#galleryModal"
+                     data-image="{{ asset('img/pantai1.jpg') }}"
+                     data-title="Pemandangan Pantai"
+                     data-description="Panorama pantai dan laut yang menjadi salah satu daya tarik utama Evara Beach.">
+
+                    <img src="{{ asset('img/pantai1.jpg') }}"
+                         alt="Pemandangan Pantai Evara Beach">
+
+                    <div class="gallery-overlay">
+                        <span>PEMANDANGAN PANTAI</span>
+                    </div>
+
+                </div>
 
             </div>
+
+
+            <!-- =================================================
+                 3. SUNRISE
+            ================================================== -->
+
+            <div class="gallery-item">
+
+                <div class="gallery-card"
+                     data-bs-toggle="modal"
+                     data-bs-target="#galleryModal"
+                     data-image="{{ asset('img/foto20.png') }}"
+                     data-title="Sunrise"
+                     data-description="Suasana pagi saat matahari terbit dan memberikan pemandangan yang indah di kawasan pantai.">
+
+                    <img src="{{ asset('img/foto20.png') }}"
+                         alt="Sunrise Evara Beach">
+
+                    <div class="gallery-overlay">
+                        <span>SUNRISE</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 4. SUNSET
+            ================================================== -->
+
+            <div class="gallery-item">
+
+                <div class="gallery-card"
+                     data-bs-toggle="modal"
+                     data-bs-target="#galleryModal"
+                     data-image="{{ asset('img/pantai.jpg') }}"
+                     data-title="Sunset"
+                     data-description="Keindahan suasana sore dan matahari terbenam yang dapat dinikmati di Evara Beach.">
+
+                    <img src="{{ asset('img/pantai.jpg') }}"
+                         alt="Sunset Evara Beach">
+
+                    <div class="gallery-overlay">
+                        <span>SUNSET</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 5. SPOT FOTO
+            ================================================== -->
+
+            <div class="gallery-item">
+
+                <div class="gallery-card"
+                     data-bs-toggle="modal"
+                     data-bs-target="#galleryModal"
+                     data-image="{{ asset('img/pantai21.png') }}"
+                     data-title="Spot Foto"
+                     data-description="Berbagai sudut menarik yang dapat digunakan pengunjung untuk mengabadikan momen selama berada di Evara Beach.">
+
+                    <img src="{{ asset('img/pantai21.png') }}"
+                         alt="Spot Foto Evara Beach">
+
+                    <div class="gallery-overlay">
+                        <span>SPOT FOTO</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 6. AKTIVITAS PANTAI
+            ================================================== -->
+
+            <div class="gallery-item">
+
+                <div class="gallery-card"
+                     data-bs-toggle="modal"
+                     data-bs-target="#galleryModal"
+                     data-image="{{ asset('img/foto20.png') }}"
+                     data-title="Aktivitas Pantai"
+                     data-description="Berbagai aktivitas yang dapat dilakukan pengunjung untuk menikmati suasana Evara Beach.">
+
+                    <img src="{{ asset('img/foto20.png') }}"
+                         alt="Aktivitas Pantai Evara Beach">
+
+                    <div class="gallery-overlay">
+                        <span>AKTIVITAS PANTAI</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 7. AREA BERSANTAI
+                 EXTRA
+            ================================================== -->
+
+            <div class="gallery-item gallery-item-extra">
+
+                <div class="gallery-card"
+                     data-bs-toggle="modal"
+                     data-bs-target="#galleryModal"
+                     data-image="{{ asset('img/pantai1.jpg') }}"
+                     data-title="Area Bersantai"
+                     data-description="Area yang dapat digunakan pengunjung untuk duduk, beristirahat, dan menikmati suasana pantai.">
+
+                    <img src="{{ asset('img/pantai1.jpg') }}"
+                         alt="Area Bersantai Evara Beach">
+
+                    <div class="gallery-overlay">
+                        <span>AREA BERSANTAI</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 8. AREA BERMAIN
+                 EXTRA
+            ================================================== -->
+
+            <div class="gallery-item gallery-item-extra">
+
+                <div class="gallery-card"
+                     data-bs-toggle="modal"
+                     data-bs-target="#galleryModal"
+                     data-image="{{ asset('img/pantai21.png') }}"
+                     data-title="Area Bermain"
+                     data-description="Area rekreasi yang dapat menjadi bagian dari aktivitas pengunjung selama berada di kawasan Evara Beach.">
+
+                    <img src="{{ asset('img/pantai21.png') }}"
+                         alt="Area Bermain Evara Beach">
+
+                    <div class="gallery-overlay">
+                        <span>AREA BERMAIN</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 9. TEMPAT MAKAN
+                 EXTRA
+            ================================================== -->
+
+            <div class="gallery-item gallery-item-extra">
+
+                <div class="gallery-card"
+                     data-bs-toggle="modal"
+                     data-bs-target="#galleryModal"
+                     data-image="{{ asset('img/pantai.jpg') }}"
+                     data-title="Tempat Makan"
+                     data-description="Area tempat makan yang dapat menjadi pilihan pengunjung untuk menikmati makanan dan minuman saat berada di sekitar pantai.">
+
+                    <img src="{{ asset('img/pantai.jpg') }}"
+                         alt="Tempat Makan Evara Beach">
+
+                    <div class="gallery-overlay">
+                        <span>TEMPAT MAKAN</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 10. PENGINAPAN
+                 EXTRA
+            ================================================== -->
+
+            <div class="gallery-item gallery-item-extra">
+
+                <div class="gallery-card"
+                     data-bs-toggle="modal"
+                     data-bs-target="#galleryModal"
+                     data-image="{{ asset('img/pantai1.jpg') }}"
+                     data-title="Penginapan"
+                     data-description="Pilihan tempat menginap yang dapat mendukung kenyamanan pengunjung selama berada di kawasan wisata.">
+
+                    <img src="{{ asset('img/pantai1.jpg') }}"
+                         alt="Penginapan Evara Beach">
+
+                    <div class="gallery-overlay">
+                        <span>PENGINAPAN</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 11. GAZEBO
+                 EXTRA
+            ================================================== -->
+
+            <div class="gallery-item gallery-item-extra">
+
+                <div class="gallery-card"
+                     data-bs-toggle="modal"
+                     data-bs-target="#galleryModal"
+                     data-image="{{ asset('img/pantai21.png') }}"
+                     data-title="Gazebo"
+                     data-description="Gazebo sebagai tempat berteduh dan bersantai sambil menikmati suasana di kawasan pantai.">
+
+                    <img src="{{ asset('img/pantai21.png') }}"
+                         alt="Gazebo Evara Beach">
+
+                    <div class="gallery-overlay">
+                        <span>GAZEBO</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 12. AREA PARKIR
+                 EXTRA
+            ================================================== -->
+
+            <div class="gallery-item gallery-item-extra">
+
+                <div class="gallery-card"
+                     data-bs-toggle="modal"
+                     data-bs-target="#galleryModal"
+                     data-image="{{ asset('img/foto20.png') }}"
+                     data-title="Area Parkir"
+                     data-description="Area parkir yang digunakan untuk mendukung kebutuhan kendaraan pengunjung Evara Beach.">
+
+                    <img src="{{ asset('img/foto20.png') }}"
+                         alt="Area Parkir Evara Beach">
+
+                    <div class="gallery-overlay">
+                        <span>AREA PARKIR</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 13. FASILITAS
+                 EXTRA
+            ================================================== -->
+
+            <div class="gallery-item gallery-item-extra">
+
+                <div class="gallery-card"
+                     data-bs-toggle="modal"
+                     data-bs-target="#galleryModal"
+                     data-image="{{ asset('img/pantai1.jpg') }}"
+                     data-title="Fasilitas"
+                     data-description="Berbagai fasilitas pendukung yang disediakan untuk memberikan kenyamanan bagi pengunjung selama berada di Evara Beach.">
+
+                    <img src="{{ asset('img/pantai1.jpg') }}"
+                         alt="Fasilitas Evara Beach">
+
+                    <div class="gallery-overlay">
+                        <span>FASILITAS</span>
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
+
+
+        <!-- =====================================================
+             LEARN MORE
+        ====================================================== -->
+
+        <div class="gallery-more">
+
+            <button type="button"
+                    class="gallery-more-btn"
+                    id="galleryMoreBtn">
+
+                <span id="galleryMoreText">
+                    Learn More
+                </span>
+
+                <span class="arrow">
+                    ↓
+                </span>
+
+            </button>
+
+        </div>
+
     </section>
+
+
+    <!-- =====================================================
+         PENUTUP SEBELUM FOOTER
+    ====================================================== -->
+
+    <div class="gallery-ending">
+
+        <div class="gallery-ending-line"></div>
+
+        <p class="gallery-ending-text">
+            Evara Beach — nikmati setiap suasana di tepi pantai.
+        </p>
+
+    </div>
 
 </div>
+
+
+<!-- =========================================================
+     MODAL FOTO
+========================================================= -->
+
+<div class="modal fade gallery-modal"
+     id="galleryModal"
+     tabindex="-1"
+     aria-hidden="true">
+
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h5 class="modal-title"
+                    id="galleryModalTitle">
+                    Galeri Evara Beach
+                </h5>
+
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close">
+                </button>
+
+            </div>
+
+            <div class="modal-body">
+
+                <img id="galleryModalImage"
+                     class="gallery-modal-image"
+                     src=""
+                     alt="">
+
+                <p id="galleryModalDescription"
+                   class="gallery-modal-description">
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+    /* =====================================================
+       LEARN MORE / SHOW LESS
+    ====================================================== */
+
+    const moreButton = document.getElementById('galleryMoreBtn');
+    const moreText = document.getElementById('galleryMoreText');
+    const extraItems = document.querySelectorAll('.gallery-item-extra');
+
+    let expanded = false;
+
+    if (moreButton) {
+
+        moreButton.addEventListener('click', function () {
+
+            expanded = !expanded;
+
+            extraItems.forEach(function (item) {
+                item.classList.toggle('show', expanded);
+            });
+
+            if (expanded) {
+
+                moreText.textContent = 'Show Less';
+                moreButton.classList.add('active');
+
+            } else {
+
+                moreText.textContent = 'Learn More';
+                moreButton.classList.remove('active');
+
+                window.scrollTo({
+                    top: document.querySelector('.gallery-section').offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+
+        });
+
+    }
+
+
+    /* =====================================================
+       MODAL FOTO
+    ====================================================== */
+
+    const galleryCards = document.querySelectorAll('.gallery-card');
+
+    const modalImage = document.getElementById('galleryModalImage');
+    const modalTitle = document.getElementById('galleryModalTitle');
+    const modalDescription = document.getElementById('galleryModalDescription');
+
+    galleryCards.forEach(function (card) {
+
+        card.addEventListener('click', function () {
+
+            const image = card.getAttribute('data-image');
+            const title = card.getAttribute('data-title');
+            const description = card.getAttribute('data-description');
+
+            modalImage.src = image;
+            modalImage.alt = title;
+
+            modalTitle.textContent = title;
+            modalDescription.textContent = description;
+
+        });
+
+    });
+
+});
+</script>
 
 @endsection
