@@ -1,40 +1,556 @@
+{{-- =========================================================
+     FOOTER PUBLIC VISIT-IN
+========================================================= --}}
+
+<style>
+
+    /* =====================================================
+       FOOTER UTAMA
+    ===================================================== */
+
+    .visitor-footer {
+        background: #087873;
+        color: #ffffff;
+        margin: 0;
+    }
+
+
+    /* =====================================================
+       AREA UTAMA
+    ===================================================== */
+
+    .visitor-footer-main {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 40px 30px 34px;
+    }
+
+    .visitor-footer-grid {
+        display: grid;
+
+        grid-template-columns:
+            1.35fr
+            1fr
+            1fr
+            1fr;
+
+        gap: 38px;
+
+        align-items: start;
+    }
+
+
+    /* =====================================================
+       BRAND
+    ===================================================== */
+
+    .footer-brand {
+        padding-right: 10px;
+        text-align: center;
+    }
+
+    .footer-brand-name {
+        margin: 0;
+
+        font-family: 'Playfair Display', serif;
+
+        font-size: 30px;
+        font-weight: 700;
+
+        letter-spacing: .5px;
+        line-height: 1.1;
+
+        color: #ffffff;
+    }
+
+    .footer-brand-subtitle {
+        display: block;
+
+        margin-top: 6px;
+
+        font-size: 9px;
+        font-weight: 700;
+
+        letter-spacing: 2px;
+
+        color: #e2b56e;
+    }
+
+    .footer-brand-description {
+        max-width: 315px;
+
+        margin: 12px auto 0;
+
+        color: rgba(255,255,255,.80);
+
+        font-size: 12.5px;
+
+        line-height: 1.65;
+    }
+
+
+    /* =====================================================
+       JUDUL KOLOM
+    ===================================================== */
+
+    .footer-column-title {
+        margin: 0 0 17px;
+
+        font-size: 14px;
+        font-weight: 700;
+
+        color: #ffffff;
+
+        text-align: center;
+    }
+
+
+    /* =====================================================
+       INFORMASI
+    ===================================================== */
+
+    .footer-links {
+        list-style: none;
+
+        padding: 0;
+        margin: 0;
+
+        text-align: center;
+    }
+
+    .footer-links li {
+        margin-bottom: 8px;
+    }
+
+    .footer-links li:last-child {
+        margin-bottom: 0;
+    }
+
+    .footer-links a {
+        display: inline-block;
+
+        color: rgba(255,255,255,.78);
+
+        text-decoration: none;
+
+        font-size: 12.5px;
+
+        transition: .25s ease;
+    }
+
+    .footer-links a:hover {
+        color: #ffffff;
+
+        transform: translateY(-1px);
+    }
+
+
+    /* =====================================================
+       KONTAK
+    ===================================================== */
+
+    .footer-contact {
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 11px;
+    }
+
+    .footer-contact-item {
+        width: 190px;
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 9px;
+
+        text-align: left;
+    }
+
+    .footer-contact-icon {
+        width: 30px;
+        height: 30px;
+
+        min-width: 30px;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 50%;
+
+        background: rgba(255,255,255,.08);
+
+        border: 1px solid rgba(255,255,255,.25);
+
+        font-size: 13px;
+    }
+
+
+    /* WhatsApp */
+
+    .footer-contact-icon.whatsapp {
+        color: #25D366;
+    }
+
+
+    /* Email & lokasi */
+
+    .footer-contact-icon.email,
+    .footer-contact-icon.location {
+        color: #e2b56e;
+    }
+
+
+    .footer-contact-text {
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 1px;
+
+        min-width: 0;
+    }
+
+    .footer-contact-label {
+        font-size: 8px;
+
+        font-weight: 700;
+
+        letter-spacing: 1px;
+
+        text-transform: uppercase;
+
+        color: #e2b56e;
+    }
+
+    .footer-contact-value {
+        color: rgba(255,255,255,.85);
+
+        font-size: 11.5px;
+
+        line-height: 1.45;
+
+        text-decoration: none;
+
+        white-space: nowrap;
+    }
+
+    a.footer-contact-value:hover {
+        color: #ffffff;
+    }
+
+
+    /* =====================================================
+       IKUTI KAMI
+    ===================================================== */
+
+    .footer-social {
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 9px;
+    }
+
+    .footer-social-link {
+        width: 160px;
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 10px;
+
+        color: #ffffff;
+
+        text-decoration: none;
+
+        transition: .25s ease;
+    }
+
+    .footer-social-link:hover {
+        color: #ffffff;
+
+        transform: translateX(3px);
+    }
+
+    .footer-social-icon {
+        width: 32px;
+        height: 32px;
+
+        min-width: 32px;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 50%;
+
+        background: rgba(255,255,255,.08);
+
+        border: 1px solid rgba(255,255,255,.25);
+
+        font-size: 14px;
+
+        transition: .25s ease;
+    }
+
+
+    /* =====================================================
+       WARNA IKON SOSIAL
+    ===================================================== */
+
+    /* Instagram */
+
+    .footer-social-link.instagram .footer-social-icon {
+        color: #E4405F;
+    }
+
+    .footer-social-link.instagram:hover .footer-social-icon {
+        background: linear-gradient(
+            135deg,
+            #F58529,
+            #DD2A7B,
+            #8134AF
+        );
+
+        border-color: transparent;
+
+        color: #ffffff;
+    }
+
+
+    /* TikTok */
+
+    .footer-social-link.tiktok .footer-social-icon {
+        color: #ffffff;
+    }
+
+    .footer-social-link.tiktok:hover .footer-social-icon {
+        background: #111111;
+
+        border-color: #25F4EE;
+
+        color: #25F4EE;
+    }
+
+
+    /* Facebook */
+
+    .footer-social-link.facebook .footer-social-icon {
+        color: #1877F2;
+    }
+
+    .footer-social-link.facebook:hover .footer-social-icon {
+        background: #1877F2;
+
+        border-color: #1877F2;
+
+        color: #ffffff;
+    }
+
+
+    /* YouTube */
+
+    .footer-social-link.youtube .footer-social-icon {
+        color: #FF0000;
+    }
+
+    .footer-social-link.youtube:hover .footer-social-icon {
+        background: #FF0000;
+
+        border-color: #FF0000;
+
+        color: #ffffff;
+    }
+
+
+    .footer-social-info {
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 0;
+    }
+
+    .footer-social-name {
+        font-size: 11.5px;
+
+        font-weight: 700;
+
+        line-height: 1.3;
+
+        color: #ffffff;
+    }
+
+    .footer-social-account {
+        font-size: 10px;
+
+        line-height: 1.3;
+
+        color: rgba(255,255,255,.62);
+    }
+
+
+    /* =====================================================
+       BAGIAN BAWAH
+    ===================================================== */
+
+    .visitor-footer-bottom {
+        background: #076b67;
+
+        border-top: 1px solid rgba(255,255,255,.13);
+    }
+
+    .visitor-footer-bottom-inner {
+        max-width: 1180px;
+
+        margin: 0 auto;
+
+        padding: 13px 30px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        text-align: center;
+    }
+
+    .footer-copyright {
+        margin: 0;
+
+        color: rgba(255,255,255,.78);
+
+        font-size: 10.5px;
+
+        font-weight: 500;
+    }
+
+
+    /* =====================================================
+       TABLET
+    ===================================================== */
+
+    @media (max-width: 991px) {
+
+        .visitor-footer-main {
+            padding: 38px 25px 30px;
+        }
+
+        .visitor-footer-grid {
+            grid-template-columns: 1fr 1fr;
+
+            gap: 32px 30px;
+        }
+
+        .footer-brand {
+            padding-right: 0;
+        }
+
+    }
+
+
+    /* =====================================================
+       MOBILE
+    ===================================================== */
+
+    @media (max-width: 575px) {
+
+        .visitor-footer-main {
+            padding: 34px 22px 28px;
+        }
+
+        .visitor-footer-grid {
+            grid-template-columns: 1fr;
+
+            gap: 28px;
+        }
+
+        .footer-brand-description {
+            max-width: 100%;
+        }
+
+        .footer-contact-item,
+        .footer-social-link {
+            width: 190px;
+        }
+
+        .visitor-footer-bottom-inner {
+            padding: 12px 20px;
+        }
+
+    }
+
+</style>
+
+
+{{-- =========================================================
+     BOOTSTRAP ICONS
+========================================================= --}}
+
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+>
+
+
 <footer class="visitor-footer">
 
-    <div class="container">
 
-        <div class="row gy-5">
+    {{-- =====================================================
+         AREA UTAMA FOOTER
+    ====================================================== --}}
 
-            {{-- BRAND --}}
-            <div class="col-lg-4 col-md-6">
+    <div class="visitor-footer-main">
 
-                <a href="{{ route('beranda') }}" class="footer-brand">
-                    <span class="footer-brand-name">VISIT-IN</span>
-                    <span class="footer-brand-subtitle">
-                        EVARA BEACH
-                    </span>
-                </a>
+        <div class="visitor-footer-grid">
 
-                <p class="footer-description">
-                    Platform pendataan pengunjung untuk mendukung
-                    pengalaman wisata yang lebih tertata di Evara Beach.
+
+            {{-- =================================================
+                 BRAND
+            ================================================== --}}
+
+            <div class="footer-brand">
+
+                <h3 class="footer-brand-name">
+                    VISIT-IN
+                </h3>
+
+                <span class="footer-brand-subtitle">
+                    EVARA BEACH
+                </span>
+
+                <p class="footer-brand-description">
+                    Platform pendataan pengunjung wisata untuk
+                    mendukung pengelolaan data pengunjung serta
+                    informasi mengenai Evara Beach.
                 </p>
-
-                <a href="{{ route('pengunjung.create') }}"
-                   class="footer-visit-btn">
-                    ISI DATA KUNJUNGAN
-                </a>
 
             </div>
 
 
-            {{-- NAVIGASI --}}
-            <div class="col-lg-2 col-md-6">
+            {{-- =================================================
+                 INFORMASI
+            ================================================== --}}
 
-                <h5 class="footer-title">
-                    Navigasi
-                </h5>
+            <div>
 
-                <ul class="footer-menu">
+                <h4 class="footer-column-title">
+                    Informasi
+                </h4>
+
+                <ul class="footer-links">
 
                     <li>
                         <a href="{{ route('beranda') }}">
@@ -65,466 +581,241 @@
             </div>
 
 
-            {{-- INFORMASI --}}
-            <div class="col-lg-3 col-md-6">
+            {{-- =================================================
+                 KONTAK
+            ================================================== --}}
 
-                <h5 class="footer-title">
-                    Evara Beach
-                </h5>
+            <div>
 
-                <div class="footer-info">
-
-                    <div class="footer-info-item">
-                        <span class="footer-info-label">
-                            Lokasi
-                        </span>
-
-                        <span>
-                            Evara Beach
-                        </span>
-                    </div>
-
-                    <div class="footer-info-item">
-                        <span class="footer-info-label">
-                            Jam Operasional
-                        </span>
-
-                        <span>
-                            Setiap Hari
-                            <br>
-                            08.00 – 18.00 WIB
-                        </span>
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            {{-- KONTAK --}}
-            <div class="col-lg-3 col-md-6">
-
-                <h5 class="footer-title">
-                    Hubungi Kami
-                </h5>
+                <h4 class="footer-column-title">
+                    Kontak
+                </h4>
 
                 <div class="footer-contact">
 
-                    <a href="#" class="footer-contact-item">
 
-                        <span class="contact-icon">
-                            WA
-                        </span>
+                    {{-- WhatsApp --}}
 
-                        <span>
-                            <small>WhatsApp</small>
-                            Hubungi kami
-                        </span>
+                    <div class="footer-contact-item">
 
-                    </a>
+                        <div class="footer-contact-icon whatsapp">
+                            <i class="bi bi-whatsapp"></i>
+                        </div>
+
+                        <div class="footer-contact-text">
+
+                            <span class="footer-contact-label">
+                                WhatsApp
+                            </span>
+
+                            <a
+                                href="https://wa.me/6281234567890"
+                                target="_blank"
+                                class="footer-contact-value"
+                            >
+                                0812 3456 7890
+                            </a>
+
+                        </div>
+
+                    </div>
 
 
-                    <a href="mailto:info@evarabeach.com"
-                       class="footer-contact-item">
+                    {{-- Email --}}
 
-                        <span class="contact-icon">
-                            @
-                        </span>
+                    <div class="footer-contact-item">
 
-                        <span>
-                            <small>Email</small>
-                            info@evarabeach.com
-                        </span>
+                        <div class="footer-contact-icon email">
+                            <i class="bi bi-envelope"></i>
+                        </div>
 
-                    </a>
+                        <div class="footer-contact-text">
+
+                            <span class="footer-contact-label">
+                                Email
+                            </span>
+
+                            <a
+                                href="mailto:info@evarabeach.com"
+                                class="footer-contact-value"
+                            >
+                                info@evarabeach.com
+                            </a>
+
+                        </div>
+
+                    </div>
 
 
-                    <a href="#" class="footer-contact-item">
+                    {{-- Lokasi --}}
 
-                        <span class="contact-icon">
-                            IG
-                        </span>
+                    <div class="footer-contact-item">
 
-                        <span>
-                            <small>Instagram</small>
-                            Evara Beach
-                        </span>
+                        <div class="footer-contact-icon location">
+                            <i class="bi bi-geo-alt"></i>
+                        </div>
 
-                    </a>
+                        <div class="footer-contact-text">
+
+                            <span class="footer-contact-label">
+                                Lokasi
+                            </span>
+
+                            <span class="footer-contact-value">
+                                Evara Beach · Indonesia
+                            </span>
+
+                        </div>
+
+                    </div>
 
                 </div>
 
             </div>
 
+
+            {{-- =================================================
+                 IKUTI KAMI
+            ================================================== --}}
+
+            <div>
+
+                <h4 class="footer-column-title">
+                    Ikuti Kami
+                </h4>
+
+                <div class="footer-social">
+
+
+                    {{-- Instagram --}}
+
+                    <a
+                        href="#"
+                        class="footer-social-link instagram"
+                    >
+
+                        <span class="footer-social-icon">
+                            <i class="bi bi-instagram"></i>
+                        </span>
+
+                        <span class="footer-social-info">
+
+                            <span class="footer-social-name">
+                                Instagram
+                            </span>
+
+                            <span class="footer-social-account">
+                                @evarabeach
+                            </span>
+
+                        </span>
+
+                    </a>
+
+
+                    {{-- TikTok --}}
+
+                    <a
+                        href="#"
+                        class="footer-social-link tiktok"
+                    >
+
+                        <span class="footer-social-icon">
+                            <i class="bi bi-tiktok"></i>
+                        </span>
+
+                        <span class="footer-social-info">
+
+                            <span class="footer-social-name">
+                                TikTok
+                            </span>
+
+                            <span class="footer-social-account">
+                                @evarabeach
+                            </span>
+
+                        </span>
+
+                    </a>
+
+
+                    {{-- Facebook --}}
+
+                    <a
+                        href="#"
+                        class="footer-social-link facebook"
+                    >
+
+                        <span class="footer-social-icon">
+                            <i class="bi bi-facebook"></i>
+                        </span>
+
+                        <span class="footer-social-info">
+
+                            <span class="footer-social-name">
+                                Facebook
+                            </span>
+
+                            <span class="footer-social-account">
+                                Evara Beach
+                            </span>
+
+                        </span>
+
+                    </a>
+
+
+                    {{-- YouTube --}}
+
+                    <a
+                        href="#"
+                        class="footer-social-link youtube"
+                    >
+
+                        <span class="footer-social-icon">
+                            <i class="bi bi-youtube"></i>
+                        </span>
+
+                        <span class="footer-social-info">
+
+                            <span class="footer-social-name">
+                                YouTube
+                            </span>
+
+                            <span class="footer-social-account">
+                                Evara Beach
+                            </span>
+
+                        </span>
+
+                    </a>
+
+
+                </div>
+
+            </div>
+
+
         </div>
 
-
-        {{-- GARIS --}}
-        <div class="footer-divider"></div>
+    </div>
 
 
-        {{-- BOTTOM --}}
-        <div class="footer-bottom">
+    {{-- =====================================================
+         COPYRIGHT
+    ===================================================== --}}
 
-            <p>
+    <div class="visitor-footer-bottom">
+
+        <div class="visitor-footer-bottom-inner">
+
+            <p class="footer-copyright">
                 © {{ date('Y') }} VISIT-IN · Evara Beach
-            </p>
-
-            <p>
-                Pendataan Pengunjung Wisata
             </p>
 
         </div>
 
     </div>
 
+
 </footer>
-
-
-<style>
-
-    /* ==================================================
-       FOOTER PUBLIK VISIT-IN
-    ================================================== */
-
-    .visitor-footer {
-        background:
-            linear-gradient(
-                135deg,
-                #075f5b 0%,
-                #087872 50%,
-                #0b6864 100%
-            );
-
-        color: #ffffff;
-
-        padding: 60px 0 24px;
-
-        margin-top: 0;
-    }
-
-
-    /* ==================================================
-       BRAND
-    ================================================== */
-
-    .footer-brand {
-        display: inline-flex;
-        flex-direction: column;
-
-        text-decoration: none;
-
-        margin-bottom: 18px;
-    }
-
-
-    .footer-brand-name {
-        font-family: 'Playfair Display', serif;
-
-        font-size: 30px;
-
-        font-weight: 700;
-
-        letter-spacing: 1px;
-
-        color: #f8e7c5;
-
-        line-height: 1;
-    }
-
-
-    .footer-brand-subtitle {
-        margin-top: 7px;
-
-        font-size: 9px;
-
-        font-weight: 700;
-
-        letter-spacing: 3px;
-
-        color: rgba(255,255,255,.72);
-    }
-
-
-    .footer-description {
-        max-width: 340px;
-
-        margin: 0 0 22px;
-
-        font-size: 14px;
-
-        line-height: 1.8;
-
-        color: rgba(255,255,255,.76);
-    }
-
-
-    /* ==================================================
-       BUTTON
-    ================================================== */
-
-    .footer-visit-btn {
-        display: inline-flex;
-
-        align-items: center;
-
-        justify-content: center;
-
-        padding: 11px 19px;
-
-        border-radius: 30px;
-
-        background: #e0ad68;
-
-        color: #ffffff;
-
-        text-decoration: none;
-
-        font-size: 11px;
-
-        font-weight: 700;
-
-        letter-spacing: .5px;
-
-        transition: .25s ease;
-    }
-
-
-    .footer-visit-btn:hover {
-        background: #f0c27d;
-
-        color: #ffffff;
-
-        transform: translateY(-2px);
-    }
-
-
-    /* ==================================================
-       TITLE
-    ================================================== */
-
-    .footer-title {
-        margin: 0 0 20px;
-
-        font-size: 16px;
-
-        font-weight: 700;
-
-        color: #f8e7c5;
-    }
-
-
-    /* ==================================================
-       NAVIGATION
-    ================================================== */
-
-    .footer-menu {
-        list-style: none;
-
-        padding: 0;
-
-        margin: 0;
-    }
-
-
-    .footer-menu li {
-        margin-bottom: 12px;
-    }
-
-
-    .footer-menu a {
-        color: rgba(255,255,255,.74);
-
-        text-decoration: none;
-
-        font-size: 13px;
-
-        transition: .25s ease;
-    }
-
-
-    .footer-menu a:hover {
-        color: #f8e7c5;
-
-        padding-left: 4px;
-    }
-
-
-    /* ==================================================
-       INFORMATION
-    ================================================== */
-
-    .footer-info {
-        display: flex;
-
-        flex-direction: column;
-
-        gap: 19px;
-    }
-
-
-    .footer-info-item {
-        display: flex;
-
-        flex-direction: column;
-
-        gap: 4px;
-
-        font-size: 13px;
-
-        line-height: 1.6;
-
-        color: rgba(255,255,255,.76);
-    }
-
-
-    .footer-info-label {
-        font-size: 11px;
-
-        font-weight: 700;
-
-        text-transform: uppercase;
-
-        letter-spacing: 1px;
-
-        color: rgba(255,255,255,.5);
-    }
-
-
-    /* ==================================================
-       CONTACT
-    ================================================== */
-
-    .footer-contact {
-        display: flex;
-
-        flex-direction: column;
-
-        gap: 13px;
-    }
-
-
-    .footer-contact-item {
-        display: flex;
-
-        align-items: center;
-
-        gap: 11px;
-
-        text-decoration: none;
-
-        color: rgba(255,255,255,.78);
-
-        font-size: 13px;
-
-        transition: .25s ease;
-    }
-
-
-    .footer-contact-item:hover {
-        color: #f8e7c5;
-    }
-
-
-    .footer-contact-item small {
-        display: block;
-
-        margin-bottom: 2px;
-
-        font-size: 10px;
-
-        color: rgba(255,255,255,.48);
-
-        letter-spacing: .4px;
-    }
-
-
-    .contact-icon {
-        width: 32px;
-
-        height: 32px;
-
-        display: flex;
-
-        align-items: center;
-
-        justify-content: center;
-
-        flex-shrink: 0;
-
-        border-radius: 50%;
-
-        background: rgba(255,255,255,.1);
-
-        border: 1px solid rgba(255,255,255,.13);
-
-        color: #f8e7c5;
-
-        font-size: 9px;
-
-        font-weight: 700;
-    }
-
-
-    /* ==================================================
-       DIVIDER
-    ================================================== */
-
-    .footer-divider {
-        height: 1px;
-
-        margin: 45px 0 20px;
-
-        background: rgba(255,255,255,.15);
-    }
-
-
-    /* ==================================================
-       BOTTOM
-    ================================================== */
-
-    .footer-bottom {
-        display: flex;
-
-        align-items: center;
-
-        justify-content: space-between;
-
-        gap: 20px;
-    }
-
-
-    .footer-bottom p {
-        margin: 0;
-
-        font-size: 11px;
-
-        color: rgba(255,255,255,.52);
-    }
-
-
-    /* ==================================================
-       RESPONSIVE
-    ================================================== */
-
-    @media (max-width: 767px) {
-
-        .visitor-footer {
-            padding: 48px 0 22px;
-        }
-
-        .footer-description {
-            max-width: 100%;
-        }
-
-        .footer-bottom {
-            flex-direction: column;
-
-            align-items: flex-start;
-
-            gap: 6px;
-        }
-
-    }
-
-</style>
