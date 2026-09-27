@@ -5,18 +5,23 @@
 @section('content')
 
 <style>
+
     :root {
         --toska: #087873;
         --toska-dark: #075b58;
         --toska-soft: #dcefed;
+
         --cream: #fbf8f1;
         --cream-soft: #f4eadb;
+
         --sand: #d4aa6b;
         --brown: #987047;
+
         --text: #405954;
         --muted: #78847f;
         --white: #ffffff;
     }
+
 
     /* =========================================================
        HALAMAN GALERI
@@ -28,6 +33,7 @@
         padding-bottom: 55px;
     }
 
+
     /* =========================================================
        HEADER GALERI
     ========================================================= */
@@ -35,6 +41,7 @@
     .gallery-header {
         padding: 70px 20px 35px;
         text-align: center;
+
         background:
             linear-gradient(
                 180deg,
@@ -51,19 +58,26 @@
     .gallery-label {
         display: inline-block;
         margin-bottom: 12px;
+
         color: var(--toska);
+
         font-size: 12px;
         font-weight: 700;
+
         letter-spacing: 3px;
         text-transform: uppercase;
     }
 
     .gallery-title {
         margin: 0;
+
         color: var(--brown);
+
         font-family: "Playfair Display", Georgia, serif;
+
         font-size: clamp(38px, 5vw, 58px);
         font-weight: 600;
+
         line-height: 1.1;
     }
 
@@ -73,8 +87,11 @@
 
     .gallery-header-description {
         max-width: 620px;
+
         margin: 18px auto 0;
+
         color: var(--muted);
+
         font-size: 15px;
         line-height: 1.8;
     }
@@ -82,10 +99,14 @@
     .gallery-header-line {
         width: 65px;
         height: 3px;
+
         margin: 25px auto 0;
+
         border-radius: 50px;
+
         background: var(--sand);
     }
+
 
     /* =========================================================
        GALERI GRID
@@ -93,13 +114,17 @@
 
     .gallery-section {
         max-width: 1180px;
+
         margin: 0 auto;
+
         padding: 20px 25px 0;
     }
 
     .gallery-grid {
         display: grid;
+
         grid-template-columns: repeat(3, 1fr);
+
         gap: 28px;
     }
 
@@ -107,17 +132,24 @@
         min-width: 0;
     }
 
+
     /* =========================================================
        CARD FOTO
     ========================================================= */
 
     .gallery-card {
         position: relative;
+
         height: 255px;
+
         overflow: hidden;
+
         border-radius: 18px;
+
         background: #e8dfd1;
+
         cursor: pointer;
+
         box-shadow:
             0 8px 25px rgba(52, 76, 72, 0.08);
     }
@@ -125,12 +157,16 @@
     .gallery-card img {
         width: 100%;
         height: 100%;
+
         display: block;
+
         object-fit: cover;
+
         transition:
             transform 0.5s ease,
             filter 0.5s ease;
     }
+
 
     /* =========================================================
        HOVER OVERLAY
@@ -138,35 +174,46 @@
 
     .gallery-overlay {
         position: absolute;
+
         inset: 0;
+
         display: flex;
+
         align-items: center;
         justify-content: center;
 
         background: rgba(8, 120, 115, 0.76);
 
         opacity: 0;
+
         transition: opacity 0.35s ease;
     }
 
     .gallery-overlay span {
         color: var(--white);
+
         font-size: 16px;
         font-weight: 700;
+
         letter-spacing: 2px;
+
         text-align: center;
         text-transform: uppercase;
 
         padding: 12px 22px;
+
         border: 1px solid rgba(255, 255, 255, 0.65);
+
         border-radius: 50px;
 
         transform: translateY(12px);
+
         transition: transform 0.35s ease;
     }
 
     .gallery-card:hover img {
         transform: scale(1.05);
+
         filter: brightness(0.88);
     }
 
@@ -178,6 +225,7 @@
         transform: translateY(0);
     }
 
+
     /* =========================================================
        ITEM TAMBAHAN
     ========================================================= */
@@ -188,10 +236,12 @@
 
     .gallery-item-extra.show {
         display: block;
+
         animation: galleryFadeIn 0.45s ease both;
     }
 
     @keyframes galleryFadeIn {
+
         from {
             opacity: 0;
             transform: translateY(15px);
@@ -201,7 +251,9 @@
             opacity: 1;
             transform: translateY(0);
         }
+
     }
+
 
     /* =========================================================
        LEARN MORE
@@ -209,31 +261,41 @@
 
     .gallery-more {
         display: flex;
+
         justify-content: center;
+
         margin-top: 45px;
     }
 
     .gallery-more-btn {
         display: inline-flex;
+
         align-items: center;
         justify-content: center;
+
         gap: 12px;
 
         min-width: 175px;
+
         padding: 13px 24px;
 
         border: 1px solid var(--toska);
+
         border-radius: 50px;
 
         background: transparent;
+
         color: var(--toska);
 
         font-size: 13px;
         font-weight: 700;
+
         letter-spacing: 1px;
+
         text-transform: uppercase;
 
         cursor: pointer;
+
         transition:
             background 0.3s ease,
             color 0.3s ease,
@@ -243,13 +305,18 @@
 
     .gallery-more-btn:hover {
         background: var(--toska);
+
         color: var(--white);
+
         transform: translateY(-2px);
-        box-shadow: 0 8px 20px rgba(8, 120, 115, 0.18);
+
+        box-shadow:
+            0 8px 20px rgba(8, 120, 115, 0.18);
     }
 
     .gallery-more-btn .arrow {
         font-size: 16px;
+
         transition: transform 0.3s ease;
     }
 
@@ -257,31 +324,42 @@
         transform: rotate(180deg);
     }
 
+
     /* =========================================================
        PENUTUP KECIL SEBELUM FOOTER
-       ========================================================= */
+    ========================================================= */
 
     .gallery-ending {
         max-width: 1180px;
+
         margin: 55px auto 0;
+
         padding: 0 25px;
+
         text-align: center;
     }
 
     .gallery-ending-line {
         width: 100%;
         height: 1px;
+
         background: rgba(152, 112, 71, 0.18);
+
         margin-bottom: 20px;
     }
 
     .gallery-ending-text {
         margin: 0;
+
         color: var(--muted);
+
         font-family: "Playfair Display", Georgia, serif;
+
         font-size: 17px;
+
         font-style: italic;
     }
+
 
     /* =========================================================
        MODAL FOTO
@@ -289,21 +367,31 @@
 
     .gallery-modal .modal-content {
         overflow: hidden;
+
         border: 0;
+
         border-radius: 18px;
+
         background: var(--cream);
-        box-shadow: 0 25px 70px rgba(0, 0, 0, 0.2);
+
+        box-shadow:
+            0 25px 70px rgba(0, 0, 0, 0.2);
     }
 
     .gallery-modal .modal-header {
         padding: 18px 22px;
-        border-bottom: 1px solid rgba(8, 120, 115, 0.12);
+
+        border-bottom:
+            1px solid rgba(8, 120, 115, 0.12);
+
         background: var(--cream);
     }
 
     .gallery-modal .modal-title {
         color: var(--toska-dark);
+
         font-family: "Playfair Display", Georgia, serif;
+
         font-size: 24px;
         font-weight: 600;
     }
@@ -318,18 +406,26 @@
 
     .gallery-modal-image {
         width: 100%;
+
         max-height: 500px;
+
         display: block;
+
         object-fit: cover;
     }
 
     .gallery-modal-description {
         margin: 0;
+
         padding: 20px 24px 25px;
+
         color: var(--text);
+
         font-size: 14px;
+
         line-height: 1.8;
     }
+
 
     /* =========================================================
        RESPONSIVE
@@ -339,13 +435,16 @@
 
         .gallery-grid {
             grid-template-columns: repeat(2, 1fr);
+
             gap: 22px;
         }
 
         .gallery-card {
             height: 235px;
         }
+
     }
+
 
     @media (max-width: 575px) {
 
@@ -367,11 +466,13 @@
 
         .gallery-grid {
             grid-template-columns: 1fr;
+
             gap: 20px;
         }
 
         .gallery-card {
             height: 240px;
+
             border-radius: 15px;
         }
 
@@ -381,28 +482,29 @@
 
         .gallery-ending {
             padding: 0 18px;
+
             margin-top: 45px;
         }
 
         .gallery-ending-text {
             font-size: 15px;
         }
+
     }
+
 </style>
 
 
 <div class="gallery-page">
+
 
     <!-- =====================================================
          HEADER
     ====================================================== -->
 
     <section class="gallery-header">
-        <div class="gallery-header-inner">
 
-            <span class="gallery-label">
-                VISIT-IN
-            </span>
+        <div class="gallery-header-inner">
 
             <h1 class="gallery-title">
                 <span>Galeri</span> Evara Beach
@@ -416,7 +518,9 @@
             <div class="gallery-header-line"></div>
 
         </div>
+
     </section>
+
 
 
     <!-- =====================================================
@@ -427,8 +531,9 @@
 
         <div class="gallery-grid">
 
+
             <!-- =================================================
-                 1. LOKET TIKET
+                 1. HAMPAARAN PASIR
             ================================================== -->
 
             <div class="gallery-item">
@@ -437,19 +542,22 @@
                      data-bs-toggle="modal"
                      data-bs-target="#galleryModal"
                      data-image="{{ asset('img/pantai21.png') }}"
-                     data-title="Loket Tiket"
-                     data-description="Area loket tiket sebagai tempat pelayanan bagi pengunjung sebelum memasuki kawasan Evara Beach.">
+                     data-title="Hamparan Pasir"
+                     data-description="Hamparan pasir yang menjadi bagian dari kawasan pesisir Evara Beach dan memberikan karakter alami pada area pantai.">
 
-                    <img src="{{ asset('img/pantai21.png') }}"
-                         alt="Loket Tiket Evara Beach">
+                    <img
+                        src="{{ asset('img/pantai21.png') }}"
+                        alt="Hamparan Pasir Evara Beach"
+                    >
 
                     <div class="gallery-overlay">
-                        <span>LOKET TIKET</span>
+                        <span>HAMPAARAN PASIR</span>
                     </div>
 
                 </div>
 
             </div>
+
 
 
             <!-- =================================================
@@ -465,8 +573,10 @@
                      data-title="Pemandangan Pantai"
                      data-description="Panorama pantai dan laut yang menjadi salah satu daya tarik utama Evara Beach.">
 
-                    <img src="{{ asset('img/pantai1.jpg') }}"
-                         alt="Pemandangan Pantai Evara Beach">
+                    <img
+                        src="{{ asset('img/pantai1.jpg') }}"
+                        alt="Pemandangan Pantai Evara Beach"
+                    >
 
                     <div class="gallery-overlay">
                         <span>PEMANDANGAN PANTAI</span>
@@ -475,6 +585,7 @@
                 </div>
 
             </div>
+
 
 
             <!-- =================================================
@@ -490,8 +601,10 @@
                      data-title="Sunrise"
                      data-description="Suasana pagi saat matahari terbit dan memberikan pemandangan yang indah di kawasan pantai.">
 
-                    <img src="{{ asset('img/foto20.png') }}"
-                         alt="Sunrise Evara Beach">
+                    <img
+                        src="{{ asset('img/foto20.png') }}"
+                        alt="Sunrise Evara Beach"
+                    >
 
                     <div class="gallery-overlay">
                         <span>SUNRISE</span>
@@ -500,6 +613,7 @@
                 </div>
 
             </div>
+
 
 
             <!-- =================================================
@@ -515,8 +629,10 @@
                      data-title="Sunset"
                      data-description="Keindahan suasana sore dan matahari terbenam yang dapat dinikmati di Evara Beach.">
 
-                    <img src="{{ asset('img/pantai.jpg') }}"
-                         alt="Sunset Evara Beach">
+                    <img
+                        src="{{ asset('img/pantai.jpg') }}"
+                        alt="Sunset Evara Beach"
+                    >
 
                     <div class="gallery-overlay">
                         <span>SUNSET</span>
@@ -525,6 +641,7 @@
                 </div>
 
             </div>
+
 
 
             <!-- =================================================
@@ -540,8 +657,10 @@
                      data-title="Spot Foto"
                      data-description="Berbagai sudut menarik yang dapat digunakan pengunjung untuk mengabadikan momen selama berada di Evara Beach.">
 
-                    <img src="{{ asset('img/pantai21.png') }}"
-                         alt="Spot Foto Evara Beach">
+                    <img
+                        src="{{ asset('img/pantai21.png') }}"
+                        alt="Spot Foto Evara Beach"
+                    >
 
                     <div class="gallery-overlay">
                         <span>SPOT FOTO</span>
@@ -550,6 +669,7 @@
                 </div>
 
             </div>
+
 
 
             <!-- =================================================
@@ -565,8 +685,10 @@
                      data-title="Aktivitas Pantai"
                      data-description="Berbagai aktivitas yang dapat dilakukan pengunjung untuk menikmati suasana Evara Beach.">
 
-                    <img src="{{ asset('img/foto20.png') }}"
-                         alt="Aktivitas Pantai Evara Beach">
+                    <img
+                        src="{{ asset('img/foto20.png') }}"
+                        alt="Aktivitas Pantai Evara Beach"
+                    >
 
                     <div class="gallery-overlay">
                         <span>AKTIVITAS PANTAI</span>
@@ -577,12 +699,12 @@
             </div>
 
 
+
             <!-- =================================================
                  7. AREA BERSANTAI
-                 EXTRA
             ================================================== -->
 
-            <div class="gallery-item gallery-item-extra">
+            <div class="gallery-item">
 
                 <div class="gallery-card"
                      data-bs-toggle="modal"
@@ -591,8 +713,10 @@
                      data-title="Area Bersantai"
                      data-description="Area yang dapat digunakan pengunjung untuk duduk, beristirahat, dan menikmati suasana pantai.">
 
-                    <img src="{{ asset('img/pantai1.jpg') }}"
-                         alt="Area Bersantai Evara Beach">
+                    <img
+                        src="{{ asset('img/pantai1.jpg') }}"
+                        alt="Area Bersantai Evara Beach"
+                    >
 
                     <div class="gallery-overlay">
                         <span>AREA BERSANTAI</span>
@@ -603,12 +727,12 @@
             </div>
 
 
+
             <!-- =================================================
                  8. AREA BERMAIN
-                 EXTRA
             ================================================== -->
 
-            <div class="gallery-item gallery-item-extra">
+            <div class="gallery-item">
 
                 <div class="gallery-card"
                      data-bs-toggle="modal"
@@ -617,8 +741,10 @@
                      data-title="Area Bermain"
                      data-description="Area rekreasi yang dapat menjadi bagian dari aktivitas pengunjung selama berada di kawasan Evara Beach.">
 
-                    <img src="{{ asset('img/pantai21.png') }}"
-                         alt="Area Bermain Evara Beach">
+                    <img
+                        src="{{ asset('img/pantai21.png') }}"
+                        alt="Area Bermain Evara Beach"
+                    >
 
                     <div class="gallery-overlay">
                         <span>AREA BERMAIN</span>
@@ -629,22 +755,24 @@
             </div>
 
 
+
             <!-- =================================================
-                 9. TEMPAT MAKAN
-                 EXTRA
+                 9. TEMPAT MAKAN / RESTO
             ================================================== -->
 
-            <div class="gallery-item gallery-item-extra">
+            <div class="gallery-item">
 
                 <div class="gallery-card"
                      data-bs-toggle="modal"
                      data-bs-target="#galleryModal"
                      data-image="{{ asset('img/pantai.jpg') }}"
                      data-title="Tempat Makan"
-                     data-description="Area tempat makan yang dapat menjadi pilihan pengunjung untuk menikmati makanan dan minuman saat berada di sekitar pantai.">
+                     data-description="Resto atau tempat kuliner di kawasan Evara Beach yang dapat menjadi pilihan pengunjung untuk menikmati makanan dan minuman.">
 
-                    <img src="{{ asset('img/pantai.jpg') }}"
-                         alt="Tempat Makan Evara Beach">
+                    <img
+                        src="{{ asset('img/pantai.jpg') }}"
+                        alt="Tempat Makan atau Resto Evara Beach"
+                    >
 
                     <div class="gallery-overlay">
                         <span>TEMPAT MAKAN</span>
@@ -653,6 +781,7 @@
                 </div>
 
             </div>
+
 
 
             <!-- =================================================
@@ -669,8 +798,10 @@
                      data-title="Penginapan"
                      data-description="Pilihan tempat menginap yang dapat mendukung kenyamanan pengunjung selama berada di kawasan wisata.">
 
-                    <img src="{{ asset('img/pantai1.jpg') }}"
-                         alt="Penginapan Evara Beach">
+                    <img
+                        src="{{ asset('img/pantai1.jpg') }}"
+                        alt="Penginapan Evara Beach"
+                    >
 
                     <div class="gallery-overlay">
                         <span>PENGINAPAN</span>
@@ -679,6 +810,7 @@
                 </div>
 
             </div>
+
 
 
             <!-- =================================================
@@ -695,8 +827,10 @@
                      data-title="Gazebo"
                      data-description="Gazebo sebagai tempat berteduh dan bersantai sambil menikmati suasana di kawasan pantai.">
 
-                    <img src="{{ asset('img/pantai21.png') }}"
-                         alt="Gazebo Evara Beach">
+                    <img
+                        src="{{ asset('img/pantai21.png') }}"
+                        alt="Gazebo Evara Beach"
+                    >
 
                     <div class="gallery-overlay">
                         <span>GAZEBO</span>
@@ -705,6 +839,7 @@
                 </div>
 
             </div>
+
 
 
             <!-- =================================================
@@ -721,8 +856,10 @@
                      data-title="Area Parkir"
                      data-description="Area parkir yang digunakan untuk mendukung kebutuhan kendaraan pengunjung Evara Beach.">
 
-                    <img src="{{ asset('img/foto20.png') }}"
-                         alt="Area Parkir Evara Beach">
+                    <img
+                        src="{{ asset('img/foto20.png') }}"
+                        alt="Area Parkir Evara Beach"
+                    >
 
                     <div class="gallery-overlay">
                         <span>AREA PARKIR</span>
@@ -733,32 +870,8 @@
             </div>
 
 
-            <!-- =================================================
-                 13. FASILITAS
-                 EXTRA
-            ================================================== -->
-
-            <div class="gallery-item gallery-item-extra">
-
-                <div class="gallery-card"
-                     data-bs-toggle="modal"
-                     data-bs-target="#galleryModal"
-                     data-image="{{ asset('img/pantai1.jpg') }}"
-                     data-title="Fasilitas"
-                     data-description="Berbagai fasilitas pendukung yang disediakan untuk memberikan kenyamanan bagi pengunjung selama berada di Evara Beach.">
-
-                    <img src="{{ asset('img/pantai1.jpg') }}"
-                         alt="Fasilitas Evara Beach">
-
-                    <div class="gallery-overlay">
-                        <span>FASILITAS</span>
-                    </div>
-
-                </div>
-
-            </div>
-
         </div>
+
 
 
         <!-- =====================================================
@@ -767,9 +880,11 @@
 
         <div class="gallery-more">
 
-            <button type="button"
-                    class="gallery-more-btn"
-                    id="galleryMoreBtn">
+            <button
+                type="button"
+                class="gallery-more-btn"
+                id="galleryMoreBtn"
+            >
 
                 <span id="galleryMoreText">
                     Learn More
@@ -784,6 +899,7 @@
         </div>
 
     </section>
+
 
 
     <!-- =====================================================
@@ -803,14 +919,17 @@
 </div>
 
 
+
 <!-- =========================================================
      MODAL FOTO
 ========================================================= -->
 
-<div class="modal fade gallery-modal"
-     id="galleryModal"
-     tabindex="-1"
-     aria-hidden="true">
+<div
+    class="modal fade gallery-modal"
+    id="galleryModal"
+    tabindex="-1"
+    aria-hidden="true"
+>
 
     <div class="modal-dialog modal-dialog-centered modal-lg">
 
@@ -818,28 +937,37 @@
 
             <div class="modal-header">
 
-                <h5 class="modal-title"
-                    id="galleryModalTitle">
+                <h5
+                    class="modal-title"
+                    id="galleryModalTitle"
+                >
                     Galeri Evara Beach
                 </h5>
 
-                <button type="button"
-                        class="btn-close"
-                        data-bs-dismiss="modal"
-                        aria-label="Close">
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                >
                 </button>
 
             </div>
 
+
             <div class="modal-body">
 
-                <img id="galleryModalImage"
-                     class="gallery-modal-image"
-                     src=""
-                     alt="">
+                <img
+                    id="galleryModalImage"
+                    class="gallery-modal-image"
+                    src=""
+                    alt=""
+                >
 
-                <p id="galleryModalDescription"
-                   class="gallery-modal-description">
+                <p
+                    id="galleryModalDescription"
+                    class="gallery-modal-description"
+                >
                 </p>
 
             </div>
@@ -851,18 +979,27 @@
 </div>
 
 
+
 <script>
+
 document.addEventListener('DOMContentLoaded', function () {
+
 
     /* =====================================================
        LEARN MORE / SHOW LESS
     ====================================================== */
 
-    const moreButton = document.getElementById('galleryMoreBtn');
-    const moreText = document.getElementById('galleryMoreText');
-    const extraItems = document.querySelectorAll('.gallery-item-extra');
+    const moreButton =
+        document.getElementById('galleryMoreBtn');
+
+    const moreText =
+        document.getElementById('galleryMoreText');
+
+    const extraItems =
+        document.querySelectorAll('.gallery-item-extra');
 
     let expanded = false;
+
 
     if (moreButton) {
 
@@ -870,24 +1007,41 @@ document.addEventListener('DOMContentLoaded', function () {
 
             expanded = !expanded;
 
+
             extraItems.forEach(function (item) {
-                item.classList.toggle('show', expanded);
+
+                item.classList.toggle(
+                    'show',
+                    expanded
+                );
+
             });
+
 
             if (expanded) {
 
                 moreText.textContent = 'Show Less';
+
                 moreButton.classList.add('active');
 
             } else {
 
                 moreText.textContent = 'Learn More';
+
                 moreButton.classList.remove('active');
 
+
                 window.scrollTo({
-                    top: document.querySelector('.gallery-section').offsetTop - 80,
+
+                    top:
+                        document.querySelector(
+                            '.gallery-section'
+                        ).offsetTop - 80,
+
                     behavior: 'smooth'
+
                 });
+
             }
 
         });
@@ -895,35 +1049,53 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 
+
     /* =====================================================
        MODAL FOTO
     ====================================================== */
 
-    const galleryCards = document.querySelectorAll('.gallery-card');
+    const galleryCards =
+        document.querySelectorAll('.gallery-card');
 
-    const modalImage = document.getElementById('galleryModalImage');
-    const modalTitle = document.getElementById('galleryModalTitle');
-    const modalDescription = document.getElementById('galleryModalDescription');
+    const modalImage =
+        document.getElementById('galleryModalImage');
+
+    const modalTitle =
+        document.getElementById('galleryModalTitle');
+
+    const modalDescription =
+        document.getElementById('galleryModalDescription');
+
 
     galleryCards.forEach(function (card) {
 
         card.addEventListener('click', function () {
 
-            const image = card.getAttribute('data-image');
-            const title = card.getAttribute('data-title');
-            const description = card.getAttribute('data-description');
+            const image =
+                card.getAttribute('data-image');
+
+            const title =
+                card.getAttribute('data-title');
+
+            const description =
+                card.getAttribute('data-description');
+
 
             modalImage.src = image;
+
             modalImage.alt = title;
 
             modalTitle.textContent = title;
-            modalDescription.textContent = description;
+
+            modalDescription.textContent =
+                description;
 
         });
 
     });
 
 });
+
 </script>
 
-@endsection
+@endsection 
