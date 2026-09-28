@@ -10,13 +10,10 @@
         --toska: #087873;
         --toska-dark: #075b58;
         --toska-soft: #dcefed;
-
         --cream: #fbf8f1;
         --cream-soft: #f4eadb;
-
         --sand: #d4aa6b;
         --brown: #987047;
-
         --text: #405954;
         --muted: #78847f;
         --white: #ffffff;
@@ -41,7 +38,6 @@
     .gallery-header {
         padding: 70px 20px 35px;
         text-align: center;
-
         background:
             linear-gradient(
                 180deg,
@@ -58,26 +54,19 @@
     .gallery-label {
         display: inline-block;
         margin-bottom: 12px;
-
         color: var(--toska);
-
         font-size: 12px;
         font-weight: 700;
-
         letter-spacing: 3px;
         text-transform: uppercase;
     }
 
     .gallery-title {
         margin: 0;
-
         color: var(--brown);
-
         font-family: "Playfair Display", Georgia, serif;
-
         font-size: clamp(38px, 5vw, 58px);
         font-weight: 600;
-
         line-height: 1.1;
     }
 
@@ -87,11 +76,8 @@
 
     .gallery-header-description {
         max-width: 620px;
-
         margin: 18px auto 0;
-
         color: var(--muted);
-
         font-size: 15px;
         line-height: 1.8;
     }
@@ -99,11 +85,8 @@
     .gallery-header-line {
         width: 65px;
         height: 3px;
-
         margin: 25px auto 0;
-
         border-radius: 50px;
-
         background: var(--sand);
     }
 
@@ -114,17 +97,13 @@
 
     .gallery-section {
         max-width: 1180px;
-
         margin: 0 auto;
-
         padding: 20px 25px 0;
     }
 
     .gallery-grid {
         display: grid;
-
         grid-template-columns: repeat(3, 1fr);
-
         gap: 28px;
     }
 
@@ -139,17 +118,11 @@
 
     .gallery-card {
         position: relative;
-
         height: 255px;
-
         overflow: hidden;
-
         border-radius: 18px;
-
         background: #e8dfd1;
-
         cursor: pointer;
-
         box-shadow:
             0 8px 25px rgba(52, 76, 72, 0.08);
     }
@@ -157,11 +130,8 @@
     .gallery-card img {
         width: 100%;
         height: 100%;
-
         display: block;
-
         object-fit: cover;
-
         transition:
             transform 0.5s ease,
             filter 0.5s ease;
@@ -174,46 +144,31 @@
 
     .gallery-overlay {
         position: absolute;
-
         inset: 0;
-
         display: flex;
-
         align-items: center;
         justify-content: center;
-
         background: rgba(8, 120, 115, 0.76);
-
         opacity: 0;
-
         transition: opacity 0.35s ease;
     }
 
     .gallery-overlay span {
         color: var(--white);
-
         font-size: 16px;
         font-weight: 700;
-
         letter-spacing: 2px;
-
         text-align: center;
         text-transform: uppercase;
-
         padding: 12px 22px;
-
         border: 1px solid rgba(255, 255, 255, 0.65);
-
         border-radius: 50px;
-
         transform: translateY(12px);
-
         transition: transform 0.35s ease;
     }
 
     .gallery-card:hover img {
         transform: scale(1.05);
-
         filter: brightness(0.88);
     }
 
@@ -236,12 +191,10 @@
 
     .gallery-item-extra.show {
         display: block;
-
         animation: galleryFadeIn 0.45s ease both;
     }
 
     @keyframes galleryFadeIn {
-
         from {
             opacity: 0;
             transform: translateY(15px);
@@ -251,7 +204,6 @@
             opacity: 1;
             transform: translateY(0);
         }
-
     }
 
 
@@ -261,41 +213,26 @@
 
     .gallery-more {
         display: flex;
-
         justify-content: center;
-
         margin-top: 45px;
     }
 
     .gallery-more-btn {
         display: inline-flex;
-
         align-items: center;
         justify-content: center;
-
         gap: 12px;
-
         min-width: 175px;
-
         padding: 13px 24px;
-
         border: 1px solid var(--toska);
-
         border-radius: 50px;
-
         background: transparent;
-
         color: var(--toska);
-
         font-size: 13px;
         font-weight: 700;
-
         letter-spacing: 1px;
-
         text-transform: uppercase;
-
         cursor: pointer;
-
         transition:
             background 0.3s ease,
             color 0.3s ease,
@@ -305,18 +242,14 @@
 
     .gallery-more-btn:hover {
         background: var(--toska);
-
         color: var(--white);
-
         transform: translateY(-2px);
-
         box-shadow:
             0 8px 20px rgba(8, 120, 115, 0.18);
     }
 
     .gallery-more-btn .arrow {
         font-size: 16px;
-
         transition: transform 0.3s ease;
     }
 
@@ -326,37 +259,28 @@
 
 
     /* =========================================================
-       PENUTUP KECIL SEBELUM FOOTER
+       PENUTUP
     ========================================================= */
 
     .gallery-ending {
         max-width: 1180px;
-
         margin: 55px auto 0;
-
         padding: 0 25px;
-
         text-align: center;
     }
 
     .gallery-ending-line {
         width: 100%;
         height: 1px;
-
         background: rgba(152, 112, 71, 0.18);
-
         margin-bottom: 20px;
     }
 
     .gallery-ending-text {
         margin: 0;
-
         color: var(--muted);
-
         font-family: "Playfair Display", Georgia, serif;
-
         font-size: 17px;
-
         font-style: italic;
     }
 
@@ -367,31 +291,23 @@
 
     .gallery-modal .modal-content {
         overflow: hidden;
-
         border: 0;
-
         border-radius: 18px;
-
         background: var(--cream);
-
         box-shadow:
             0 25px 70px rgba(0, 0, 0, 0.2);
     }
 
     .gallery-modal .modal-header {
         padding: 18px 22px;
-
         border-bottom:
             1px solid rgba(8, 120, 115, 0.12);
-
         background: var(--cream);
     }
 
     .gallery-modal .modal-title {
         color: var(--toska-dark);
-
         font-family: "Playfair Display", Georgia, serif;
-
         font-size: 24px;
         font-weight: 600;
     }
@@ -406,23 +322,16 @@
 
     .gallery-modal-image {
         width: 100%;
-
         max-height: 500px;
-
         display: block;
-
         object-fit: cover;
     }
 
     .gallery-modal-description {
         margin: 0;
-
         padding: 20px 24px 25px;
-
         color: var(--text);
-
         font-size: 14px;
-
         line-height: 1.8;
     }
 
@@ -435,14 +344,12 @@
 
         .gallery-grid {
             grid-template-columns: repeat(2, 1fr);
-
             gap: 22px;
         }
 
         .gallery-card {
             height: 235px;
         }
-
     }
 
 
@@ -466,13 +373,11 @@
 
         .gallery-grid {
             grid-template-columns: 1fr;
-
             gap: 20px;
         }
 
         .gallery-card {
             height: 240px;
-
             border-radius: 15px;
         }
 
@@ -482,14 +387,12 @@
 
         .gallery-ending {
             padding: 0 18px;
-
             margin-top: 45px;
         }
 
         .gallery-ending-text {
             font-size: 15px;
         }
-
     }
 
 </style>
@@ -522,7 +425,6 @@
     </section>
 
 
-
     <!-- =====================================================
          GALERI
     ====================================================== -->
@@ -533,7 +435,7 @@
 
 
             <!-- =================================================
-                 1. HAMPAARAN PASIR
+                 1. HAMPARAN PASIR
             ================================================== -->
 
             <div class="gallery-item">
@@ -541,23 +443,22 @@
                 <div class="gallery-card"
                      data-bs-toggle="modal"
                      data-bs-target="#galleryModal"
-                     data-image="{{ asset('img/pantai21.png') }}"
+                     data-image="{{ asset('img/galeri1.jpeg') }}"
                      data-title="Hamparan Pasir"
                      data-description="Hamparan pasir yang menjadi bagian dari kawasan pesisir Evara Beach dan memberikan karakter alami pada area pantai.">
 
                     <img
-                        src="{{ asset('img/pantai21.png') }}"
+                        src="{{ asset('img/galeri1.jpeg') }}"
                         alt="Hamparan Pasir Evara Beach"
                     >
 
                     <div class="gallery-overlay">
-                        <span>HAMPAARAN PASIR</span>
+                        <span>HAMPARAN PASIR</span>
                     </div>
 
                 </div>
 
             </div>
-
 
 
             <!-- =================================================
@@ -569,12 +470,12 @@
                 <div class="gallery-card"
                      data-bs-toggle="modal"
                      data-bs-target="#galleryModal"
-                     data-image="{{ asset('img/pantai1.jpg') }}"
+                     data-image="{{ asset('img/galeri2.jpeg') }}"
                      data-title="Pemandangan Pantai"
                      data-description="Panorama pantai dan laut yang menjadi salah satu daya tarik utama Evara Beach.">
 
                     <img
-                        src="{{ asset('img/pantai1.jpg') }}"
+                        src="{{ asset('img/galeri2.jpeg') }}"
                         alt="Pemandangan Pantai Evara Beach"
                     >
 
@@ -585,7 +486,6 @@
                 </div>
 
             </div>
-
 
 
             <!-- =================================================
@@ -615,7 +515,6 @@
             </div>
 
 
-
             <!-- =================================================
                  4. SUNSET
             ================================================== -->
@@ -625,12 +524,12 @@
                 <div class="gallery-card"
                      data-bs-toggle="modal"
                      data-bs-target="#galleryModal"
-                     data-image="{{ asset('img/pantai.jpg') }}"
+                     data-image="{{ asset('img/galeri4.jpeg') }}"
                      data-title="Sunset"
                      data-description="Keindahan suasana sore dan matahari terbenam yang dapat dinikmati di Evara Beach.">
 
                     <img
-                        src="{{ asset('img/pantai.jpg') }}"
+                        src="{{ asset('img/galeri4.jpeg') }}"
                         alt="Sunset Evara Beach"
                     >
 
@@ -643,7 +542,6 @@
             </div>
 
 
-
             <!-- =================================================
                  5. SPOT FOTO
             ================================================== -->
@@ -653,12 +551,12 @@
                 <div class="gallery-card"
                      data-bs-toggle="modal"
                      data-bs-target="#galleryModal"
-                     data-image="{{ asset('img/pantai21.png') }}"
+                     data-image="{{ asset('img/galeri5.png') }}"
                      data-title="Spot Foto"
                      data-description="Berbagai sudut menarik yang dapat digunakan pengunjung untuk mengabadikan momen selama berada di Evara Beach.">
 
                     <img
-                        src="{{ asset('img/pantai21.png') }}"
+                        src="{{ asset('img/galeri5.png') }}"
                         alt="Spot Foto Evara Beach"
                     >
 
@@ -669,7 +567,6 @@
                 </div>
 
             </div>
-
 
 
             <!-- =================================================
@@ -699,7 +596,6 @@
             </div>
 
 
-
             <!-- =================================================
                  7. AREA BERSANTAI
             ================================================== -->
@@ -709,12 +605,12 @@
                 <div class="gallery-card"
                      data-bs-toggle="modal"
                      data-bs-target="#galleryModal"
-                     data-image="{{ asset('img/pantai1.jpg') }}"
+                     data-image="{{ asset('img/galeri7.jpeg') }}"
                      data-title="Area Bersantai"
                      data-description="Area yang dapat digunakan pengunjung untuk duduk, beristirahat, dan menikmati suasana pantai.">
 
                     <img
-                        src="{{ asset('img/pantai1.jpg') }}"
+                        src="{{ asset('img/galeri7.jpeg') }}"
                         alt="Area Bersantai Evara Beach"
                     >
 
@@ -725,7 +621,6 @@
                 </div>
 
             </div>
-
 
 
             <!-- =================================================
@@ -755,7 +650,6 @@
             </div>
 
 
-
             <!-- =================================================
                  9. TEMPAT MAKAN / RESTO
             ================================================== -->
@@ -781,7 +675,6 @@
                 </div>
 
             </div>
-
 
 
             <!-- =================================================
@@ -812,7 +705,6 @@
             </div>
 
 
-
             <!-- =================================================
                  11. GAZEBO
                  EXTRA
@@ -839,7 +731,6 @@
                 </div>
 
             </div>
-
 
 
             <!-- =================================================
@@ -873,7 +764,6 @@
         </div>
 
 
-
         <!-- =====================================================
              LEARN MORE
         ====================================================== -->
@@ -901,7 +791,6 @@
     </section>
 
 
-
     <!-- =====================================================
          PENUTUP SEBELUM FOOTER
     ====================================================== -->
@@ -917,7 +806,6 @@
     </div>
 
 </div>
-
 
 
 <!-- =========================================================
@@ -977,7 +865,6 @@
     </div>
 
 </div>
-
 
 
 <script>
@@ -1049,7 +936,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 
-
     /* =====================================================
        MODAL FOTO
     ====================================================== */
@@ -1098,4 +984,4 @@ document.addEventListener('DOMContentLoaded', function () {
 
 </script>
 
-@endsection 
+@endsection
