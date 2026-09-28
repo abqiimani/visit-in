@@ -5,6 +5,7 @@
 @section('content')
 
 <style>
+
     :root {
         --tosca-dark: #075c59;
         --tosca: #0d7772;
@@ -45,20 +46,11 @@
                 rgba(3, 48, 47, 0.15) 72%,
                 rgba(3, 48, 47, 0.03) 100%
             ),
-            url('{{ asset('img/foto20.png') }}');
+            url('{{ asset('img/foto pantai.jpeg') }}');
 
         background-size: cover;
-
-        /* posisi gambar tetap natural */
         background-position: center center;
     }
-
-
-    /*
-     * TRANSISI FOTO KE SECTION CREAM
-     * Dibuat lebih panjang dan hangat supaya
-     * tidak terlihat seperti foto langsung berubah putih.
-     */
 
     .hero-section::after {
         content: "";
@@ -82,7 +74,6 @@
         pointer-events: none;
     }
 
-
     .hero-content {
         position: relative;
         z-index: 2;
@@ -92,12 +83,10 @@
         padding: 90px 42px 120px;
     }
 
-
     .hero-text {
         max-width: 620px;
         color: var(--white);
     }
-
 
     .hero-label {
         display: inline-flex;
@@ -108,8 +97,8 @@
 
         border: 1px solid rgba(255,255,255,0.42);
         border-radius: 30px;
-
         background: rgba(255,255,255,0.10);
+
         backdrop-filter: blur(5px);
 
         font-size: 12px;
@@ -118,7 +107,6 @@
         text-transform: uppercase;
     }
 
-
     .hero-label::before {
         content: "";
         width: 7px;
@@ -126,9 +114,6 @@
         border-radius: 50%;
         background: #e7c078;
     }
-
-
-    /* Ukuran tetap seperti desain sebelumnya */
 
     .hero-title {
         margin: 0;
@@ -141,23 +126,19 @@
         letter-spacing: -0.5px;
     }
 
-
     .hero-title span {
         display: block;
         color: #f6dfb7;
     }
-
 
     .hero-description {
         max-width: 570px;
         margin: 23px 0 30px;
 
         color: rgba(255,255,255,0.90);
-
         font-size: 16px;
         line-height: 1.8;
     }
-
 
     .hero-button {
         display: inline-flex;
@@ -175,7 +156,6 @@
         font-size: 14px;
         font-weight: 700;
         letter-spacing: .3px;
-
         text-decoration: none;
 
         transition:
@@ -184,21 +164,16 @@
             box-shadow .25s ease;
     }
 
-
     .hero-button:hover {
         background: #f7dfb7;
         color: #155d59;
-
         transform: translateY(-2px);
-
         box-shadow: 0 10px 25px rgba(0,0,0,.18);
     }
-
 
     .hero-button i {
         font-size: 16px;
     }
-
 
 
     /* =========================================================
@@ -210,12 +185,10 @@
         background: var(--cream);
     }
 
-
     .welcome-container {
         max-width: 1180px;
         margin: 0 auto;
     }
-
 
     .welcome-grid {
         display: grid;
@@ -224,29 +197,23 @@
         align-items: center;
     }
 
-
     .welcome-image {
         position: relative;
     }
-
 
     .welcome-image img {
         display: block;
         width: 100%;
         height: 450px;
-
         object-fit: cover;
         border-radius: 5px;
     }
 
-
     .welcome-image::after {
         content: "";
         position: absolute;
-
         width: 105px;
         height: 105px;
-
         right: -18px;
         bottom: -18px;
 
@@ -254,76 +221,61 @@
         border-bottom: 3px solid var(--sand-dark);
     }
 
-
     .section-label {
         margin-bottom: 13px;
-
         color: var(--tosca);
-
         font-size: 12px;
         font-weight: 700;
         letter-spacing: 2px;
         text-transform: uppercase;
     }
 
-
     .welcome-title {
         margin: 0 0 20px;
 
         color: var(--tosca-dark);
-
         font-family: "Playfair Display", Georgia, serif;
         font-size: clamp(34px, 4vw, 48px);
         font-weight: 600;
         line-height: 1.15;
     }
 
-
     .welcome-text {
         max-width: 550px;
         margin: 0;
 
         color: var(--text);
-
         font-size: 16px;
         line-height: 1.9;
     }
 
-
     .welcome-highlight {
         display: flex;
         gap: 18px;
-
         margin-top: 28px;
         padding-top: 23px;
 
         border-top: 1px solid rgba(141,103,69,.20);
     }
 
-
     .highlight-item {
         flex: 1;
     }
-
 
     .highlight-item strong {
         display: block;
         margin-bottom: 5px;
 
         color: var(--tosca-dark);
-
         font-size: 14px;
         font-weight: 700;
     }
 
-
     .highlight-item span {
         color: var(--muted);
-
         font-size: 13px;
         line-height: 1.6;
     }
-
 
 
     /* =========================================================
@@ -339,12 +291,10 @@
         border-bottom: 1px solid rgba(141,103,69,.10);
     }
 
-
     .experience-container {
         max-width: 1120px;
         margin: 0 auto;
     }
-
 
     .experience-heading {
         max-width: 700px;
@@ -352,28 +302,23 @@
         text-align: center;
     }
 
-
     .experience-title {
         margin: 0 0 15px;
 
         color: var(--tosca-dark);
-
         font-family: "Playfair Display", Georgia, serif;
         font-size: clamp(32px, 4vw, 44px);
         line-height: 1.2;
         font-weight: 600;
     }
 
-
     .experience-intro {
         margin: 0;
 
         color: var(--muted);
-
         font-size: 15px;
         line-height: 1.8;
     }
-
 
     .experience-list {
         display: grid;
@@ -381,45 +326,37 @@
         gap: 45px;
     }
 
-
     .experience-item {
         position: relative;
         padding: 10px 25px;
         text-align: center;
     }
 
-
     .experience-number {
         display: block;
         margin-bottom: 14px;
 
         color: var(--sand-dark);
-
         font-family: "Playfair Display", Georgia, serif;
         font-size: 29px;
         font-weight: 600;
     }
 
-
     .experience-item h3 {
         margin: 0 0 11px;
 
         color: var(--tosca-dark);
-
         font-size: 17px;
         font-weight: 700;
     }
-
 
     .experience-item p {
         margin: 0;
 
         color: var(--muted);
-
         font-size: 14px;
         line-height: 1.8;
     }
-
 
     .experience-item:not(:last-child)::after {
         content: "";
@@ -435,7 +372,6 @@
     }
 
 
-
     /* =========================================================
        SECTION 3 — VISUAL
        ========================================================= */
@@ -445,12 +381,10 @@
         background: var(--cream);
     }
 
-
     .visual-container {
         max-width: 1180px;
         margin: 0 auto;
     }
-
 
     .visual-grid {
         display: grid;
@@ -458,17 +392,15 @@
         min-height: 440px;
     }
 
-
     .visual-image {
         min-height: 440px;
 
         background-image:
-            url('{{ asset('img/pantai21.png') }}');
+            url('{{ asset('img/foto pantai.jpeg') }}');
 
         background-size: cover;
         background-position: center;
     }
-
 
     .visual-content {
         display: flex;
@@ -481,33 +413,27 @@
         color: var(--white);
     }
 
-
     .visual-content .section-label {
         color: #e4bd7e;
     }
-
 
     .visual-title {
         margin: 0 0 20px;
 
         color: var(--white);
-
         font-family: "Playfair Display", Georgia, serif;
         font-size: clamp(32px, 4vw, 45px);
         line-height: 1.18;
         font-weight: 600;
     }
 
-
     .visual-text {
         margin: 0;
 
         color: rgba(255,255,255,.84);
-
         font-size: 15px;
         line-height: 1.9;
     }
-
 
 
     /* =========================================================
@@ -518,48 +444,39 @@
         padding: 95px 30px 110px;
 
         text-align: center;
-
         background: var(--cream);
     }
-
 
     .closing-container {
         max-width: 720px;
         margin: 0 auto;
     }
 
-
     .closing-line {
         width: 45px;
         height: 2px;
-
         margin: 0 auto 25px;
 
         background: var(--sand-dark);
     }
 
-
     .closing-title {
         margin: 0 0 18px;
 
         color: var(--tosca-dark);
-
         font-family: "Playfair Display", Georgia, serif;
         font-size: clamp(34px, 4vw, 48px);
         line-height: 1.2;
         font-weight: 600;
     }
 
-
     .closing-text {
         margin: 0;
 
         color: var(--muted);
-
         font-size: 15px;
         line-height: 1.9;
     }
-
 
 
     /* =========================================================
@@ -573,28 +490,22 @@
             background-position: 58% center;
         }
 
-
         .hero-content {
             padding: 90px 35px 115px;
         }
-
 
         .welcome-grid {
             gap: 45px;
         }
 
-
         .welcome-image img {
             height: 400px;
         }
 
-
         .visual-content {
             padding: 50px;
         }
-
     }
-
 
 
     @media (max-width: 767px) {
@@ -604,76 +515,62 @@
             background-position: center;
         }
 
-
         .hero-section::after {
             height: 130px;
         }
-
 
         .hero-content {
             padding: 85px 25px 110px;
         }
 
-
         .hero-title {
             font-size: 45px;
         }
-
 
         .hero-description {
             font-size: 15px;
             line-height: 1.75;
         }
 
-
         .welcome-section {
             padding: 75px 22px 80px;
         }
-
 
         .welcome-grid {
             grid-template-columns: 1fr;
             gap: 50px;
         }
 
-
         .welcome-image img {
             height: 340px;
         }
-
 
         .welcome-image::after {
             width: 75px;
             height: 75px;
         }
 
-
         .welcome-highlight {
             flex-direction: column;
             gap: 18px;
         }
 
-
         .experience-section {
             padding: 70px 22px 75px;
         }
 
-
         .experience-heading {
             margin-bottom: 40px;
         }
-
 
         .experience-list {
             grid-template-columns: 1fr;
             gap: 35px;
         }
 
-
         .experience-item {
             padding: 0 15px;
         }
-
 
         .experience-item:not(:last-child)::after {
             width: 45px;
@@ -687,33 +584,26 @@
             transform: translateX(-50%);
         }
 
-
         .visual-section {
             padding: 70px 22px;
         }
-
 
         .visual-grid {
             grid-template-columns: 1fr;
         }
 
-
         .visual-image {
             min-height: 320px;
         }
-
 
         .visual-content {
             padding: 50px 30px;
         }
 
-
         .closing-section {
             padding: 75px 22px 85px;
         }
-
     }
-
 
 
     @media (max-width: 480px) {
@@ -722,37 +612,30 @@
             font-size: 40px;
         }
 
-
         .hero-label {
             font-size: 11px;
             letter-spacing: 1.5px;
         }
-
 
         .hero-button {
             width: 100%;
             justify-content: center;
         }
 
-
         .welcome-image img {
             height: 300px;
         }
-
 
         .visual-image {
             min-height: 270px;
         }
 
-
         .visual-content {
             padding: 42px 25px;
         }
-
     }
 
 </style>
-
 
 
 <div class="beranda-page">
@@ -772,19 +655,16 @@
                     Evara Beach
                 </div>
 
-
                 <h1 class="hero-title">
                     Temukan Tenangnya
                     <span>Suasana Pantai</span>
                 </h1>
-
 
                 <p class="hero-description">
                     Nikmati keindahan pantai, suasana yang menyenangkan,
                     dan berbagai pengalaman sederhana yang membuat
                     kunjungan ke Evara Beach terasa berkesan.
                 </p>
-
 
                 <a href="{{ route('pengunjung.create') }}"
                    class="hero-button">
@@ -804,7 +684,6 @@
     </section>
 
 
-
     {{-- =====================================================
          WELCOME
          ===================================================== --}}
@@ -815,16 +694,14 @@
 
             <div class="welcome-grid">
 
-
                 <div class="welcome-image">
 
                     <img
-                        src="{{ asset('img/foto20.png') }}"
+                        src="{{ asset('img/foto pantai.jpeg') }}"
                         alt="Pemandangan Evara Beach"
                     >
 
                 </div>
-
 
 
                 <div class="welcome-content">
@@ -833,11 +710,9 @@
                         Selamat Datang di Evara Beach
                     </div>
 
-
                     <h2 class="welcome-title">
                         Tempat untuk Menikmati Waktu dengan Cara Anda
                     </h2>
-
 
                     <p class="welcome-text">
                         Evara Beach menawarkan suasana yang dapat dinikmati
@@ -847,7 +722,6 @@
                         udara pantai — semuanya bisa menjadi bagian dari
                         kunjungan Anda.
                     </p>
-
 
                     <div class="welcome-highlight">
 
@@ -889,7 +763,6 @@
     </section>
 
 
-
     {{-- =====================================================
          EXPERIENCE
          ===================================================== --}}
@@ -898,18 +771,15 @@
 
         <div class="experience-container">
 
-
             <div class="experience-heading">
 
                 <div class="section-label">
                     Pengalaman Berkunjung
                 </div>
 
-
                 <h2 class="experience-title">
                     Ada Banyak Cara untuk Menikmati Pantai
                 </h2>
-
 
                 <p class="experience-intro">
                     Setiap pengunjung bisa memiliki cara yang berbeda
@@ -919,9 +789,7 @@
             </div>
 
 
-
             <div class="experience-list">
-
 
                 <div class="experience-item">
 
@@ -929,11 +797,9 @@
                         01
                     </span>
 
-
                     <h3>
                         Menikmati Pemandangan
                     </h3>
-
 
                     <p>
                         Luangkan waktu melihat hamparan laut,
@@ -943,18 +809,15 @@
                 </div>
 
 
-
                 <div class="experience-item">
 
                     <span class="experience-number">
                         02
                     </span>
 
-
                     <h3>
                         Bersama Orang Terdekat
                     </h3>
-
 
                     <p>
                         Nikmati waktu bersama keluarga atau teman
@@ -964,18 +827,15 @@
                 </div>
 
 
-
                 <div class="experience-item">
 
                     <span class="experience-number">
                         03
                     </span>
 
-
                     <h3>
                         Mengabadikan Perjalanan
                     </h3>
-
 
                     <p>
                         Temukan sudut yang menarik untuk berfoto
@@ -984,13 +844,11 @@
 
                 </div>
 
-
             </div>
 
         </div>
 
     </section>
-
 
 
     {{-- =====================================================
@@ -1003,9 +861,7 @@
 
             <div class="visual-grid">
 
-
                 <div class="visual-image"></div>
-
 
                 <div class="visual-content">
 
@@ -1013,31 +869,26 @@
                         Tentukan Cara Anda Menikmati Pantai
                     </div>
 
-
                     <h2 class="visual-title">
                         Dari Pemandangan hingga Suasana
                     </h2>
-
 
                     <p class="visual-text">
                         Ada yang datang untuk menikmati pemandangan,
                         ada yang ingin menghabiskan waktu bersama,
                         dan ada pula yang sekadar mencari suasana
                         berbeda dari rutinitas sehari-hari.
-
                         Apa pun alasannya, setiap kunjungan memiliki
                         cerita tersendiri.
                     </p>
 
                 </div>
 
-
             </div>
 
         </div>
 
     </section>
-
 
 
     {{-- =====================================================
@@ -1050,11 +901,9 @@
 
             <div class="closing-line"></div>
 
-
             <h2 class="closing-title">
                 Sampai Jumpa di Evara Beach
             </h2>
-
 
             <p class="closing-text">
                 Nikmati perjalanan Anda, temukan suasana yang disukai,
