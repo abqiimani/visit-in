@@ -39,6 +39,82 @@
 
     @stack('styles')
 
+    <style>
+        /* =====================================================
+           FIX LAYOUT ADMIN VISIT-IN
+        ====================================================== */
+
+        #wrapper {
+            width: 100%;
+            min-height: 100vh;
+        }
+
+        /*
+         * Content harus mulai setelah sidebar
+         */
+        #content-wrapper {
+            margin-left: 14rem !important;
+            width: calc(100% - 14rem) !important;
+            min-height: 100vh;
+        }
+
+        /*
+         * Content harus mulai setelah navbar
+         */
+        #content {
+            padding-top: 75px !important;
+            width: 100%;
+            min-height: calc(100vh - 75px);
+        }
+
+        /*
+         * Container halaman jangan keluar
+         * dari area content
+         */
+        #content .container-fluid {
+            width: 100%;
+            max-width: 100%;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+
+        /*
+         * Table/card tetap berada
+         * di dalam area content
+         */
+        #content .card {
+            max-width: 100%;
+        }
+
+        #content .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ====================================================== */
+
+        @media (max-width: 767.98px) {
+
+            #content-wrapper {
+                margin-left: 0 !important;
+                width: 100% !important;
+            }
+
+            #content {
+                padding-top: 75px !important;
+            }
+
+            #content .container-fluid {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+
+        }
+    </style>
+
 </head>
 
 <body id="page-top">
@@ -50,6 +126,7 @@
         @include('layouts.inc.sidebar')
         <!-- End Sidebar -->
 
+
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
 
@@ -59,6 +136,7 @@
                 <!-- Navbar -->
                 @include('layouts.inc.navbar')
                 <!-- End Navbar -->
+
 
                 <!-- Page Content -->
                 <div class="container-fluid">
@@ -71,6 +149,7 @@
             </div>
             <!-- End Main Content -->
 
+
             <!-- Footer -->
             @include('layouts.inc.footer')
             <!-- End Footer -->
@@ -81,6 +160,7 @@
     </div>
     <!-- End Page Wrapper -->
 
+
     <!-- Scroll to Top -->
     <a
         class="scroll-to-top rounded"
@@ -88,6 +168,7 @@
     >
         <i class="fas fa-angle-up"></i>
     </a>
+
 
     <!-- jQuery -->
     <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
@@ -101,13 +182,16 @@
     <!-- SB Admin 2 JavaScript -->
     <script src="{{ asset('js/sb-admin-2.min.js') }}"></script>
 
+
     <!-- DataTables -->
     <script src="https://cdn.datatables.net/1.13.8/js/jquery.dataTables.min.js"></script>
 
     <script src="https://cdn.datatables.net/1.13.8/js/dataTables.bootstrap4.min.js"></script>
 
+
     <!-- SweetAlert2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
     @stack('scripts')
 

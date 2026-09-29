@@ -39,13 +39,12 @@ Route::get('/galeri', function () {
 
 
 // ==========================================================
-// ULASAN PENGUNJUNG
+// EVENT
 // ==========================================================
 
-Route::get('/ulasan-pengunjung', function () {
-    return view('ulasan.index');
-})->name('ulasan');
-
+Route::get('/event', function () {
+    return view('event.index');
+})->name('event');
 
 // ==========================================================
 // FORM DATA PENGUNJUNG

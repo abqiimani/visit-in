@@ -7,32 +7,28 @@
 <style>
     :root {
         --toska: #087873;
-        --toska-dark: #045956;
+        --toska-dark: #075b58;
         --toska-deep: #034a47;
-        --toska-soft: #dcefeb;
 
         --cream: #f8f1e3;
         --cream-light: #fffaf1;
-        --cream-dark: #eee1c9;
+        --cream-soft: #f4eadb;
 
-        --sand: #c99755;
-        --sand-light: #e4c38f;
-
+        --sand: #d4aa6b;
         --brown: #8a6038;
-        --brown-dark: #6f4828;
+        --brown-dark: #765033;
 
         --text: #405954;
-        --muted: #6f7d78;
-        --white: #ffffff;
+        --muted: #74817d;
 
-        --line: rgba(111, 72, 40, .20);
+        --white: #ffffff;
     }
 
     * {
         box-sizing: border-box;
     }
 
-    .destination-page {
+    .destinasi-page {
         background: var(--cream);
         color: var(--text);
         overflow: hidden;
@@ -43,479 +39,494 @@
        HERO
     ========================================================= */
 
-    .destination-hero {
-        position: relative;
-        min-height: 310px;
+    .destinasi-hero {
+        padding: 100px 30px 105px;
 
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        background: linear-gradient(
+            135deg,
+            #f8f1e3 0%,
+            #f6eddf 52%,
+            #efe0c4 100%
+        );
 
-        background: var(--cream-light);
-
-        overflow: hidden;
+        border-bottom: 1px solid rgba(138, 96, 56, .12);
     }
 
-    .destination-hero-content {
-        width: 100%;
+    .destinasi-hero-inner {
         max-width: 900px;
 
         margin: 0 auto;
-        padding: 48px 30px 58px;
-
-        text-align: center;
 
         display: flex;
         flex-direction: column;
+
         align-items: center;
         justify-content: center;
-    }
-
-    .destination-eyebrow {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 14px;
-
-        margin-bottom: 18px;
-
-        color: var(--brown);
-
-        font-size: 11px;
-        font-weight: 700;
-        letter-spacing: 2.5px;
-        text-transform: uppercase;
-    }
-
-    .destination-eyebrow::before,
-    .destination-eyebrow::after {
-        content: "";
-
-        width: 42px;
-        height: 2px;
-
-        flex-shrink: 0;
-
-        background: var(--sand);
-    }
-
-    .destination-hero h1 {
-        margin: 0;
-
-        font-family: "Playfair Display", Georgia, serif;
-
-        font-size: clamp(48px, 5.5vw, 70px);
-        line-height: 1;
-        font-weight: 600;
-
-        letter-spacing: -2.5px;
 
         text-align: center;
-        white-space: nowrap;
     }
 
-    .destination-hero h1 .evara {
-        color: var(--toska-dark);
-    }
-
-    .destination-hero h1 .beach {
-        color: var(--brown);
-        font-weight: 400;
-        letter-spacing: -2px;
-    }
-
-    .destination-hero p {
+    .destinasi-hero-inner > div {
         width: 100%;
-        max-width: 650px;
-
-        margin: 21px auto 0;
-
-        color: var(--text);
-
-        font-size: 15px;
-        line-height: 1.75;
-
-        text-align: center;
     }
 
-
-    /* =========================================================
-       PROFILE
-    ========================================================= */
-
-    .profile-section {
-        padding: 90px 8% 105px;
-        background: var(--toska);
-    }
-
-    .profile-grid {
-        display: grid;
-
-        grid-template-columns: .72fr 1.28fr;
-
-        gap: 78px;
-
-        align-items: start;
-    }
-
-    .section-label {
-        margin-bottom: 14px;
+    .hero-label {
+        margin-bottom: 17px;
 
         color: var(--brown);
 
         font-size: 12px;
         font-weight: 700;
-        letter-spacing: 2px;
+
+        letter-spacing: 2.4px;
         text-transform: uppercase;
+
+        text-align: center;
     }
 
-    .profile-section .section-label {
-        color: var(--sand-light);
-    }
-
-    .profile-heading h2 {
-        margin: 0;
-
-        color: var(--cream-light);
-
-        font-family: "Playfair Display", Georgia, serif;
-
-        font-size: clamp(35px, 3.5vw, 48px);
-        line-height: 1.12;
-
-        font-weight: 600;
-
-        letter-spacing: -1px;
-    }
-
-    .profile-content .lead {
-        margin: 0 0 23px;
-
-        color: var(--cream-light);
-
-        font-size: 18px;
-        line-height: 1.7;
-
-        font-weight: 500;
-    }
-
-    .profile-content p {
-        margin: 0 0 18px;
-
-        color: rgba(255, 250, 241, .84);
-
-        font-size: 15px;
-        line-height: 1.85;
-    }
-
-    .profile-highlights {
-        display: grid;
-
-        grid-template-columns: repeat(2, 1fr);
-
-        gap: 17px;
-
-        margin-top: 32px;
-    }
-
-    .profile-highlight {
-        padding: 22px 21px;
-
-        background: var(--cream-light);
-
-        border-left: 4px solid var(--sand);
-    }
-
-    .profile-highlight strong {
-        display: block;
-
-        margin-bottom: 7px;
-
-        color: var(--toska-dark);
-
-        font-size: 14px;
-        font-weight: 700;
-    }
-
-    .profile-highlight span {
-        color: var(--muted);
-
-        font-size: 13.5px;
-        line-height: 1.65;
-    }
-
-
-    /* =========================================================
-       CHARACTER SECTION
-    ========================================================= */
-
-    .character-section {
-        padding: 100px 8%;
-
-        background: var(--cream-light);
-    }
-
-    .character-header {
-        max-width: 760px;
-
-        margin-bottom: 48px;
-    }
-
-    .character-header .section-label {
-        color: var(--brown);
-    }
-
-    .character-header h2 {
-        margin: 0 0 16px;
+    .destinasi-hero h1 {
+        margin: 0 auto;
 
         color: var(--toska-dark);
 
         font-family: "Playfair Display", Georgia, serif;
 
-        font-size: clamp(35px, 4vw, 50px);
-        line-height: 1.15;
+        font-size: clamp(47px, 5.5vw, 68px);
 
+        line-height: 1.05;
         font-weight: 600;
+
+        letter-spacing: -.7px;
+
+        text-align: center;
     }
 
-    .character-header p {
-        margin: 0;
-
-        color: var(--text);
-
-        font-size: 15.5px;
-        line-height: 1.8;
-    }
-
-
-    /* =========================================================
-       CHARACTER LIST
-    ========================================================= */
-
-    .character-list {
-        max-width: 1050px;
-
-        border-top: 2px solid var(--brown);
-    }
-
-    .character-item {
-        border-bottom: 1px solid var(--line);
-
-        transition: background .3s ease;
-    }
-
-    .character-item.active {
-        background: var(--toska-soft);
-
-        border-bottom-color: rgba(8, 120, 115, .25);
-    }
-
-    .character-button {
-        width: 100%;
-
-        padding: 25px 18px;
-
-        border: 0;
-        outline: none;
-
-        background: transparent;
-        color: var(--toska-dark);
-
-        display: flex;
-        align-items: center;
-
-        text-align: left;
-
-        cursor: pointer;
-
-        font-family: inherit;
-
-        transition: .25s ease;
-    }
-
-    .character-button:hover {
-        color: var(--brown-dark);
-
-        background: rgba(201, 151, 85, .07);
-
-        padding-left: 25px;
-    }
-
-    .character-number {
-        width: 55px;
-
-        flex-shrink: 0;
-
+    .destinasi-hero h1 span {
         color: var(--brown);
-
-        font-size: 14px;
-        font-weight: 700;
-
-        letter-spacing: 1px;
     }
 
-    .character-title {
-        flex: 1;
+    .hero-description {
+        max-width: 700px;
 
-        font-size: 20px;
-        font-weight: 600;
-    }
-
-    .character-arrow {
-        margin-left: 20px;
-
-        color: var(--brown);
-
-        font-size: 18px;
-
-        transition: transform .3s ease;
-    }
-
-    .character-item.active .character-arrow {
-        transform: rotate(180deg);
-
-        color: var(--toska);
-    }
-
-    .character-content {
-        max-height: 0;
-
-        overflow: hidden;
-
-        padding-left: 73px;
-        padding-right: 30px;
-
-        transition:
-            max-height .35s ease,
-            padding .35s ease;
-    }
-
-    .character-content p {
-        max-width: 800px;
-
-        margin: 0;
-
-        padding: 0 0 28px;
+        margin: 28px auto 0;
 
         color: var(--text);
 
         font-size: 15px;
-        line-height: 1.8;
-    }
+        line-height: 1.9;
 
-    .character-item.active .character-content {
-        max-height: 220px;
+        text-align: center;
     }
 
 
     /* =========================================================
-       DESTINATION DETAILS
+       PROFIL DESTINASI
     ========================================================= */
 
-    .details-section {
-        padding: 100px 8%;
+    .profil-section {
+        padding: 105px 30px;
 
-        background: var(--cream-dark);
+        background: var(--cream-light);
     }
 
-    .details-container {
+    .profil-container {
         max-width: 1120px;
 
         margin: 0 auto;
     }
 
-    .details-header {
-        max-width: 730px;
+    .profil-heading {
+        max-width: 700px;
 
-        margin-bottom: 45px;
+        margin: 0 auto 55px;
+
+        text-align: center;
     }
 
-    .details-header .section-label {
-        color: var(--brown);
+    .section-label {
+        margin-bottom: 13px;
+
+        color: var(--toska);
+
+        font-size: 12px;
+        font-weight: 700;
+
+        letter-spacing: 2px;
+        text-transform: uppercase;
     }
 
-    .details-header h2 {
-        margin: 0 0 16px;
+    .section-title {
+        margin: 0;
 
         color: var(--toska-dark);
 
         font-family: "Playfair Display", Georgia, serif;
 
-        font-size: clamp(35px, 4vw, 48px);
-        line-height: 1.15;
+        font-size: clamp(35px, 4vw, 49px);
 
+        line-height: 1.17;
         font-weight: 600;
     }
 
-    .details-header p {
-        margin: 0;
+    .profil-grid {
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 70px;
+
+        align-items: center;
+    }
+
+    .profil-image {
+        position: relative;
+
+        padding: 0 15px 15px 0;
+    }
+
+    .profil-image::after {
+        content: "";
+
+        position: absolute;
+
+        left: 15px;
+        right: 0;
+        top: 15px;
+        bottom: 0;
+
+        border: 2px solid var(--sand);
+
+        z-index: 0;
+    }
+
+    .profil-image img {
+        position: relative;
+
+        z-index: 1;
+
+        display: block;
+
+        width: 100%;
+        height: 430px;
+
+        object-fit: cover;
+    }
+
+    .profil-text {
+        padding: 0 10px;
+    }
+
+    .profil-text p {
+        margin: 0 0 19px;
 
         color: var(--text);
 
-        font-size: 15.5px;
-        line-height: 1.8;
+        font-size: 15px;
+        line-height: 1.9;
     }
 
-    .details-grid {
-        display: grid;
+    .profil-note {
+        margin-top: 28px;
 
-        grid-template-columns: repeat(3, 1fr);
+        padding: 21px 23px;
 
-        gap: 20px;
+        border-left: 3px solid var(--sand);
+
+        background: var(--cream-soft);
     }
 
-    .detail-card {
-        min-height: 205px;
-
-        padding: 30px 27px;
-
-        background: var(--cream-light);
-
-        border-top: 4px solid var(--toska);
-
-        box-shadow: 0 8px 25px rgba(111, 72, 40, .06);
-
-        transition:
-            transform .25s ease,
-            box-shadow .25s ease;
-    }
-
-    .detail-card:hover {
-        transform: translateY(-4px);
-
-        box-shadow:
-            0 12px 30px rgba(111, 72, 40, .10);
-    }
-
-    .detail-card-number {
+    .profil-note strong {
         display: block;
 
-        margin-bottom: 18px;
+        margin-bottom: 6px;
 
+        color: var(--toska-dark);
+
+        font-size: 14px;
+    }
+
+    .profil-note span {
+        color: var(--muted);
+
+        font-size: 13px;
+
+        line-height: 1.7;
+    }
+
+
+    /* =========================================================
+       KARAKTER DESTINASI
+    ========================================================= */
+
+    .karakter-section {
+        padding: 100px 30px 110px;
+
+        background: var(--cream);
+    }
+
+    .karakter-container {
+        max-width: 1120px;
+
+        margin: 0 auto;
+    }
+
+    .karakter-heading {
+        width: 100%;
+        max-width: 850px;
+
+        margin: 0 auto 55px;
+
+        text-align: center;
+    }
+
+    .karakter-heading .section-label {
+        text-align: center;
+    }
+
+    .karakter-heading .section-title {
+        width: 100%;
+
+        text-align: center;
+    }
+
+    .karakter-heading p {
+        max-width: 650px;
+
+        margin: 18px auto 0;
+
+        color: var(--muted);
+
+        font-size: 15px;
+
+        line-height: 1.85;
+
+        text-align: center;
+    }
+
+
+    /* =========================================================
+       ACCORDION
+    ========================================================= */
+
+    .karakter-accordion {
+        width: 100%;
+        max-width: 900px;
+
+        margin: 0 auto;
+
+        border-top: 1px solid rgba(138, 96, 56, .22);
+    }
+
+    .karakter-accordion .accordion-item {
+        background: transparent;
+
+        border: 0;
+
+        border-bottom: 1px solid rgba(138, 96, 56, .22);
+
+        border-radius: 0;
+    }
+
+    .karakter-accordion .accordion-button {
+        position: relative;
+
+        display: grid;
+
+        grid-template-columns: 75px 1fr 45px;
+
+        align-items: center;
+
+        width: 100%;
+
+        padding: 27px 10px;
+
+        background: transparent;
+
+        color: var(--toska-dark);
+
+        border: 0;
+
+        box-shadow: none;
+
+        text-align: left;
+    }
+
+    .karakter-accordion .accordion-button::after {
+        display: none;
+    }
+
+    .karakter-accordion .accordion-button:focus {
+        box-shadow: none;
+    }
+
+    .karakter-number {
         color: var(--sand);
 
         font-family: "Playfair Display", Georgia, serif;
 
-        font-size: 25px;
+        font-size: 24px;
+
         font-weight: 600;
     }
 
-    .detail-card h3 {
-        margin: 0 0 10px;
-
+    .karakter-name {
         color: var(--toska-dark);
 
-        font-size: 19px;
+        font-size: 18px;
+
         font-weight: 700;
+
+        transition: color .2s ease;
     }
 
-    .detail-card p {
+    .karakter-icon {
+        width: 34px;
+        height: 34px;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        border: 1px solid rgba(138, 96, 56, .25);
+
+        border-radius: 50%;
+
+        color: var(--toska);
+
+        font-size: 17px;
+
+        transition:
+            transform .25s ease,
+            background .25s ease,
+            color .25s ease,
+            border-color .25s ease;
+    }
+
+    .karakter-accordion
+    .accordion-button:hover
+    .karakter-name {
+        color: var(--brown);
+    }
+
+    .karakter-accordion
+    .accordion-button:not(.collapsed)
+    .karakter-name {
+        color: var(--brown);
+    }
+
+    .karakter-accordion
+    .accordion-button:not(.collapsed)
+    .karakter-icon {
+        transform: rotate(45deg);
+
+        background: var(--toska);
+
+        color: var(--white);
+
+        border-color: var(--toska);
+    }
+
+    .karakter-description {
+        padding: 0 75px 30px 85px;
+    }
+
+    .karakter-description-inner {
+        max-width: 720px;
+
+        padding: 22px 25px;
+
+        background: var(--cream-light);
+
+        border-left: 3px solid var(--sand);
+    }
+
+    .karakter-description-inner p {
         margin: 0;
 
         color: var(--muted);
 
         font-size: 14px;
-        line-height: 1.75;
+
+        line-height: 1.9;
+    }
+
+
+    /* =========================================================
+       DAYA TARIK
+    ========================================================= */
+
+    .daya-tarik-section {
+        padding: 105px 30px;
+
+        background: var(--cream-light);
+    }
+
+    .daya-tarik-container {
+        max-width: 1120px;
+
+        margin: 0 auto;
+    }
+
+    .daya-tarik-grid {
+        display: grid;
+
+        grid-template-columns: .9fr 1.1fr;
+
+        gap: 70px;
+
+        align-items: center;
+    }
+
+    .daya-tarik-content {
+        padding-left: 28px;
+
+        border-left: 3px solid var(--toska);
+    }
+
+    .daya-tarik-content h2 {
+        margin: 0 0 20px;
+
+        color: var(--toska-dark);
+
+        font-family: "Playfair Display", Georgia, serif;
+
+        font-size: clamp(34px, 4vw, 47px);
+
+        line-height: 1.17;
+
+        font-weight: 600;
+    }
+
+    .daya-tarik-content p {
+        margin: 0;
+
+        color: var(--muted);
+
+        font-size: 15px;
+
+        line-height: 1.9;
+    }
+
+    .daya-tarik-images {
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 18px;
+    }
+
+    .daya-tarik-images img {
+        width: 100%;
+        height: 280px;
+
+        display: block;
+
+        object-fit: cover;
+    }
+
+    .daya-tarik-images img:first-child {
+        margin-top: 30px;
     }
 
 
@@ -523,15 +534,15 @@
        CLOSING
     ========================================================= */
 
-    .destination-closing {
-        padding: 85px 30px 100px;
+    .destinasi-closing {
+        padding: 90px 30px 105px;
 
-        background: var(--cream-light);
+        background: var(--cream);
 
         text-align: center;
     }
 
-    .destination-closing-inner {
+    .closing-inner {
         max-width: 700px;
 
         margin: 0 auto;
@@ -546,26 +557,28 @@
         background: var(--sand);
     }
 
-    .destination-closing h2 {
-        margin: 0 0 16px;
+    .closing-inner h2 {
+        margin: 0 0 17px;
 
         color: var(--toska-dark);
 
         font-family: "Playfair Display", Georgia, serif;
 
-        font-size: clamp(32px, 4vw, 45px);
+        font-size: clamp(34px, 4vw, 47px);
+
         line-height: 1.2;
 
         font-weight: 600;
     }
 
-    .destination-closing p {
+    .closing-inner p {
         margin: 0;
 
         color: var(--muted);
 
         font-size: 15px;
-        line-height: 1.8;
+
+        line-height: 1.9;
     }
 
 
@@ -575,163 +588,163 @@
 
     @media (max-width: 991px) {
 
-        .destination-hero {
-            min-height: 285px;
+        .hero-description {
+            max-width: 650px;
         }
 
-        .destination-hero-content {
-            padding: 40px 8% 52px;
+        .profil-grid {
+            gap: 45px;
         }
 
-        .profile-grid {
+        .daya-tarik-grid {
+            grid-template-columns: 1fr;
+
+            gap: 50px;
+        }
+    }
+
+
+    @media (max-width: 767px) {
+
+        .destinasi-hero {
+            padding: 75px 22px 80px;
+        }
+
+        .destinasi-hero h1 {
+            font-size: 44px;
+        }
+
+        .hero-description {
+            font-size: 14px;
+        }
+
+
+        .profil-section {
+            padding: 75px 22px 80px;
+        }
+
+        .profil-heading {
+            margin-bottom: 40px;
+        }
+
+        .profil-grid {
             grid-template-columns: 1fr;
 
             gap: 40px;
         }
 
-        .details-grid {
-            grid-template-columns: 1fr;
+        .profil-image {
+            padding: 0 10px 10px 0;
+        }
+
+        .profil-image img {
+            height: 320px;
+        }
+
+        .profil-image::after {
+            left: 10px;
+            top: 10px;
+        }
+
+
+        .karakter-section {
+            padding: 75px 22px 80px;
+        }
+
+        .karakter-heading {
+            margin-bottom: 40px;
+        }
+
+        .karakter-accordion .accordion-button {
+            grid-template-columns: 55px 1fr 40px;
+
+            padding: 23px 0;
+        }
+
+        .karakter-number {
+            font-size: 21px;
+        }
+
+        .karakter-name {
+            font-size: 16px;
+        }
+
+        .karakter-description {
+            padding: 0 0 25px 55px;
+        }
+
+        .karakter-description-inner {
+            padding: 18px 20px;
+        }
+
+
+        .daya-tarik-section {
+            padding: 75px 22px 80px;
+        }
+
+        .daya-tarik-images img {
+            height: 230px;
+        }
+
+
+        .destinasi-closing {
+            padding: 75px 22px 85px;
         }
     }
 
 
-    @media (max-width: 700px) {
+    @media (max-width: 480px) {
 
-        .destination-hero {
-            min-height: 285px;
+        .destinasi-hero h1 {
+            font-size: 39px;
         }
 
-        .destination-hero-content {
-            padding: 34px 7% 50px;
+        .profil-image img {
+            height: 280px;
         }
 
-        .destination-eyebrow {
-            gap: 10px;
-
-            font-size: 10px;
-            letter-spacing: 2px;
-        }
-
-        .destination-eyebrow::before,
-        .destination-eyebrow::after {
-            width: 26px;
-        }
-
-        .destination-hero h1 {
-            font-size: 46px;
-
-            letter-spacing: -2px;
-        }
-
-        .destination-hero h1 .beach {
-            letter-spacing: -2px;
-        }
-
-        .destination-hero p {
-            max-width: 100%;
-
-            margin-top: 17px;
-
-            font-size: 14px;
-        }
-
-
-        .profile-section {
-            padding: 70px 7%;
-        }
-
-        .profile-heading h2 {
-            font-size: 36px;
-            line-height: 1.15;
-        }
-
-        .profile-content .lead {
-            font-size: 17px;
-        }
-
-        .profile-highlights {
+        .daya-tarik-images {
             grid-template-columns: 1fr;
         }
 
+        .daya-tarik-images img,
+        .daya-tarik-images img:first-child {
+            height: 250px;
 
-        .character-section,
-        .details-section {
-            padding: 70px 7%;
-        }
-
-        .character-header h2,
-        .details-header h2 {
-            font-size: 36px;
-        }
-
-        .character-button {
-            padding: 22px 10px;
-        }
-
-        .character-button:hover {
-            padding-left: 15px;
-        }
-
-        .character-number {
-            width: 42px;
-
-            font-size: 12px;
-        }
-
-        .character-title {
-            font-size: 17px;
-        }
-
-        .character-arrow {
-            margin-left: 10px;
-        }
-
-        .character-content {
-            padding-left: 52px;
-            padding-right: 10px;
-        }
-
-        .character-content p {
-            font-size: 14px;
-        }
-
-        .detail-card {
-            min-height: auto;
-
-            padding: 27px 23px;
-        }
-
-
-        .destination-closing {
-            padding: 70px 22px 85px;
+            margin-top: 0;
         }
     }
+
 </style>
 
 
-<div class="destination-page">
+<div class="destinasi-page">
 
 
     {{-- =====================================================
          HERO
     ====================================================== --}}
 
-    <section class="destination-hero">
+    <section class="destinasi-hero">
 
-        <div class="destination-hero-content">
+        <div class="destinasi-hero-inner">
 
-            <span class="destination-eyebrow">
-                Tentang Destinasi
-            </span>
+            <div>
 
-            <h1>
-                <span class="evara">Evara</span>
-                <span class="beach">Beach</span>
-            </h1>
+                <div class="hero-label">
+                    Tentang Destinasi
+                </div>
 
-            <p>
-                Mengenal lebih dekat kawasan pesisir Evara Beach
-                dan karakter yang menjadi bagian dari destinasi ini.
+                <h1>
+                    Mengenal <span>Evara Beach</span>
+                </h1>
+
+            </div>
+
+            <p class="hero-description">
+                Evara Beach merupakan destinasi wisata pesisir
+                dengan karakter kawasan yang dibentuk oleh pantai,
+                lingkungan pesisir, dan ruang terbuka.
             </p>
 
         </div>
@@ -740,79 +753,69 @@
 
 
     {{-- =====================================================
-         PROFILE
+         PROFIL DESTINASI
     ====================================================== --}}
 
-    <section class="profile-section">
+    <section class="profil-section">
 
-        <div class="profile-grid">
+        <div class="profil-container">
 
-
-            {{-- KIRI --}}
-
-            <div class="profile-heading">
+            <div class="profil-heading">
 
                 <div class="section-label">
                     Profil Destinasi
                 </div>
 
-                <h2>
-                    Sebuah destinasi yang dekat dengan pesisir
+                <h2 class="section-title">
+                    Sebuah kawasan pesisir
+                    dengan karakter tersendiri.
                 </h2>
 
             </div>
 
 
-            {{-- KANAN --}}
+            <div class="profil-grid">
 
-            <div class="profile-content">
+                <div class="profil-image">
 
-                <p class="lead">
-                    Evara Beach merupakan destinasi wisata pesisir
-                    yang menghadirkan kawasan pantai sebagai bagian
-                    utama dari karakter tempatnya.
-                </p>
+                    <img
+                        src="{{ asset('img/foto pantai.jpeg') }}"
+                        alt="Evara Beach"
+                    >
 
-                <p>
-                    Laut, garis pantai, dan lingkungan terbuka menjadi
-                    bagian yang membentuk wajah Evara Beach. Kawasan ini
-                    memberikan ruang bagi pengunjung untuk menikmati
-                    lingkungan pesisir dalam suasana yang santai.
-                </p>
-
-                <p>
-                    Setiap bagian dari kawasan memiliki hubungan dengan
-                    lingkungan pantai, sehingga pengalaman berkunjung
-                    tidak hanya berasal dari satu titik, tetapi dari
-                    keseluruhan karakter kawasan.
-                </p>
+                </div>
 
 
-                <div class="profile-highlights">
+                <div class="profil-text">
 
-                    <div class="profile-highlight">
+                    <p>
+                        Evara Beach merupakan destinasi wisata pesisir
+                        yang menjadikan kawasan pantai sebagai bagian
+                        utama dari identitasnya.
+                    </p>
+
+                    <p>
+                        Lingkungan pantai, garis pesisir, serta ruang
+                        terbuka di sekitarnya membentuk kawasan yang
+                        menjadi bagian dari Evara Beach.
+                    </p>
+
+                    <p>
+                        Melalui VISIT-IN, Evara Beach diperkenalkan
+                        sebagai sebuah destinasi dengan karakter
+                        kawasan pesisir.
+                    </p>
+
+                    <div class="profil-note">
 
                         <strong>
-                            Kawasan Pesisir
+                            Identitas Evara Beach
                         </strong>
 
                         <span>
-                            Lingkungan pantai menjadi unsur utama
-                            yang membentuk karakter Evara Beach.
-                        </span>
-
-                    </div>
-
-
-                    <div class="profile-highlight">
-
-                        <strong>
-                            Ruang Terbuka
-                        </strong>
-
-                        <span>
-                            Area terbuka memberikan kesan lapang
-                            yang menjadi bagian dari kawasan pantai.
+                            Pantai, garis pesisir, dan ruang terbuka
+                            menjadi unsur yang membentuk karakter
+                            kawasan Evara Beach.
                         </span>
 
                     </div>
@@ -827,284 +830,276 @@
 
 
     {{-- =====================================================
-         CHARACTER
+         KARAKTER DESTINASI
     ====================================================== --}}
 
-    <section class="character-section">
+    <section class="karakter-section">
 
-        <div class="character-header">
+        <div class="karakter-container">
 
-            <div class="section-label">
-                Karakter Evara Beach
-            </div>
-
-            <h2>
-                Apa yang membentuk Evara Beach
-            </h2>
-
-            <p>
-                Evara Beach memiliki karakter yang terbentuk dari
-                hubungan antara lingkungan pantai, ruang terbuka,
-                dan keberadaan pengunjung di dalam kawasan.
-            </p>
-
-        </div>
-
-
-        <div class="character-list">
-
-
-            {{-- 01 --}}
-
-            <div class="character-item">
-
-                <button
-                    type="button"
-                    class="character-button"
-                    onclick="toggleCharacter(this)"
-                >
-
-                    <span class="character-number">
-                        01
-                    </span>
-
-                    <span class="character-title">
-                        Lingkungan Pesisir
-                    </span>
-
-                    <span class="character-arrow">
-                        ↓
-                    </span>
-
-                </button>
-
-
-                <div class="character-content">
-
-                    <p>
-                        Lingkungan pesisir menjadi dasar dari karakter
-                        Evara Beach. Keberadaan laut dan kawasan pantai
-                        memberikan identitas yang kuat terhadap destinasi ini.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            {{-- 02 --}}
-
-            <div class="character-item">
-
-                <button
-                    type="button"
-                    class="character-button"
-                    onclick="toggleCharacter(this)"
-                >
-
-                    <span class="character-number">
-                        02
-                    </span>
-
-                    <span class="character-title">
-                        Ruang yang Terbuka
-                    </span>
-
-                    <span class="character-arrow">
-                        ↓
-                    </span>
-
-                </button>
-
-
-                <div class="character-content">
-
-                    <p>
-                        Kawasan pantai memiliki ruang terbuka yang memberikan
-                        pandangan lebih luas terhadap lingkungan sekitar.
-                        Karakter ini menjadi salah satu bagian yang terasa
-                        ketika berada di kawasan Evara Beach.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            {{-- 03 --}}
-
-            <div class="character-item">
-
-                <button
-                    type="button"
-                    class="character-button"
-                    onclick="toggleCharacter(this)"
-                >
-
-                    <span class="character-number">
-                        03
-                    </span>
-
-                    <span class="character-title">
-                        Lingkungan yang Menyatu
-                    </span>
-
-                    <span class="character-arrow">
-                        ↓
-                    </span>
-
-                </button>
-
-
-                <div class="character-content">
-
-                    <p>
-                        Area di sekitar pantai membentuk satu kesatuan
-                        lingkungan yang saling terhubung. Laut, pasir,
-                        ruang terbuka, dan kawasan sekitar menjadi bagian
-                        dari identitas Evara Beach.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            {{-- 04 --}}
-
-            <div class="character-item">
-
-                <button
-                    type="button"
-                    class="character-button"
-                    onclick="toggleCharacter(this)"
-                >
-
-                    <span class="character-number">
-                        04
-                    </span>
-
-                    <span class="character-title">
-                        Ruang untuk Berkunjung
-                    </span>
-
-                    <span class="character-arrow">
-                        ↓
-                    </span>
-
-                </button>
-
-
-                <div class="character-content">
-
-                    <p>
-                        Evara Beach menjadi ruang yang dapat dikunjungi
-                        untuk menikmati lingkungan pesisir dengan cara
-                        yang berbeda sesuai dengan kebutuhan setiap pengunjung.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-        </div>
-
-    </section>
-
-
-    {{-- =====================================================
-         DESTINATION DETAILS
-    ====================================================== --}}
-
-    <section class="details-section">
-
-        <div class="details-container">
-
-            <div class="details-header">
+            <div class="karakter-heading">
 
                 <div class="section-label">
-                    Evara Beach
+                    Karakter Destinasi
                 </div>
 
-                <h2>
-                    Satu kawasan, berbagai sisi
+                <h2 class="section-title">
+                    Mengenal bagian dari Evara Beach
                 </h2>
 
                 <p>
-                    Evara Beach tidak hanya dilihat dari pantainya,
-                    tetapi juga dari lingkungan yang mengelilinginya
-                    dan bagaimana kawasan tersebut menjadi satu kesatuan.
+                    Klik pada bagian yang ingin kamu ketahui
+                    untuk melihat penjelasan lebih lengkap.
                 </p>
 
             </div>
 
 
-            <div class="details-grid">
+            <div
+                class="accordion karakter-accordion"
+                id="karakterAccordion"
+            >
 
 
-                {{-- CARD 01 --}}
+                {{-- =================================================
+                     01 KAWASAN PANTAI
+                ================================================== --}}
 
-                <div class="detail-card">
+                <div class="accordion-item">
 
-                    <span class="detail-card-number">
-                        01
-                    </span>
+                    <h3 class="accordion-header">
 
-                    <h3>
-                        Lanskap Pantai
+                        <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#karakterPantai"
+                            aria-expanded="false"
+                            aria-controls="karakterPantai"
+                        >
+
+                            <span class="karakter-number">
+                                01
+                            </span>
+
+                            <span class="karakter-name">
+                                Kawasan Pantai
+                            </span>
+
+                            <span class="karakter-icon">
+                                <i class="bi bi-plus"></i>
+                            </span>
+
+                        </button>
+
                     </h3>
 
+
+                    <div
+                        id="karakterPantai"
+                        class="accordion-collapse collapse"
+                        data-bs-parent="#karakterAccordion"
+                    >
+
+                        <div class="karakter-description">
+
+                            <div class="karakter-description-inner">
+
+                                <p>
+                                    Kawasan pantai merupakan bagian
+                                    utama dari Evara Beach. Area ini
+                                    menjadi unsur yang paling menonjol
+                                    dalam membentuk identitas destinasi.
+                                    Garis pantai dan area di sekitarnya
+                                    menjadi bagian dari lingkungan
+                                    wisata Evara Beach.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                {{-- =================================================
+                     02 LINGKUNGAN PESISIR
+                ================================================== --}}
+
+                <div class="accordion-item">
+
+                    <h3 class="accordion-header">
+
+                        <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#karakterPesisir"
+                            aria-expanded="false"
+                            aria-controls="karakterPesisir"
+                        >
+
+                            <span class="karakter-number">
+                                02
+                            </span>
+
+                            <span class="karakter-name">
+                                Lingkungan Pesisir
+                            </span>
+
+                            <span class="karakter-icon">
+                                <i class="bi bi-plus"></i>
+                            </span>
+
+                        </button>
+
+                    </h3>
+
+
+                    <div
+                        id="karakterPesisir"
+                        class="accordion-collapse collapse"
+                        data-bs-parent="#karakterAccordion"
+                    >
+
+                        <div class="karakter-description">
+
+                            <div class="karakter-description-inner">
+
+                                <p>
+                                    Lingkungan pesisir menjadi bagian
+                                    yang tidak terpisahkan dari Evara
+                                    Beach. Garis pantai dan lingkungan
+                                    di sekitarnya membentuk karakter
+                                    kawasan yang menjadi identitas
+                                    Evara Beach sebagai destinasi
+                                    wisata pesisir.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                {{-- =================================================
+                     03 RUANG TERBUKA
+                ================================================== --}}
+
+                <div class="accordion-item">
+
+                    <h3 class="accordion-header">
+
+                        <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#karakterRuang"
+                            aria-expanded="false"
+                            aria-controls="karakterRuang"
+                        >
+
+                            <span class="karakter-number">
+                                03
+                            </span>
+
+                            <span class="karakter-name">
+                                Ruang Terbuka
+                            </span>
+
+                            <span class="karakter-icon">
+                                <i class="bi bi-plus"></i>
+                            </span>
+
+                        </button>
+
+                    </h3>
+
+
+                    <div
+                        id="karakterRuang"
+                        class="accordion-collapse collapse"
+                        data-bs-parent="#karakterAccordion"
+                    >
+
+                        <div class="karakter-description">
+
+                            <div class="karakter-description-inner">
+
+                                <p>
+                                    Ruang terbuka menjadi bagian dari
+                                    kawasan Evara Beach dan melengkapi
+                                    lingkungan pesisir yang ada di
+                                    dalam destinasi. Area ini menjadi
+                                    bagian dari ruang yang membentuk
+                                    keseluruhan kawasan Evara Beach.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    {{-- =====================================================
+         DAYA TARIK
+    ====================================================== --}}
+
+    <section class="daya-tarik-section">
+
+        <div class="daya-tarik-container">
+
+            <div class="daya-tarik-grid">
+
+                <div class="daya-tarik-content">
+
+                    <div class="section-label">
+                        Daya Tarik
+                    </div>
+
+                    <h2>
+                        Karakter pantai
+                        yang menjadi identitas.
+                    </h2>
+
                     <p>
-                        Pemandangan laut dan garis pantai menjadi
-                        bagian utama dari lanskap yang membentuk
-                        identitas Evara Beach.
+                        Evara Beach memiliki daya tarik yang berasal
+                        dari karakter kawasan pesisirnya. Laut, garis
+                        pantai, dan ruang terbuka menjadi unsur yang
+                        membentuk tampilan destinasi.
                     </p>
 
                 </div>
 
 
-                {{-- CARD 02 --}}
+                <div class="daya-tarik-images">
 
-                <div class="detail-card">
+                    <img
+                        src="{{ asset('img/pantai21.png') }}"
+                        alt="Pantai Evara Beach"
+                    >
 
-                    <span class="detail-card-number">
-                        02
-                    </span>
-
-                    <h3>
-                        Lingkungan Sekitar
-                    </h3>
-
-                    <p>
-                        Kawasan sekitar pantai menjadi bagian yang
-                        melengkapi pengalaman berada di Evara Beach
-                        sebagai sebuah destinasi.
-                    </p>
+                    <img
+                        src="{{ asset('img/foto20.png') }}"
+                        alt="Pemandangan Evara Beach"
+                    >
 
                 </div>
-
-
-                {{-- CARD 03 --}}
-
-                <div class="detail-card">
-
-                    <span class="detail-card-number">
-                        03
-                    </span>
-
-                    <h3>
-                        Pengalaman Berkunjung
-                    </h3>
-
-                    <p>
-                        Setiap pengunjung dapat memiliki pengalaman
-                        yang berbeda sesuai dengan waktu dan tujuan
-                        kunjungannya di kawasan pantai.
-                    </p>
-
-                </div>
-
 
             </div>
 
@@ -1117,20 +1112,20 @@
          CLOSING
     ====================================================== --}}
 
-    <section class="destination-closing">
+    <section class="destinasi-closing">
 
-        <div class="destination-closing-inner">
+        <div class="closing-inner">
 
             <div class="closing-line"></div>
 
             <h2>
-                Kenali Evara Beach
+                Evara Beach
             </h2>
 
             <p>
-                Temukan karakter kawasan pesisir Evara Beach
-                dan lihat lebih banyak sisi destinasi melalui
-                Galeri Evara Beach.
+                Sebuah destinasi wisata pesisir dengan pantai,
+                lingkungan pesisir, dan ruang terbuka sebagai
+                bagian dari karakter kawasannya.
             </p>
 
         </div>
@@ -1139,25 +1134,5 @@
 
 
 </div>
-
-
-<script>
-    function toggleCharacter(button) {
-
-        const item = button.closest('.character-item');
-
-        const allItems = document.querySelectorAll('.character-item');
-
-        allItems.forEach(function(otherItem) {
-
-            if (otherItem !== item) {
-                otherItem.classList.remove('active');
-            }
-
-        });
-
-        item.classList.toggle('active');
-    }
-</script>
 
 @endsection

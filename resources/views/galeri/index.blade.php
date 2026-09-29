@@ -853,13 +853,13 @@
                     class="gallery-card"
                     data-bs-toggle="modal"
                     data-bs-target="#galleryModal"
-                    data-image="{{ asset('img/galeri7.jpeg') }}"
+                    data-image="{{ asset('img/galeri8.jpeg') }}"
                     data-title="Area Bersantai"
                     data-description="Area yang dapat digunakan pengunjung untuk duduk, beristirahat, dan menikmati suasana pantai."
                 >
 
                     <img
-                        src="{{ asset('img/galeri7.jpeg') }}"
+                        src="{{ asset('img/galeri8.jpeg') }}"
                         alt="Area Bersantai Evara Beach"
                     >
 
@@ -911,18 +911,18 @@
                     class="gallery-card"
                     data-bs-toggle="modal"
                     data-bs-target="#galleryModal"
-                    data-image="{{ asset('img/pantai.jpg') }}"
-                    data-title="Tempat Makan"
+                    data-image="{{ asset('img/galeri9.jpeg') }}"
+                    data-title="Kulinerh"
                     data-description="Resto atau tempat kuliner di kawasan Evara Beach yang dapat menjadi pilihan pengunjung untuk menikmati makanan dan minuman."
                 >
 
                     <img
-                        src="{{ asset('img/pantai.jpg') }}"
+                        src="{{ asset('img/galeri9.jpeg') }}"
                         alt="Tempat Makan atau Resto Evara Beach"
                     >
 
                     <div class="gallery-overlay">
-                        <span>TEMPAT MAKAN</span>
+                        <span>KULINER</span>
                     </div>
 
                 </div>

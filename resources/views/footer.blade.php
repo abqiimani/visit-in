@@ -571,8 +571,8 @@
                     </li>
 
                     <li>
-                        <a href="{{ route('ulasan') }}">
-                            Ulasan Pengunjung
+                        <a href="{{ route('event') }}">
+                            Event
                         </a>
                     </li>
 

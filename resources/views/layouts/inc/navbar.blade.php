@@ -104,6 +104,35 @@
     .visit-topbar .dropdown-divider {
         border-top: 1px solid #eee3d2;
     }
+
+
+    /* =====================================================
+       NAVBAR TETAP SAAT SCROLL
+       HANYA UNTUK MEMBUAT NAVBAR TETAP DI ATAS
+    ====================================================== */
+
+    .visit-topbar {
+        position: fixed !important;
+
+        top: 0;
+        right: 0;
+        left: 14rem;
+
+        z-index: 1030;
+    }
+
+
+    /* =====================================================
+       RESPONSIVE
+       ====================================================== */
+
+    @media (max-width: 767.98px) {
+
+        .visit-topbar {
+            left: 0;
+        }
+
+    }
 </style>
 
 

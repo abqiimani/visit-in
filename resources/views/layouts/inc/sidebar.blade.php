@@ -209,6 +209,48 @@
 
         text-transform: uppercase;
     }
+
+
+    /* =====================================================
+       SIDEBAR TETAP SAAT SCROLL
+       HANYA UNTUK MEMBUAT SIDEBAR TETAP DI KIRI
+    ====================================================== */
+
+    .visit-sidebar {
+        position: fixed !important;
+
+        top: 0;
+        left: 0;
+
+        width: 14rem !important;
+        min-width: 14rem;
+
+        height: 100vh;
+
+        z-index: 1040;
+
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+
+    /* =====================================================
+       SCROLLBAR SIDEBAR
+       TIDAK MENGUBAH TAMPILAN MENU
+    ====================================================== */
+
+    .visit-sidebar::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    .visit-sidebar::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    .visit-sidebar::-webkit-scrollbar-thumb {
+        background: rgba(255,255,255,.20);
+        border-radius: 10px;
+    }
 </style>
 
 

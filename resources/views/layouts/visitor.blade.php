@@ -594,10 +594,10 @@
                     <li class="nav-item">
 
                         <a
-                            class="nav-link {{ request()->routeIs('ulasan') ? 'active' : '' }}"
-                            href="{{ route('ulasan') }}"
+                            class="nav-link {{ request()->routeIs('event') ? 'active' : '' }}"
+                            href="{{ route('event') }}"
                         >
-                            Ulasan Pengunjung
+                            Event
                         </a>
 
                     </li>

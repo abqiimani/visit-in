@@ -5,7 +5,6 @@
 @section('content')
 
 <style>
-
     :root {
         --tosca-dark: #075c59;
         --tosca: #0d7772;
@@ -34,8 +33,10 @@
     .hero-section {
         position: relative;
         min-height: 650px;
+
         display: flex;
         align-items: center;
+
         overflow: hidden;
 
         background-image:
@@ -54,10 +55,12 @@
 
     .hero-section::after {
         content: "";
+
         position: absolute;
         left: 0;
         right: 0;
         bottom: 0;
+
         height: 180px;
 
         background: linear-gradient(
@@ -77,9 +80,12 @@
     .hero-content {
         position: relative;
         z-index: 2;
+
         width: 100%;
         max-width: 1250px;
+
         margin: 0 auto;
+
         padding: 90px 42px 120px;
     }
 
@@ -92,11 +98,13 @@
         display: inline-flex;
         align-items: center;
         gap: 10px;
+
         margin-bottom: 18px;
         padding: 8px 17px;
 
         border: 1px solid rgba(255,255,255,0.42);
         border-radius: 30px;
+
         background: rgba(255,255,255,0.10);
 
         backdrop-filter: blur(5px);
@@ -109,19 +117,25 @@
 
     .hero-label::before {
         content: "";
+
         width: 7px;
         height: 7px;
+
         border-radius: 50%;
+
         background: #e7c078;
     }
 
     .hero-title {
         margin: 0;
+
         color: var(--white);
 
         font-family: "Playfair Display", Georgia, serif;
+
         font-size: clamp(44px, 5vw, 62px);
         font-weight: 600;
+
         line-height: 1.08;
         letter-spacing: -0.5px;
     }
@@ -133,30 +147,90 @@
 
     .hero-description {
         max-width: 570px;
+
         margin: 23px 0 30px;
 
         color: rgba(255,255,255,0.90);
+
         font-size: 16px;
         line-height: 1.8;
+    }
+
+
+    /* =========================================================
+       CTA BUTTON
+       ========================================================= */
+
+    .hero-button-wrap {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 7px;
+    }
+
+    .hero-button-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+
+        margin-left: 9px;
+
+        color: #ffffff;
+
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 1.7px;
+
+        text-transform: uppercase;
+
+        text-shadow:
+            0 2px 6px rgba(0,0,0,.30);
+    }
+
+    .hero-button-label::before {
+        content: "";
+
+        width: 7px;
+        height: 7px;
+
+        flex-shrink: 0;
+
+        border-radius: 50%;
+
+        background: #f1d19b;
+
+        box-shadow:
+            0 0 0 4px rgba(241,209,155,.18);
     }
 
     .hero-button {
         display: inline-flex;
         align-items: center;
-        gap: 11px;
+        justify-content: center;
 
-        padding: 14px 24px;
+        gap: 14px;
 
-        border: none;
-        border-radius: 8px;
+        width: 330px;
+        min-height: 66px;
+
+        padding: 17px 25px;
+
+        border: 2px solid rgba(255,255,255,.75);
+        border-radius: 12px;
 
         background: #f1d19b;
-        color: #155d59;
+        color: #075c59;
 
-        font-size: 14px;
-        font-weight: 700;
-        letter-spacing: .3px;
+        font-size: 16px;
+        font-weight: 900;
+        letter-spacing: .6px;
+
         text-decoration: none;
+
+        box-shadow:
+            0 14px 30px rgba(0,0,0,.25),
+            0 0 0 6px rgba(241,209,155,.13);
 
         transition:
             transform .25s ease,
@@ -165,14 +239,31 @@
     }
 
     .hero-button:hover {
-        background: #f7dfb7;
-        color: #155d59;
-        transform: translateY(-2px);
-        box-shadow: 0 10px 25px rgba(0,0,0,.18);
+        background: #f8dfb5;
+        color: #075c59;
+
+        transform: translateY(-4px);
+
+        box-shadow:
+            0 19px 38px rgba(0,0,0,.30),
+            0 0 0 8px rgba(241,209,155,.17);
     }
 
-    .hero-button i {
-        font-size: 16px;
+    .hero-button i:first-child {
+        font-size: 21px;
+    }
+
+    .hero-button .hero-arrow {
+        margin-left: auto;
+
+        font-size: 22px;
+        font-weight: 700;
+
+        transition: transform .25s ease;
+    }
+
+    .hero-button:hover .hero-arrow {
+        transform: translateX(5px);
     }
 
 
@@ -182,6 +273,7 @@
 
     .welcome-section {
         padding: 105px 30px 110px;
+
         background: var(--cream);
     }
 
@@ -192,8 +284,11 @@
 
     .welcome-grid {
         display: grid;
+
         grid-template-columns: .95fr 1.05fr;
+
         gap: 75px;
+
         align-items: center;
     }
 
@@ -203,17 +298,23 @@
 
     .welcome-image img {
         display: block;
+
         width: 100%;
         height: 450px;
+
         object-fit: cover;
+
         border-radius: 5px;
     }
 
     .welcome-image::after {
         content: "";
+
         position: absolute;
+
         width: 105px;
         height: 105px;
+
         right: -18px;
         bottom: -18px;
 
@@ -223,10 +324,13 @@
 
     .section-label {
         margin-bottom: 13px;
+
         color: var(--tosca);
+
         font-size: 12px;
         font-weight: 700;
         letter-spacing: 2px;
+
         text-transform: uppercase;
     }
 
@@ -234,24 +338,31 @@
         margin: 0 0 20px;
 
         color: var(--tosca-dark);
+
         font-family: "Playfair Display", Georgia, serif;
+
         font-size: clamp(34px, 4vw, 48px);
         font-weight: 600;
+
         line-height: 1.15;
     }
 
     .welcome-text {
         max-width: 550px;
+
         margin: 0;
 
         color: var(--text);
+
         font-size: 16px;
         line-height: 1.9;
     }
 
     .welcome-highlight {
         display: flex;
+
         gap: 18px;
+
         margin-top: 28px;
         padding-top: 23px;
 
@@ -264,15 +375,18 @@
 
     .highlight-item strong {
         display: block;
+
         margin-bottom: 5px;
 
         color: var(--tosca-dark);
+
         font-size: 14px;
         font-weight: 700;
     }
 
     .highlight-item span {
         color: var(--muted);
+
         font-size: 13px;
         line-height: 1.6;
     }
@@ -298,7 +412,9 @@
 
     .experience-heading {
         max-width: 700px;
+
         margin: 0 auto 55px;
+
         text-align: center;
     }
 
@@ -306,8 +422,11 @@
         margin: 0 0 15px;
 
         color: var(--tosca-dark);
+
         font-family: "Playfair Display", Georgia, serif;
+
         font-size: clamp(32px, 4vw, 44px);
+
         line-height: 1.2;
         font-weight: 600;
     }
@@ -316,28 +435,36 @@
         margin: 0;
 
         color: var(--muted);
+
         font-size: 15px;
         line-height: 1.8;
     }
 
     .experience-list {
         display: grid;
+
         grid-template-columns: repeat(3, 1fr);
+
         gap: 45px;
     }
 
     .experience-item {
         position: relative;
+
         padding: 10px 25px;
+
         text-align: center;
     }
 
     .experience-number {
         display: block;
+
         margin-bottom: 14px;
 
         color: var(--sand-dark);
+
         font-family: "Playfair Display", Georgia, serif;
+
         font-size: 29px;
         font-weight: 600;
     }
@@ -346,6 +473,7 @@
         margin: 0 0 11px;
 
         color: var(--tosca-dark);
+
         font-size: 17px;
         font-weight: 700;
     }
@@ -354,12 +482,14 @@
         margin: 0;
 
         color: var(--muted);
+
         font-size: 14px;
         line-height: 1.8;
     }
 
     .experience-item:not(:last-child)::after {
         content: "";
+
         position: absolute;
 
         width: 1px;
@@ -378,6 +508,7 @@
 
     .visual-section {
         padding: 105px 30px;
+
         background: var(--cream);
     }
 
@@ -388,7 +519,9 @@
 
     .visual-grid {
         display: grid;
+
         grid-template-columns: 1.1fr .9fr;
+
         min-height: 440px;
     }
 
@@ -404,12 +537,14 @@
 
     .visual-content {
         display: flex;
+
         flex-direction: column;
         justify-content: center;
 
         padding: 65px;
 
         background: var(--tosca-dark);
+
         color: var(--white);
     }
 
@@ -421,8 +556,11 @@
         margin: 0 0 20px;
 
         color: var(--white);
+
         font-family: "Playfair Display", Georgia, serif;
+
         font-size: clamp(32px, 4vw, 45px);
+
         line-height: 1.18;
         font-weight: 600;
     }
@@ -431,6 +569,7 @@
         margin: 0;
 
         color: rgba(255,255,255,.84);
+
         font-size: 15px;
         line-height: 1.9;
     }
@@ -444,6 +583,7 @@
         padding: 95px 30px 110px;
 
         text-align: center;
+
         background: var(--cream);
     }
 
@@ -455,6 +595,7 @@
     .closing-line {
         width: 45px;
         height: 2px;
+
         margin: 0 auto 25px;
 
         background: var(--sand-dark);
@@ -464,8 +605,11 @@
         margin: 0 0 18px;
 
         color: var(--tosca-dark);
+
         font-family: "Playfair Display", Georgia, serif;
+
         font-size: clamp(34px, 4vw, 48px);
+
         line-height: 1.2;
         font-weight: 600;
     }
@@ -474,6 +618,7 @@
         margin: 0;
 
         color: var(--muted);
+
         font-size: 15px;
         line-height: 1.9;
     }
@@ -487,6 +632,7 @@
 
         .hero-section {
             min-height: 620px;
+
             background-position: 58% center;
         }
 
@@ -512,6 +658,7 @@
 
         .hero-section {
             min-height: 640px;
+
             background-position: center;
         }
 
@@ -532,12 +679,17 @@
             line-height: 1.75;
         }
 
+        .hero-button {
+            width: 310px;
+        }
+
         .welcome-section {
             padding: 75px 22px 80px;
         }
 
         .welcome-grid {
             grid-template-columns: 1fr;
+
             gap: 50px;
         }
 
@@ -552,6 +704,7 @@
 
         .welcome-highlight {
             flex-direction: column;
+
             gap: 18px;
         }
 
@@ -565,6 +718,7 @@
 
         .experience-list {
             grid-template-columns: 1fr;
+
             gap: 35px;
         }
 
@@ -578,6 +732,7 @@
 
             top: auto;
             right: auto;
+
             bottom: -18px;
             left: 50%;
 
@@ -617,9 +772,21 @@
             letter-spacing: 1.5px;
         }
 
+        .hero-button-wrap {
+            width: 100%;
+        }
+
+        .hero-button-label {
+            margin-left: 5px;
+        }
+
         .hero-button {
             width: 100%;
-            justify-content: center;
+            min-height: 64px;
+
+            padding: 16px 20px;
+
+            font-size: 15px;
         }
 
         .welcome-image img {
@@ -634,7 +801,6 @@
             padding: 42px 25px;
         }
     }
-
 </style>
 
 
@@ -655,10 +821,12 @@
                     Evara Beach
                 </div>
 
+
                 <h1 class="hero-title">
                     Temukan Tenangnya
                     <span>Suasana Pantai</span>
                 </h1>
+
 
                 <p class="hero-description">
                     Nikmati keindahan pantai, suasana yang menyenangkan,
@@ -666,16 +834,30 @@
                     kunjungan ke Evara Beach terasa berkesan.
                 </p>
 
-                <a href="{{ route('pengunjung.create') }}"
-                   class="hero-button">
 
-                    <i class="bi bi-pencil-square"></i>
+                <div class="hero-button-wrap">
 
-                    <span>ISI DATA KUNJUNGAN</span>
+                    <div class="hero-button-label">
+                        Mulai di sini
+                    </div>
 
-                    <i class="bi bi-arrow-right"></i>
 
-                </a>
+                    <a
+                        href="{{ route('pengunjung.create') }}"
+                        class="hero-button"
+                    >
+
+                        <i class="bi bi-pencil-square"></i>
+
+                        <span>
+                            ISI DATA KUNJUNGAN
+                        </span>
+
+                        <i class="bi bi-arrow-right hero-arrow"></i>
+
+                    </a>
+
+                </div>
 
             </div>
 
@@ -694,10 +876,11 @@
 
             <div class="welcome-grid">
 
+
                 <div class="welcome-image">
 
                     <img
-                        src="{{ asset('img/foto pantai.jpeg') }}"
+                        src="{{ asset('img/foto20.png') }}"
                         alt="Pemandangan Evara Beach"
                     >
 
@@ -710,9 +893,11 @@
                         Selamat Datang di Evara Beach
                     </div>
 
+
                     <h2 class="welcome-title">
                         Tempat untuk Menikmati Waktu dengan Cara Anda
                     </h2>
+
 
                     <p class="welcome-text">
                         Evara Beach menawarkan suasana yang dapat dinikmati
@@ -722,6 +907,7 @@
                         udara pantai — semuanya bisa menjadi bagian dari
                         kunjungan Anda.
                     </p>
+
 
                     <div class="welcome-highlight">
 
@@ -777,9 +963,11 @@
                     Pengalaman Berkunjung
                 </div>
 
+
                 <h2 class="experience-title">
                     Ada Banyak Cara untuk Menikmati Pantai
                 </h2>
+
 
                 <p class="experience-intro">
                     Setiap pengunjung bisa memiliki cara yang berbeda
@@ -790,6 +978,7 @@
 
 
             <div class="experience-list">
+
 
                 <div class="experience-item">
 
@@ -844,6 +1033,7 @@
 
                 </div>
 
+
             </div>
 
         </div>
@@ -861,7 +1051,9 @@
 
             <div class="visual-grid">
 
+
                 <div class="visual-image"></div>
+
 
                 <div class="visual-content">
 
@@ -869,15 +1061,18 @@
                         Tentukan Cara Anda Menikmati Pantai
                     </div>
 
+
                     <h2 class="visual-title">
                         Dari Pemandangan hingga Suasana
                     </h2>
+
 
                     <p class="visual-text">
                         Ada yang datang untuk menikmati pemandangan,
                         ada yang ingin menghabiskan waktu bersama,
                         dan ada pula yang sekadar mencari suasana
                         berbeda dari rutinitas sehari-hari.
+
                         Apa pun alasannya, setiap kunjungan memiliki
                         cerita tersendiri.
                     </p>
@@ -901,9 +1096,11 @@
 
             <div class="closing-line"></div>
 
+
             <h2 class="closing-title">
                 Sampai Jumpa di Evara Beach
             </h2>
+
 
             <p class="closing-text">
                 Nikmati perjalanan Anda, temukan suasana yang disukai,
