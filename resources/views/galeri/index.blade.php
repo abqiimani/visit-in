@@ -9,18 +9,22 @@
         --toska: #087873;
         --toska-dark: #075b58;
         --toska-soft: #dcefed;
+
         --cream: #fbf8f1;
         --cream-soft: #f4eadb;
+
         --sand: #d4aa6b;
         --brown: #987047;
+
         --text: #405954;
         --muted: #78847f;
+
         --white: #ffffff;
     }
 
     /* =========================================================
        HALAMAN GALERI
-    ========================================================= */
+    ========================================================== */
 
     .gallery-page {
         background: var(--cream);
@@ -28,9 +32,10 @@
         padding-bottom: 55px;
     }
 
+
     /* =========================================================
        HEADER GALERI
-    ========================================================= */
+    ========================================================== */
 
     .gallery-header {
         padding: 70px 20px 35px;
@@ -88,9 +93,10 @@
         background: var(--sand);
     }
 
+
     /* =========================================================
        GALERI GRID
-    ========================================================= */
+    ========================================================== */
 
     .gallery-section {
         max-width: 1180px;
@@ -108,9 +114,10 @@
         min-width: 0;
     }
 
+
     /* =========================================================
        CARD FOTO
-    ========================================================= */
+    ========================================================== */
 
     .gallery-card {
         position: relative;
@@ -143,9 +150,10 @@
             filter 0.5s ease;
     }
 
+
     /* =========================================================
        HOVER OVERLAY
-    ========================================================= */
+    ========================================================== */
 
     .gallery-overlay {
         position: absolute;
@@ -202,9 +210,12 @@
         transform: translateY(0);
     }
 
+
     /* =========================================================
-       ITEM TAMBAHAN
-    ========================================================= */
+       FOTO TAMBAHAN
+       6 FOTO PERTAMA TAMPIL
+       6 FOTO BERIKUTNYA TERSEMBUNYI
+    ========================================================== */
 
     .gallery-item-extra {
         display: none;
@@ -230,9 +241,10 @@
         }
     }
 
+
     /* =========================================================
        LEARN MORE
-    ========================================================= */
+    ========================================================== */
 
     .gallery-more {
         display: flex;
@@ -301,9 +313,10 @@
         transform: rotate(180deg);
     }
 
+
     /* =========================================================
        PENUTUP
-    ========================================================= */
+    ========================================================== */
 
     .gallery-ending {
         max-width: 1180px;
@@ -339,10 +352,10 @@
         font-style: italic;
     }
 
+
     /* =========================================================
        MODAL FOTO
-       POSISI DITURUNKAN SEDIKIT
-    ========================================================= */
+    ========================================================== */
 
     .gallery-modal {
         position: fixed !important;
@@ -353,11 +366,6 @@
         width: 100% !important;
         height: 100% !important;
 
-        /*
-         * JARAK DARI ATAS
-         * Sebelumnya 80px
-         * Sekarang 105px
-         */
         padding:
             105px
             20px
@@ -398,9 +406,10 @@
             rgba(0, 0, 0, 0.28);
     }
 
+
     /* =========================================================
        HEADER MODAL
-    ========================================================= */
+    ========================================================== */
 
     .gallery-modal .modal-header {
         min-height: 64px;
@@ -448,9 +457,10 @@
         opacity: 1;
     }
 
+
     /* =========================================================
        BODY MODAL
-    ========================================================= */
+    ========================================================== */
 
     .gallery-modal .modal-body {
         padding: 0;
@@ -458,18 +468,14 @@
         background: var(--cream);
     }
 
+
     /* =========================================================
        GAMBAR MODAL
-    ========================================================= */
+    ========================================================== */
 
     .gallery-modal-image {
         width: 100%;
 
-        /*
-         * Sedikit diperkecil supaya
-         * judul + gambar + description
-         * tetap terlihat nyaman.
-         */
         max-height: 58vh;
 
         display: block;
@@ -479,9 +485,10 @@
         background: #eee7da;
     }
 
+
     /* =========================================================
        DESCRIPTION MODAL
-    ========================================================= */
+    ========================================================== */
 
     .gallery-modal-description {
         margin: 0;
@@ -500,17 +507,19 @@
         line-height: 1.6;
     }
 
+
     /* =========================================================
        BACKDROP
-    ========================================================= */
+    ========================================================== */
 
     .modal-backdrop.show {
         opacity: 0.68;
     }
 
+
     /* =========================================================
        TABLET
-    ========================================================= */
+    ========================================================== */
 
     @media (max-width: 991px) {
 
@@ -539,9 +548,10 @@
         }
     }
 
+
     /* =========================================================
        HP
-    ========================================================= */
+    ========================================================== */
 
     @media (max-width: 575px) {
 
@@ -590,9 +600,10 @@
             font-size: 15px;
         }
 
+
         /* =====================================================
            MODAL HP
-        ===================================================== */
+        ====================================================== */
 
         .gallery-modal {
             padding:
@@ -669,6 +680,7 @@
 
         <div class="gallery-grid">
 
+
             <!-- =================================================
                  1. HAMPARAN PASIR
             ================================================== -->
@@ -710,7 +722,7 @@
                     data-bs-target="#galleryModal"
                     data-image="{{ asset('img/galeri2.jpeg') }}"
                     data-title="Pemandangan Pantai"
-                    data-description="Panorama pantai dan laut yang menjadi salah satu daya tarik utama Evara Beach."
+                    data-description="Panorama laut dan kawasan pantai yang menjadi bagian dari keindahan Evara Beach."
                 >
 
                     <img
@@ -739,7 +751,7 @@
                     data-bs-target="#galleryModal"
                     data-image="{{ asset('img/foto20.png') }}"
                     data-title="Sunrise"
-                    data-description="Suasana pagi saat matahari terbit dan memberikan pemandangan yang indah di kawasan pantai."
+                    data-description="Pemandangan pagi saat matahari terbit di kawasan pantai dengan cahaya yang menyinari garis laut."
                 >
 
                     <img
@@ -768,7 +780,7 @@
                     data-bs-target="#galleryModal"
                     data-image="{{ asset('img/galeri4.jpeg') }}"
                     data-title="Sunset"
-                    data-description="Keindahan suasana sore dan matahari terbenam yang dapat dinikmati di Evara Beach."
+                    data-description="Keindahan matahari terbenam dengan cahaya senja yang memantul di permukaan laut Evara Beach."
                 >
 
                     <img
@@ -845,9 +857,10 @@
 
             <!-- =================================================
                  7. AREA BERSANTAI
+                 TERSEMBUNYI AWAL
             ================================================== -->
 
-            <div class="gallery-item">
+            <div class="gallery-item gallery-item-extra">
 
                 <div
                     class="gallery-card"
@@ -873,10 +886,11 @@
 
 
             <!-- =================================================
-                 8. AREA BERMAIN
+                 8. AKTIVITAS AIR
+                 TERSEMBUNYI AWAL
             ================================================== -->
 
-            <div class="gallery-item">
+            <div class="gallery-item gallery-item-extra">
 
                 <div
                     class="gallery-card"
@@ -884,12 +898,12 @@
                     data-bs-target="#galleryModal"
                     data-image="{{ asset('img/galeri11.png') }}"
                     data-title="Aktivitas Air"
-                    data-description="Area rekreasi yang dapat menjadi bagian dari aktivitas pengunjung selama berada di kawasan Evara Beach."
+                    data-description="Aktivitas rekreasi air yang dapat menjadi bagian dari pengalaman pengunjung di kawasan Evara Beach."
                 >
 
                     <img
                         src="{{ asset('img/galeri11.png') }}"
-                        alt="Area Bermain Evara Beach"
+                        alt="Aktivitas Air Evara Beach"
                     >
 
                     <div class="gallery-overlay">
@@ -902,23 +916,24 @@
 
 
             <!-- =================================================
-                 9. TEMPAT MAKAN
+                 9. KULINER
+                 TERSEMBUNYI AWAL
             ================================================== -->
 
-            <div class="gallery-item">
+            <div class="gallery-item gallery-item-extra">
 
                 <div
                     class="gallery-card"
                     data-bs-toggle="modal"
                     data-bs-target="#galleryModal"
                     data-image="{{ asset('img/galeri10.jpeg') }}"
-                    data-title="Kulinerh"
-                    data-description="Resto atau tempat kuliner di kawasan Evara Beach yang dapat menjadi pilihan pengunjung untuk menikmati makanan dan minuman."
+                    data-title="Kuliner"
+                    data-description="Beragam pilihan makanan dan minuman yang dapat dinikmati pengunjung selama berada di Evara Beach."
                 >
 
                     <img
                         src="{{ asset('img/galeri10.jpeg') }}"
-                        alt="Tempat Makan atau Resto Evara Beach"
+                        alt="Kuliner Evara Beach"
                     >
 
                     <div class="gallery-overlay">
@@ -932,6 +947,7 @@
 
             <!-- =================================================
                  10. PENGINAPAN
+                 TERSEMBUNYI AWAL
             ================================================== -->
 
             <div class="gallery-item gallery-item-extra">
@@ -961,6 +977,7 @@
 
             <!-- =================================================
                  11. GAZEBO
+                 TERSEMBUNYI AWAL
             ================================================== -->
 
             <div class="gallery-item gallery-item-extra">
@@ -971,7 +988,7 @@
                     data-bs-target="#galleryModal"
                     data-image="{{ asset('img/galeri12.png') }}"
                     data-title="Gazebo"
-                    data-description="Gazebo sebagai tempat berteduh dan bersantai sambil menikmati suasana di kawasan pantai."
+                    data-description="Gazebo yang dapat digunakan pengunjung sebagai tempat berteduh dan bersantai di kawasan pantai."
                 >
 
                     <img
@@ -989,7 +1006,8 @@
 
 
             <!-- =================================================
-                 12. AREA PARKIR
+                 12. SUASANA MALAM
+                 TERSEMBUNYI AWAL
             ================================================== -->
 
             <div class="gallery-item gallery-item-extra">
@@ -998,23 +1016,24 @@
                     class="gallery-card"
                     data-bs-toggle="modal"
                     data-bs-target="#galleryModal"
-                    data-image="{{ asset('img/foto20.png') }}"
-                    data-title="Area Parkir"
-                    data-description="Area parkir yang digunakan untuk mendukung kebutuhan kendaraan pengunjung Evara Beach."
+                    data-image="{{ asset('img/galeri15.png') }}"
+                    data-title="Suasana Malam"
+                    data-description="Area makan dan bersantai dengan suasana malam yang hangat di tepi pantai Evara Beach."
                 >
 
                     <img
-                        src="{{ asset('img/foto20.png') }}"
-                        alt="Area Parkir Evara Beach"
+                        src="{{ asset('img/galeri15.png') }}"
+                        alt="Suasana Malam Evara Beach"
                     >
 
                     <div class="gallery-overlay">
-                        <span>AREA PARKIR</span>
+                        <span>SUASANA MALAM</span>
                     </div>
 
                 </div>
 
             </div>
+
 
         </div>
 
@@ -1156,6 +1175,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                 );
 
+
                 if (expanded) {
 
                     moreText.textContent =
@@ -1192,10 +1212,12 @@ document.addEventListener('DOMContentLoaded', function () {
                         });
 
                     }
+
                 }
 
             }
         );
+
     }
 
 
@@ -1245,6 +1267,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         card.getAttribute(
                             'data-description'
                         );
+
 
                     modalImage.src =
                         image;

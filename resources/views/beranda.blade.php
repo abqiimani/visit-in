@@ -47,7 +47,7 @@
                 rgba(3, 48, 47, 0.15) 72%,
                 rgba(3, 48, 47, 0.03) 100%
             ),
-            url('{{ asset('img/foto pantai.jpeg') }}');
+            url('{{ asset('img/pantaifiks.png') }}');
 
         background-size: cover;
         background-position: center center;

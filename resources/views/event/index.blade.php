@@ -552,7 +552,7 @@
                 <div class="event-image">
 
                     <img
-                        src="{{ asset('img/galeri6.png') }}"
+                        src="{{ asset('img/event.png') }}"
                         alt="Evara Beach Festival"
                     >
 
@@ -592,7 +592,7 @@
                 <div class="event-image">
 
                     <img
-                        src="{{ asset('img/foto20.png') }}"
+                        src="{{ asset('img/event1.png') }}"
                         alt="Evara Beach Night"
                     >
 
