@@ -5,6 +5,7 @@
 @section('content')
 
 <style>
+
     :root {
         --toska: #087873;
         --toska-dark: #075b58;
@@ -24,9 +25,11 @@
         --white: #ffffff;
     }
 
+
     * {
         box-sizing: border-box;
     }
+
 
     .destinasi-page {
         background: var(--cream);
@@ -35,40 +38,108 @@
     }
 
 
+
     /* =========================================================
        HERO
     ========================================================= */
 
     .destinasi-hero {
+        position: relative;
+        isolation: isolate;
+        overflow: hidden;
+
         padding: 100px 30px 105px;
 
-        background: linear-gradient(
-            135deg,
-            #f8f1e3 0%,
-            #f6eddf 52%,
-            #efe0c4 100%
-        );
+        background:
+            radial-gradient(
+                circle at 8% 20%,
+                rgba(8, 120, 115, .10) 0,
+                rgba(8, 120, 115, .04) 120px,
+                transparent 260px
+            ),
+            radial-gradient(
+                circle at 92% 82%,
+                rgba(212, 170, 107, .16) 0,
+                rgba(212, 170, 107, .06) 150px,
+                transparent 300px
+            ),
+            linear-gradient(
+                135deg,
+                #f8f1e3 0%,
+                #f7efe1 48%,
+                #efe0c4 100%
+            );
 
         border-bottom: 1px solid rgba(138, 96, 56, .12);
     }
 
-    .destinasi-hero-inner {
-        max-width: 900px;
 
+    /* ORNAMEN KIRI */
+    .destinasi-hero::before {
+        content: "";
+
+        position: absolute;
+
+        width: 360px;
+        height: 360px;
+
+        left: -185px;
+        top: -145px;
+
+        border: 1px solid rgba(8, 120, 115, .16);
+        border-radius: 50%;
+
+        box-shadow:
+            0 0 0 28px rgba(8, 120, 115, .035),
+            0 0 0 56px rgba(8, 120, 115, .025);
+
+        z-index: -1;
+    }
+
+
+    /* ORNAMEN KANAN */
+    .destinasi-hero::after {
+        content: "";
+
+        position: absolute;
+
+        width: 300px;
+        height: 300px;
+
+        right: -145px;
+        bottom: -150px;
+
+        border: 1px solid rgba(138, 96, 56, .18);
+        border-radius: 50%;
+
+        box-shadow:
+            0 0 0 24px rgba(212, 170, 107, .045),
+            0 0 0 48px rgba(212, 170, 107, .03);
+
+        z-index: -1;
+    }
+
+
+    .destinasi-hero-inner {
+        position: relative;
+        z-index: 2;
+
+        max-width: 900px;
         margin: 0 auto;
 
         display: flex;
         flex-direction: column;
-
         align-items: center;
         justify-content: center;
 
         text-align: center;
     }
 
+
     .destinasi-hero-inner > div {
         width: 100%;
     }
+
 
     .hero-label {
         margin-bottom: 17px;
@@ -84,6 +155,7 @@
         text-align: center;
     }
 
+
     .destinasi-hero h1 {
         margin: 0 auto;
 
@@ -92,8 +164,8 @@
         font-family: "Playfair Display", Georgia, serif;
 
         font-size: clamp(47px, 5.5vw, 68px);
-
         line-height: 1.05;
+
         font-weight: 600;
 
         letter-spacing: -.7px;
@@ -101,13 +173,14 @@
         text-align: center;
     }
 
+
     .destinasi-hero h1 span {
         color: var(--brown);
     }
 
+
     .hero-description {
         max-width: 700px;
-
         margin: 28px auto 0;
 
         color: var(--text);
@@ -119,29 +192,30 @@
     }
 
 
+
     /* =========================================================
        PROFIL DESTINASI
     ========================================================= */
 
     .profil-section {
         padding: 105px 30px;
-
         background: var(--cream-light);
     }
 
+
     .profil-container {
         max-width: 1120px;
-
         margin: 0 auto;
     }
 
+
     .profil-heading {
         max-width: 700px;
-
         margin: 0 auto 55px;
 
         text-align: center;
     }
+
 
     .section-label {
         margin-bottom: 13px;
@@ -155,6 +229,7 @@
         text-transform: uppercase;
     }
 
+
     .section-title {
         margin: 0;
 
@@ -163,10 +238,11 @@
         font-family: "Playfair Display", Georgia, serif;
 
         font-size: clamp(35px, 4vw, 49px);
-
         line-height: 1.17;
+
         font-weight: 600;
     }
+
 
     .profil-grid {
         display: grid;
@@ -178,11 +254,12 @@
         align-items: center;
     }
 
+
     .profil-image {
         position: relative;
-
         padding: 0 15px 15px 0;
     }
+
 
     .profil-image::after {
         content: "";
@@ -191,6 +268,7 @@
 
         left: 15px;
         right: 0;
+
         top: 15px;
         bottom: 0;
 
@@ -198,6 +276,7 @@
 
         z-index: 0;
     }
+
 
     .profil-image img {
         position: relative;
@@ -212,9 +291,11 @@
         object-fit: cover;
     }
 
+
     .profil-text {
         padding: 0 10px;
     }
+
 
     .profil-text p {
         margin: 0 0 19px;
@@ -224,6 +305,7 @@
         font-size: 15px;
         line-height: 1.9;
     }
+
 
     .profil-note {
         margin-top: 28px;
@@ -235,6 +317,7 @@
         background: var(--cream-soft);
     }
 
+
     .profil-note strong {
         display: block;
 
@@ -245,13 +328,14 @@
         font-size: 14px;
     }
 
+
     .profil-note span {
         color: var(--muted);
 
         font-size: 13px;
-
         line-height: 1.7;
     }
+
 
 
     /* =========================================================
@@ -264,11 +348,12 @@
         background: var(--cream);
     }
 
+
     .karakter-container {
         max-width: 1120px;
-
         margin: 0 auto;
     }
+
 
     .karakter-heading {
         width: 100%;
@@ -279,15 +364,18 @@
         text-align: center;
     }
 
+
     .karakter-heading .section-label {
         text-align: center;
     }
+
 
     .karakter-heading .section-title {
         width: 100%;
 
         text-align: center;
     }
+
 
     .karakter-heading p {
         max-width: 650px;
@@ -297,11 +385,11 @@
         color: var(--muted);
 
         font-size: 15px;
-
         line-height: 1.85;
 
         text-align: center;
     }
+
 
 
     /* =========================================================
@@ -317,6 +405,7 @@
         border-top: 1px solid rgba(138, 96, 56, .22);
     }
 
+
     .karakter-accordion .accordion-item {
         background: transparent;
 
@@ -326,6 +415,7 @@
 
         border-radius: 0;
     }
+
 
     .karakter-accordion .accordion-button {
         position: relative;
@@ -351,13 +441,16 @@
         text-align: left;
     }
 
+
     .karakter-accordion .accordion-button::after {
         display: none;
     }
 
+
     .karakter-accordion .accordion-button:focus {
         box-shadow: none;
     }
+
 
     .karakter-number {
         color: var(--sand);
@@ -369,6 +462,7 @@
         font-weight: 600;
     }
 
+
     .karakter-name {
         color: var(--toska-dark);
 
@@ -378,6 +472,7 @@
 
         transition: color .2s ease;
     }
+
 
     .karakter-icon {
         width: 34px;
@@ -403,17 +498,20 @@
             border-color .25s ease;
     }
 
+
     .karakter-accordion
     .accordion-button:hover
     .karakter-name {
         color: var(--brown);
     }
 
+
     .karakter-accordion
     .accordion-button:not(.collapsed)
     .karakter-name {
         color: var(--brown);
     }
+
 
     .karakter-accordion
     .accordion-button:not(.collapsed)
@@ -427,9 +525,11 @@
         border-color: var(--toska);
     }
 
+
     .karakter-description {
         padding: 0 75px 30px 85px;
     }
+
 
     .karakter-description-inner {
         max-width: 720px;
@@ -441,15 +541,16 @@
         border-left: 3px solid var(--sand);
     }
 
+
     .karakter-description-inner p {
         margin: 0;
 
         color: var(--muted);
 
         font-size: 14px;
-
         line-height: 1.9;
     }
+
 
 
     /* =========================================================
@@ -462,11 +563,12 @@
         background: var(--cream-light);
     }
 
+
     .daya-tarik-container {
         max-width: 1120px;
-
         margin: 0 auto;
     }
+
 
     .daya-tarik-grid {
         display: grid;
@@ -478,11 +580,13 @@
         align-items: center;
     }
 
+
     .daya-tarik-content {
         padding-left: 28px;
 
         border-left: 3px solid var(--toska);
     }
+
 
     .daya-tarik-content h2 {
         margin: 0 0 20px;
@@ -492,11 +596,11 @@
         font-family: "Playfair Display", Georgia, serif;
 
         font-size: clamp(34px, 4vw, 47px);
-
         line-height: 1.17;
 
         font-weight: 600;
     }
+
 
     .daya-tarik-content p {
         margin: 0;
@@ -504,9 +608,9 @@
         color: var(--muted);
 
         font-size: 15px;
-
         line-height: 1.9;
     }
+
 
     .daya-tarik-images {
         display: grid;
@@ -515,6 +619,7 @@
 
         gap: 18px;
     }
+
 
     .daya-tarik-images img {
         width: 100%;
@@ -525,9 +630,11 @@
         object-fit: cover;
     }
 
+
     .daya-tarik-images img:first-child {
         margin-top: 30px;
     }
+
 
 
     /* =========================================================
@@ -542,11 +649,12 @@
         text-align: center;
     }
 
+
     .closing-inner {
         max-width: 700px;
-
         margin: 0 auto;
     }
+
 
     .closing-line {
         width: 45px;
@@ -557,6 +665,7 @@
         background: var(--sand);
     }
 
+
     .closing-inner h2 {
         margin: 0 0 17px;
 
@@ -565,11 +674,11 @@
         font-family: "Playfair Display", Georgia, serif;
 
         font-size: clamp(34px, 4vw, 47px);
-
         line-height: 1.2;
 
         font-weight: 600;
     }
+
 
     .closing-inner p {
         margin: 0;
@@ -577,9 +686,9 @@
         color: var(--muted);
 
         font-size: 15px;
-
         line-height: 1.9;
     }
+
 
 
     /* =========================================================
@@ -592,16 +701,20 @@
             max-width: 650px;
         }
 
+
         .profil-grid {
             gap: 45px;
         }
+
 
         .daya-tarik-grid {
             grid-template-columns: 1fr;
 
             gap: 50px;
         }
+
     }
+
 
 
     @media (max-width: 767px) {
@@ -610,22 +723,27 @@
             padding: 75px 22px 80px;
         }
 
+
         .destinasi-hero h1 {
             font-size: 44px;
         }
+
 
         .hero-description {
             font-size: 14px;
         }
 
 
+
         .profil-section {
             padding: 75px 22px 80px;
         }
 
+
         .profil-heading {
             margin-bottom: 40px;
         }
+
 
         .profil-grid {
             grid-template-columns: 1fr;
@@ -633,13 +751,16 @@
             gap: 40px;
         }
 
+
         .profil-image {
             padding: 0 10px 10px 0;
         }
 
+
         .profil-image img {
             height: 320px;
         }
+
 
         .profil-image::after {
             left: 10px;
@@ -647,13 +768,16 @@
         }
 
 
+
         .karakter-section {
             padding: 75px 22px 80px;
         }
 
+
         .karakter-heading {
             margin-bottom: 40px;
         }
+
 
         .karakter-accordion .accordion-button {
             grid-template-columns: 55px 1fr 40px;
@@ -661,36 +785,45 @@
             padding: 23px 0;
         }
 
+
         .karakter-number {
             font-size: 21px;
         }
+
 
         .karakter-name {
             font-size: 16px;
         }
 
+
         .karakter-description {
             padding: 0 0 25px 55px;
         }
+
 
         .karakter-description-inner {
             padding: 18px 20px;
         }
 
 
+
         .daya-tarik-section {
             padding: 75px 22px 80px;
         }
+
 
         .daya-tarik-images img {
             height: 230px;
         }
 
 
+
         .destinasi-closing {
             padding: 75px 22px 85px;
         }
+
     }
+
 
 
     @media (max-width: 480px) {
@@ -699,13 +832,16 @@
             font-size: 39px;
         }
 
+
         .profil-image img {
             height: 280px;
         }
 
+
         .daya-tarik-images {
             grid-template-columns: 1fr;
         }
+
 
         .daya-tarik-images img,
         .daya-tarik-images img:first-child {
@@ -713,12 +849,15 @@
 
             margin-top: 0;
         }
+
     }
 
 </style>
 
 
+
 <div class="destinasi-page">
+
 
 
     {{-- =====================================================
@@ -752,6 +891,7 @@
     </section>
 
 
+
     {{-- =====================================================
          PROFIL DESTINASI
     ====================================================== --}}
@@ -774,6 +914,7 @@
             </div>
 
 
+
             <div class="profil-grid">
 
                 <div class="profil-image">
@@ -784,6 +925,7 @@
                     >
 
                 </div>
+
 
 
                 <div class="profil-text">
@@ -806,6 +948,7 @@
                         kawasan pesisir.
                     </p>
 
+
                     <div class="profil-note">
 
                         <strong>
@@ -827,6 +970,7 @@
         </div>
 
     </section>
+
 
 
     {{-- =====================================================
@@ -855,10 +999,12 @@
             </div>
 
 
+
             <div
                 class="accordion karakter-accordion"
                 id="karakterAccordion"
             >
+
 
 
                 {{-- =================================================
@@ -895,6 +1041,7 @@
                     </h3>
 
 
+
                     <div
                         id="karakterPantai"
                         class="accordion-collapse collapse"
@@ -922,6 +1069,7 @@
                     </div>
 
                 </div>
+
 
 
                 {{-- =================================================
@@ -958,6 +1106,7 @@
                     </h3>
 
 
+
                     <div
                         id="karakterPesisir"
                         class="accordion-collapse collapse"
@@ -985,6 +1134,7 @@
                     </div>
 
                 </div>
+
 
 
                 {{-- =================================================
@@ -1021,6 +1171,7 @@
                     </h3>
 
 
+
                     <div
                         id="karakterRuang"
                         class="accordion-collapse collapse"
@@ -1049,11 +1200,13 @@
                 </div>
 
 
+
             </div>
 
         </div>
 
     </section>
+
 
 
     {{-- =====================================================
@@ -1087,6 +1240,7 @@
                 </div>
 
 
+
                 <div class="daya-tarik-images">
 
                     <img
@@ -1106,6 +1260,7 @@
         </div>
 
     </section>
+
 
 
     {{-- =====================================================
@@ -1131,6 +1286,7 @@
         </div>
 
     </section>
+
 
 
 </div>

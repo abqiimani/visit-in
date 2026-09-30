@@ -824,13 +824,13 @@
                     class="gallery-card"
                     data-bs-toggle="modal"
                     data-bs-target="#galleryModal"
-                    data-image="{{ asset('img/galeri6.png') }}"
+                    data-image="{{ asset('img/galeri13.png') }}"
                     data-title="Keseruan Bersama"
                     data-description="Momen kebersamaan pengunjung saat menikmati permainan dan kegiatan bersama di tepi pantai."
                 >
 
                     <img
-                        src="{{ asset('img/galeri6.png') }}"
+                        src="{{ asset('img/galeri13.png') }}"
                         alt="Keseruan Bersama di Evara Beach"
                     >
 
@@ -882,18 +882,18 @@
                     class="gallery-card"
                     data-bs-toggle="modal"
                     data-bs-target="#galleryModal"
-                    data-image="{{ asset('img/pantai21.png') }}"
-                    data-title="Area Bermain"
+                    data-image="{{ asset('img/galeri11.png') }}"
+                    data-title="Aktivitas Air"
                     data-description="Area rekreasi yang dapat menjadi bagian dari aktivitas pengunjung selama berada di kawasan Evara Beach."
                 >
 
                     <img
-                        src="{{ asset('img/pantai21.png') }}"
+                        src="{{ asset('img/galeri11.png') }}"
                         alt="Area Bermain Evara Beach"
                     >
 
                     <div class="gallery-overlay">
-                        <span>AREA BERMAIN</span>
+                        <span>AKTIVITAS AIR</span>
                     </div>
 
                 </div>
@@ -911,13 +911,13 @@
                     class="gallery-card"
                     data-bs-toggle="modal"
                     data-bs-target="#galleryModal"
-                    data-image="{{ asset('img/galeri9.jpeg') }}"
+                    data-image="{{ asset('img/galeri10.jpeg') }}"
                     data-title="Kulinerh"
                     data-description="Resto atau tempat kuliner di kawasan Evara Beach yang dapat menjadi pilihan pengunjung untuk menikmati makanan dan minuman."
                 >
 
                     <img
-                        src="{{ asset('img/galeri9.jpeg') }}"
+                        src="{{ asset('img/galeri10.jpeg') }}"
                         alt="Tempat Makan atau Resto Evara Beach"
                     >
 
@@ -940,13 +940,13 @@
                     class="gallery-card"
                     data-bs-toggle="modal"
                     data-bs-target="#galleryModal"
-                    data-image="{{ asset('img/pantai1.jpg') }}"
+                    data-image="{{ asset('img/galeri14.png') }}"
                     data-title="Penginapan"
                     data-description="Pilihan tempat menginap yang dapat mendukung kenyamanan pengunjung selama berada di kawasan wisata."
                 >
 
                     <img
-                        src="{{ asset('img/pantai1.jpg') }}"
+                        src="{{ asset('img/galeri14.png') }}"
                         alt="Penginapan Evara Beach"
                     >
 
@@ -969,13 +969,13 @@
                     class="gallery-card"
                     data-bs-toggle="modal"
                     data-bs-target="#galleryModal"
-                    data-image="{{ asset('img/pantai21.png') }}"
+                    data-image="{{ asset('img/galeri12.png') }}"
                     data-title="Gazebo"
                     data-description="Gazebo sebagai tempat berteduh dan bersantai sambil menikmati suasana di kawasan pantai."
                 >
 
                     <img
-                        src="{{ asset('img/pantai21.png') }}"
+                        src="{{ asset('img/galeri12.png') }}"
                         alt="Gazebo Evara Beach"
                     >
 
