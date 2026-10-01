@@ -28,12 +28,14 @@
         --shadow: 0 18px 45px rgba(45, 76, 71, .10);
     }
 
+
     /* =====================================================
        EVENT PAGE
     ===================================================== */
 
     .event-page {
         min-height: 100vh;
+
         background:
             radial-gradient(
                 circle at 8% 8%,
@@ -46,88 +48,204 @@
                 var(--cream) 48%,
                 #f7f0e5 100%
             );
+
         color: var(--text);
     }
 
+
     /* =====================================================
-       HERO
+       HERO EVENT
+       HANYA BAGIAN ATAS YANG DIUBAH
     ===================================================== */
 
     .event-hero {
-        padding: 88px 20px 72px;
-        text-align: center;
         position: relative;
         overflow: hidden;
+
+        padding: 58px 20px 52px;
+
+        text-align: center;
+
+        background:
+            radial-gradient(
+                circle at 50% -80%,
+                rgba(8, 120, 115, .18),
+                transparent 52%
+            ),
+            linear-gradient(
+                180deg,
+                #fffdf8 0%,
+                #f9f4e9 70%,
+                #f5ecdd 100%
+            );
+
+        border-bottom: 1px solid rgba(8, 120, 115, .12);
     }
+
+
+    /* lingkaran kiri */
 
     .event-hero::before {
         content: "";
+
         position: absolute;
-        width: 360px;
-        height: 360px;
+
+        width: 300px;
+        height: 300px;
+
+        left: -165px;
+        top: -145px;
+
         border-radius: 50%;
-        background: rgba(8, 120, 115, .06);
-        top: -190px;
-        left: -120px;
+
+        border: 1px solid rgba(8, 120, 115, .14);
+
+        box-shadow:
+            0 0 0 22px rgba(8, 120, 115, .035),
+            0 0 0 44px rgba(8, 120, 115, .018);
     }
+
+
+    /* lingkaran kanan */
 
     .event-hero::after {
         content: "";
+
         position: absolute;
-        width: 300px;
-        height: 300px;
-        border-radius: 50%;
-        background: rgba(212, 170, 107, .09);
+
+        width: 220px;
+        height: 220px;
+
         right: -120px;
-        bottom: -170px;
+        bottom: -145px;
+
+        border-radius: 50%;
+
+        border: 1px solid rgba(212, 170, 107, .24);
+
+        box-shadow:
+            0 0 0 18px rgba(212, 170, 107, .045);
     }
 
+
     .event-hero-inner {
-        max-width: 820px;
-        margin: 0 auto;
         position: relative;
         z-index: 2;
+
+        max-width: 900px;
+
+        margin: 0 auto;
     }
+
+
+    /* garis kecil gold */
 
     .event-eyebrow {
         display: inline-flex;
+
         align-items: center;
-        gap: 10px;
-        margin-bottom: 17px;
+        justify-content: center;
+
+        gap: 11px;
+
+        margin-bottom: 14px;
 
         color: var(--toska);
-        font-size: .76rem;
+
+        font-size: .72rem;
         font-weight: 800;
-        letter-spacing: .19em;
+
+        letter-spacing: .22em;
+
         text-transform: uppercase;
     }
+
 
     .event-eyebrow::before,
     .event-eyebrow::after {
         content: "";
-        width: 28px;
-        height: 1px;
-        background: var(--sand);
+
+        width: 34px;
+        height: 2px;
+
+        background:
+            linear-gradient(
+                90deg,
+                transparent,
+                var(--sand)
+            );
     }
 
+
+    .event-eyebrow::after {
+        background:
+            linear-gradient(
+                90deg,
+                var(--sand),
+                transparent
+            );
+    }
+
+
+    /* judul utama */
+
     .event-hero h1 {
+        position: relative;
+
         margin: 0;
 
         color: var(--toska-deep);
+
         font-family: "Playfair Display", Georgia, serif;
-        font-size: clamp(2.6rem, 5vw, 4.2rem);
+
+        font-size: clamp(2.8rem, 5vw, 4rem);
+
         font-weight: 700;
+
         line-height: 1.08;
+
+        letter-spacing: -.025em;
     }
+
+
+    /* aksen kecil di bawah judul */
+
+    .event-hero h1::after {
+        content: "";
+
+        display: block;
+
+        width: 58px;
+        height: 3px;
+
+        margin: 18px auto 0;
+
+        border-radius: 999px;
+
+        background:
+            linear-gradient(
+                90deg,
+                var(--sand),
+                var(--sand-light)
+            );
+
+        box-shadow:
+            0 3px 10px rgba(212, 170, 107, .25);
+    }
+
 
     .event-hero p {
-        max-width: 700px;
-        margin: 22px auto 0;
+        max-width: 690px;
+
+        margin: 18px auto 0;
 
         color: var(--muted);
+
         font-size: 1rem;
-        line-height: 1.85;
+
+        line-height: 1.8;
     }
+
 
     /* =====================================================
        INTRO
@@ -185,6 +303,7 @@
         line-height: 1.82;
     }
 
+
     /* =====================================================
        EVENT SECTION
     ===================================================== */
@@ -228,6 +347,7 @@
         line-height: 1.75;
     }
 
+
     /* =====================================================
        EVENT GRID
     ===================================================== */
@@ -237,6 +357,7 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 30px;
     }
+
 
     /* =====================================================
        EVENT CARD
@@ -342,6 +463,7 @@
         font-size: .95rem;
     }
 
+
     /* =====================================================
        CLOSING
     ===================================================== */
@@ -401,6 +523,7 @@
         line-height: 1.8;
     }
 
+
     /* =====================================================
        RESPONSIVE
     ===================================================== */
@@ -418,18 +541,35 @@
         }
     }
 
+
     @media (max-width: 600px) {
 
         .event-hero {
-            padding: 70px 18px 55px;
+            padding: 48px 18px 42px;
+        }
+
+        .event-eyebrow {
+            font-size: .66rem;
+            letter-spacing: .16em;
+        }
+
+        .event-eyebrow::before,
+        .event-eyebrow::after {
+            width: 24px;
         }
 
         .event-hero h1 {
             font-size: 2.5rem;
         }
 
+        .event-hero h1::after {
+            width: 48px;
+            margin-top: 15px;
+        }
+
         .event-hero p {
             font-size: .92rem;
+            line-height: 1.7;
         }
 
         .event-intro {
@@ -469,9 +609,11 @@
 
 <div class="event-page">
 
+
     {{-- =====================================================
          HERO
     ====================================================== --}}
+
     <section class="event-hero">
 
         <div class="event-hero-inner">
@@ -485,9 +627,8 @@
             </h1>
 
             <p>
-                Evara Beach menjadi ruang untuk berbagai kegiatan,
-                perayaan, hiburan, dan acara yang menghadirkan
-                pengalaman berbeda bagi para pengunjung.
+                Berbagai kegiatan, perayaan, hiburan, dan acara
+                yang hadir untuk melengkapi suasana di Evara Beach.
             </p>
 
         </div>
@@ -498,6 +639,7 @@
     {{-- =====================================================
          INTRO
     ====================================================== --}}
+
     <section class="event-intro">
 
         <div class="event-intro-box">
@@ -521,6 +663,7 @@
     {{-- =====================================================
          EVENT LIST
     ====================================================== --}}
+
     <section class="event-section">
 
         <div class="event-heading">
@@ -547,12 +690,13 @@
             {{-- =================================================
                  1. EVARA BEACH FESTIVAL
             ================================================== --}}
+
             <article class="event-card">
 
                 <div class="event-image">
 
                     <img
-                        src="{{ asset('img/event.png') }}"
+                        src="{{ asset('img/eventt.png') }}"
                         alt="Evara Beach Festival"
                     >
 
@@ -587,6 +731,7 @@
             {{-- =================================================
                  2. EVARA BEACH NIGHT
             ================================================== --}}
+
             <article class="event-card">
 
                 <div class="event-image">
@@ -627,6 +772,7 @@
             {{-- =================================================
                  3. BEACH GAMES FESTIVAL
             ================================================== --}}
+
             <article class="event-card">
 
                 <div class="event-image">
@@ -667,6 +813,7 @@
             {{-- =================================================
                  4. EVARA FOOD & BEACH FESTIVAL
             ================================================== --}}
+
             <article class="event-card">
 
                 <div class="event-image">
@@ -707,6 +854,7 @@
             {{-- =================================================
                  5. EVARA COLOR SPLASH
             ================================================== --}}
+
             <article class="event-card">
 
                 <div class="event-image">
@@ -747,6 +895,7 @@
             {{-- =================================================
                  6. EVARA CREATIVE MARKET
             ================================================== --}}
+
             <article class="event-card">
 
                 <div class="event-image">
@@ -792,6 +941,7 @@
     {{-- =====================================================
          CLOSING
     ====================================================== --}}
+
     <section class="event-closing">
 
         <div class="event-closing-box">
