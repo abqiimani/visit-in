@@ -42,6 +42,7 @@
         color: var(--text);
     }
 
+
     /* =========================================================
        HERO
     ========================================================= */
@@ -59,7 +60,6 @@
         overflow: hidden;
         text-align: center;
 
-        /* GRADASI DIBUAT LEBIH NATURAL */
         background:
             radial-gradient(
                 circle at 18% 35%,
@@ -81,10 +81,6 @@
             );
     }
 
-    /*
-     * TRANSISI BAWAH HERO
-     * Dibuat pendek supaya tidak terlihat seperti kabut putih.
-     */
     .destinasi-hero::after {
         content: "";
 
@@ -364,6 +360,7 @@
             0 2px 13px rgba(0,40,38,.20);
     }
 
+
     /* =========================================================
        PEMISAH HERO
     ========================================================= */
@@ -379,10 +376,6 @@
 
         pointer-events: none;
 
-        /*
-         * Tidak lagi membuat fade panjang.
-         * Hanya menyambungkan hero ke background cream.
-         */
         background:
             linear-gradient(
                 to bottom,
@@ -416,6 +409,7 @@
         box-shadow:
             0 0 14px rgba(220,169,87,.25);
     }
+
 
     /* =========================================================
        PROFIL
@@ -685,6 +679,7 @@
         line-height: 1.8;
     }
 
+
     /* =========================================================
        BAGIAN KAWASAN
     ========================================================= */
@@ -781,6 +776,7 @@
 
         line-height: 1.9;
     }
+
 
     /* =========================================================
        ACCORDION
@@ -924,148 +920,6 @@
         line-height: 1.9;
     }
 
-    /* =========================================================
-       DAYA TARIK
-    ========================================================= */
-
-    .daya-tarik-section {
-        position: relative;
-
-        padding: 100px 30px 110px;
-
-        background:
-            radial-gradient(
-                circle at 90% 20%,
-                rgba(8,120,115,.13),
-                transparent 28%
-            ),
-            radial-gradient(
-                circle at 8% 85%,
-                rgba(220,169,87,.15),
-                transparent 28%
-            ),
-            linear-gradient(
-                135deg,
-                #fffaf1 0%,
-                #f5ead8 55%,
-                #eaf2ed 100%
-            );
-    }
-
-    .daya-tarik-container {
-        max-width: 1120px;
-
-        margin: 0 auto;
-    }
-
-    .daya-tarik-grid {
-        display: grid;
-
-        grid-template-columns: .86fr 1.14fr;
-
-        gap: 65px;
-
-        align-items: center;
-    }
-
-    .daya-tarik-content {
-        padding-left: 27px;
-
-        border-left: 4px solid var(--teal);
-    }
-
-    .daya-tarik-content h2 {
-        margin: 0 0 18px;
-
-        color: var(--teal-dark);
-
-        font-family: "Playfair Display", Georgia, serif;
-
-        font-size: clamp(35px, 4vw, 50px);
-
-        line-height: 1.13;
-
-        font-weight: 600;
-    }
-
-    .daya-tarik-content p {
-        margin: 0;
-
-        color: var(--muted);
-
-        font-size: 15px;
-
-        line-height: 1.95;
-    }
-
-    .daya-tarik-images {
-        display: grid;
-
-        grid-template-columns: 1fr 1fr;
-
-        gap: 18px;
-    }
-
-    .image-frame {
-        position: relative;
-
-        overflow: hidden;
-    }
-
-    .image-frame:first-child {
-        margin-top: 28px;
-    }
-
-    .image-frame::before {
-        content: "";
-
-        position: absolute;
-
-        inset: 0;
-
-        z-index: 2;
-
-        background:
-            linear-gradient(
-                180deg,
-                transparent 55%,
-                rgba(2,62,59,.28)
-            );
-
-        pointer-events: none;
-    }
-
-    .image-frame::after {
-        content: "";
-
-        position: absolute;
-
-        width: 42px;
-        height: 42px;
-
-        right: 14px;
-        top: 14px;
-
-        border-top: 2px solid rgba(255,255,255,.68);
-        border-right: 2px solid rgba(255,255,255,.68);
-
-        z-index: 3;
-    }
-
-    .image-frame img {
-        display: block;
-
-        width: 100%;
-        height: 315px;
-
-        object-fit: cover;
-
-        transition: transform .5s ease;
-    }
-
-    .image-frame:hover img {
-        transform: scale(1.045);
-    }
 
     /* =========================================================
        CLOSING
@@ -1194,6 +1048,7 @@
         line-height: 1.9;
     }
 
+
     /* =========================================================
        RESPONSIVE
     ========================================================= */
@@ -1215,22 +1070,8 @@
             max-width: 800px;
             margin: 0 auto;
         }
-
-        .daya-tarik-grid {
-            grid-template-columns: 1fr;
-            gap: 50px;
-        }
-
-        .daya-tarik-content {
-            max-width: 800px;
-        }
-
-        .daya-tarik-images {
-            max-width: 800px;
-            width: 100%;
-            margin: 0 auto;
-        }
     }
+
 
     @media (max-width: 767px) {
 
@@ -1283,8 +1124,7 @@
         }
 
         .profil-section,
-        .karakter-section,
-        .daya-tarik-section {
+        .karakter-section {
             padding: 78px 20px 88px;
         }
 
@@ -1342,22 +1182,6 @@
             font-size: 14px;
         }
 
-        .daya-tarik-content {
-            padding-left: 20px;
-        }
-
-        .daya-tarik-content p {
-            font-size: 14.5px;
-        }
-
-        .daya-tarik-images {
-            gap: 12px;
-        }
-
-        .image-frame img {
-            height: 245px;
-        }
-
         .closing-orbit {
             width: 300px;
             height: 300px;
@@ -1367,6 +1191,7 @@
             font-size: 14px;
         }
     }
+
 
     @media (max-width: 480px) {
 
@@ -1393,18 +1218,6 @@
             height: 285px;
         }
 
-        .daya-tarik-images {
-            grid-template-columns: 1fr;
-        }
-
-        .image-frame:first-child {
-            margin-top: 0;
-        }
-
-        .image-frame img {
-            height: 270px;
-        }
-
         .closing-orbit {
             width: 270px;
             height: 270px;
@@ -1414,6 +1227,7 @@
 
 
 <div class="destinasi-page">
+
 
     {{-- =====================================================
          HERO TENTANG DESTINASI
@@ -1455,6 +1269,7 @@
 
 
     {{-- PEMISAH HERO KE SECTION --}}
+
     <div class="hero-transition">
         <span class="hero-transition-line"></span>
     </div>
@@ -1565,7 +1380,7 @@
                 </h2>
 
                 <p>
-                    Setiap bagian memiliki fungsi dan suasana
+                    Setiap bagian memiliki fungsi dan karakter
                     yang berbeda dalam membentuk kawasan wisata
                     Evara Beach.
                 </p>
@@ -1578,7 +1393,10 @@
                 id="karakterAccordion"
             >
 
-                {{-- 01 --}}
+
+                {{-- =================================================
+                     01 - GARIS PANTAI
+                ================================================== --}}
 
                 <div class="accordion-item">
 
@@ -1640,7 +1458,9 @@
                 </div>
 
 
-                {{-- 02 --}}
+                {{-- =================================================
+                     02 - LINGKUNGAN PESISIR
+                ================================================== --}}
 
                 <div class="accordion-item">
 
@@ -1684,7 +1504,7 @@
 
                                 <p>
                                     Area di sekitar pantai memberikan
-                                    suasana alami yang melengkapi
+                                    karakter alami yang melengkapi
                                     kawasan. Pepohonan, garis laut,
                                     serta elemen pesisir lainnya
                                     menciptakan tampilan yang membuat
@@ -1701,7 +1521,9 @@
                 </div>
 
 
-                {{-- 03 --}}
+                {{-- =================================================
+                     03 - AREA REKREASI
+                ================================================== --}}
 
                 <div class="accordion-item">
 
@@ -1760,66 +1582,6 @@
 
                 </div>
 
-            </div>
-
-        </div>
-
-    </section>
-
-
-    {{-- =====================================================
-         DAYA TARIK
-    ====================================================== --}}
-
-    <section class="daya-tarik-section">
-
-        <div class="daya-tarik-container">
-
-            <div class="daya-tarik-grid">
-
-                <div class="daya-tarik-content">
-
-                    <div class="section-label">
-                        Daya Tarik
-                    </div>
-
-                    <h2>
-                        Pemandangan pesisir
-                        yang menjadi daya tarik utama.
-                    </h2>
-
-                    <p>
-                        Daya tarik Evara Beach terlihat dari perpaduan
-                        antara laut, hamparan pasir, pepohonan, dan
-                        ruang di sekitar pantai. Kombinasi tersebut
-                        memberikan tampilan khas yang menjadi bagian
-                        dari pengalaman berada di kawasan ini.
-                    </p>
-
-                </div>
-
-
-                <div class="daya-tarik-images">
-
-                    <div class="image-frame">
-
-                        <img
-                            src="{{ asset('img/pantai21.png') }}"
-                            alt="Pemandangan pantai Evara Beach"
-                        >
-
-                    </div>
-
-                    <div class="image-frame">
-
-                        <img
-                            src="{{ asset('img/foto20.png') }}"
-                            alt="Suasana kawasan Evara Beach"
-                        >
-
-                    </div>
-
-                </div>
 
             </div>
 

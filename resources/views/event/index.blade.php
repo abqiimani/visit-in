@@ -778,7 +778,7 @@
                 <div class="event-image">
 
                     <img
-                        src="{{ asset('img/pantai21.png') }}"
+                        src="{{ asset('img/event3.png') }}"
                         alt="Beach Games Festival"
                     >
 
@@ -819,7 +819,7 @@
                 <div class="event-image">
 
                     <img
-                        src="{{ asset('img/pantai.jpg') }}"
+                        src="{{ asset('img/event4.png') }}"
                         alt="Evara Food and Beach Festival"
                     >
 
@@ -860,7 +860,7 @@
                 <div class="event-image">
 
                     <img
-                        src="{{ asset('img/galeri5.png') }}"
+                        src="{{ asset('img/event5.png') }}"
                         alt="Evara Color Splash"
                     >
 
@@ -901,7 +901,7 @@
                 <div class="event-image">
 
                     <img
-                        src="{{ asset('img/pantai1.jpg') }}"
+                        src="{{ asset('img/event6.png') }}"
                         alt="Evara Creative Market"
                     >
 
