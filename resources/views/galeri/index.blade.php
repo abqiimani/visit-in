@@ -1018,7 +1018,7 @@
                     data-bs-target="#galleryModal"
                     data-image="{{ asset('img/galeri15.png') }}"
                     data-title="Suasana Malam"
-                    data-description="Area makan dan bersantai dengan suasana malam yang hangat di tepi pantai Evara Beach."
+                    data-description="Area kulineran atau makan dan bersantai dengan suasana malam yang hangat di tepi pantai Evara Beach."
                 >
 
                     <img
